@@ -60,13 +60,9 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AUE4CCP_Assignment1Character); \
 
 #define UE4CCP_Assignment1_Source_UE4CCP_Assignment1_UE4CCP_Assignment1Character_h_14_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__Mesh1P() { return STRUCT_OFFSET(AUE4CCP_Assignment1Character, Mesh1P); } \
-	FORCEINLINE static uint32 __PPO__FP_Gun() { return STRUCT_OFFSET(AUE4CCP_Assignment1Character, FP_Gun); } \
-	FORCEINLINE static uint32 __PPO__FP_MuzzleLocation() { return STRUCT_OFFSET(AUE4CCP_Assignment1Character, FP_MuzzleLocation); } \
-	FORCEINLINE static uint32 __PPO__VR_Gun() { return STRUCT_OFFSET(AUE4CCP_Assignment1Character, VR_Gun); } \
-	FORCEINLINE static uint32 __PPO__VR_MuzzleLocation() { return STRUCT_OFFSET(AUE4CCP_Assignment1Character, VR_MuzzleLocation); } \
 	FORCEINLINE static uint32 __PPO__FirstPersonCameraComponent() { return STRUCT_OFFSET(AUE4CCP_Assignment1Character, FirstPersonCameraComponent); } \
-	FORCEINLINE static uint32 __PPO__R_MotionController() { return STRUCT_OFFSET(AUE4CCP_Assignment1Character, R_MotionController); } \
-	FORCEINLINE static uint32 __PPO__L_MotionController() { return STRUCT_OFFSET(AUE4CCP_Assignment1Character, L_MotionController); }
+	FORCEINLINE static uint32 __PPO__currentInventorySlot() { return STRUCT_OFFSET(AUE4CCP_Assignment1Character, currentInventorySlot); } \
+	FORCEINLINE static uint32 __PPO__inventory() { return STRUCT_OFFSET(AUE4CCP_Assignment1Character, inventory); }
 
 
 #define UE4CCP_Assignment1_Source_UE4CCP_Assignment1_UE4CCP_Assignment1Character_h_11_PROLOG

@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\UE4CCP_Assignment1.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{D2B3737B-4F00-484A-906E-D435BC073842}</UniqueIdentifier>
+      <UniqueIdentifier>{4198DB8D-76E2-45D6-93DE-CD6734AFAE92}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\UE4CCP_Assignment1.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{B4C24985-27FD-4808-A5FF-8695745D7564}</UniqueIdentifier>
+      <UniqueIdentifier>{22F8D46C-2988-401D-BF4E-6DD9D79EBF91}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -30,8 +30,14 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\UE4CCP_Assignment1">
-      <UniqueIdentifier>{A09E2CE2-819B-4CF6-902A-C4B5E10B2690}</UniqueIdentifier>
+      <UniqueIdentifier>{2C6E126B-0E8A-4A73-AE2A-CA242F247C67}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\UE4CCP_Assignment1\ATEST_OBJ.cpp">
+      <Filter>Source\UE4CCP_Assignment1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UE4CCP_Assignment1\ATEST_OBJ.h">
+      <Filter>Source\UE4CCP_Assignment1</Filter>
+    </ClInclude>
     <None Include="..\..\Source\UE4CCP_Assignment1\UE4CCP_Assignment1.Build.cs">
       <Filter>Source\UE4CCP_Assignment1</Filter>
     </None>
@@ -63,6 +69,12 @@
       <Filter>Source\UE4CCP_Assignment1</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\UE4CCP_Assignment1\UE4CCP_Assignment1Projectile.h">
+      <Filter>Source\UE4CCP_Assignment1</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UE4CCP_Assignment1\UInventoryComponent.cpp">
+      <Filter>Source\UE4CCP_Assignment1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UE4CCP_Assignment1\UInventoryComponent.h">
       <Filter>Source\UE4CCP_Assignment1</Filter>
     </ClInclude>
   </ItemGroup>
