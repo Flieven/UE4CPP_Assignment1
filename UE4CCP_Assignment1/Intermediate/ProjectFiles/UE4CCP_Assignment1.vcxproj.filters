@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\UE4CCP_Assignment1.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{D2B3737B-4F00-484A-906E-D435BC073842}</UniqueIdentifier>
+      <UniqueIdentifier>{C110E115-B188-4A16-A5BD-92A1DCF1F0BE}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\UE4CCP_Assignment1.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{B4C24985-27FD-4808-A5FF-8695745D7564}</UniqueIdentifier>
+      <UniqueIdentifier>{F7C982F9-3C30-40CA-83C8-9B445CC80318}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -30,8 +30,14 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\UE4CCP_Assignment1">
-      <UniqueIdentifier>{A09E2CE2-819B-4CF6-902A-C4B5E10B2690}</UniqueIdentifier>
+      <UniqueIdentifier>{4548283E-39FC-4E27-91CC-176FA6CF098E}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\UE4CCP_Assignment1\Interinterface.cpp">
+      <Filter>Source\UE4CCP_Assignment1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UE4CCP_Assignment1\Interinterface.h">
+      <Filter>Source\UE4CCP_Assignment1</Filter>
+    </ClInclude>
     <None Include="..\..\Source\UE4CCP_Assignment1\UE4CCP_Assignment1.Build.cs">
       <Filter>Source\UE4CCP_Assignment1</Filter>
     </None>
@@ -65,5 +71,15 @@
     <ClInclude Include="..\..\Source\UE4CCP_Assignment1\UE4CCP_Assignment1Projectile.h">
       <Filter>Source\UE4CCP_Assignment1</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Source\UE4CCP_Assignment1\InteractableBase.h">
+      <Filter>Source\UE4CCP_Assignment1</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Source\UE4CCP_Assignment1\InteractableBase.cpp">
+      <Filter>Source\UE4CCP_Assignment1</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
