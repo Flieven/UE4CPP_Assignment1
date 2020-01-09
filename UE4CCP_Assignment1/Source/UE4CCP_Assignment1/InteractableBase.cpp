@@ -1,6 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
-#include "Engine.h"
 #include "InteractableBase.h"
+#include "CoreMinimal.h"
+#include "Engine.h"
 
 
 // Sets default values
@@ -37,7 +38,7 @@ void AInteractableBase::StartFocus_Implementation() //use to trigger a interacta
 
 void AInteractableBase::EndFocus_Implementation() 
 {
-	GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Blue, TEXT("Start Focus"));
+	GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Blue, TEXT("End Focus"));
 }
 
 

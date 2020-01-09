@@ -33,6 +33,7 @@
 /NODEFAULTLIB:"LIBCPD"
 /FUNCTIONPADMIN
 "C:\Users\Uhuru.Mccray\source\repos\UE4CPP_Assignment1\UE4CCP_Assignment1\Intermediate\Build\Win64\UE4CCP_Assignment1Editor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
+"C:\Users\Uhuru.Mccray\source\repos\UE4CPP_Assignment1\UE4CCP_Assignment1\Intermediate\Build\Win64\UE4Editor\Development\UE4CCP_Assignment1\DamageComponent.cpp.obj"
 "C:\Users\Uhuru.Mccray\source\repos\UE4CPP_Assignment1\UE4CCP_Assignment1\Intermediate\Build\Win64\UE4Editor\Development\UE4CCP_Assignment1\InteractableBase.cpp.obj"
 "C:\Users\Uhuru.Mccray\source\repos\UE4CPP_Assignment1\UE4CCP_Assignment1\Intermediate\Build\Win64\UE4Editor\Development\UE4CCP_Assignment1\Interinterface.cpp.obj"
 "C:\Users\Uhuru.Mccray\source\repos\UE4CPP_Assignment1\UE4CCP_Assignment1\Intermediate\Build\Win64\UE4Editor\Development\UE4CCP_Assignment1\UE4CCP_Assignment1.cpp.obj"
@@ -40,6 +41,7 @@
 "C:\Users\Uhuru.Mccray\source\repos\UE4CPP_Assignment1\UE4CCP_Assignment1\Intermediate\Build\Win64\UE4Editor\Development\UE4CCP_Assignment1\UE4CCP_Assignment1GameMode.cpp.obj"
 "C:\Users\Uhuru.Mccray\source\repos\UE4CPP_Assignment1\UE4CCP_Assignment1\Intermediate\Build\Win64\UE4Editor\Development\UE4CCP_Assignment1\UE4CCP_Assignment1HUD.cpp.obj"
 "C:\Users\Uhuru.Mccray\source\repos\UE4CPP_Assignment1\UE4CCP_Assignment1\Intermediate\Build\Win64\UE4Editor\Development\UE4CCP_Assignment1\UE4CCP_Assignment1Projectile.cpp.obj"
+"C:\Users\Uhuru.Mccray\source\repos\UE4CPP_Assignment1\UE4CCP_Assignment1\Intermediate\Build\Win64\UE4Editor\Development\UE4CCP_Assignment1\DamageComponent.gen.cpp.obj"
 "C:\Users\Uhuru.Mccray\source\repos\UE4CPP_Assignment1\UE4CCP_Assignment1\Intermediate\Build\Win64\UE4Editor\Development\UE4CCP_Assignment1\InteractableBase.gen.cpp.obj"
 "C:\Users\Uhuru.Mccray\source\repos\UE4CPP_Assignment1\UE4CCP_Assignment1\Intermediate\Build\Win64\UE4Editor\Development\UE4CCP_Assignment1\Interinterface.gen.cpp.obj"
 "C:\Users\Uhuru.Mccray\source\repos\UE4CPP_Assignment1\UE4CCP_Assignment1\Intermediate\Build\Win64\UE4Editor\Development\UE4CCP_Assignment1\UE4CCP_Assignment1.init.gen.cpp.obj"

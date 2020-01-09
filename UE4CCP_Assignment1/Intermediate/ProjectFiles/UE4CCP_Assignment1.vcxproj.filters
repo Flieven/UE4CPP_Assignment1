@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\UE4CCP_Assignment1.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{C110E115-B188-4A16-A5BD-92A1DCF1F0BE}</UniqueIdentifier>
+      <UniqueIdentifier>{6E02BDB5-A741-46DA-B402-4664E2C481B7}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\UE4CCP_Assignment1.Target.cs">
       <Filter>Source</Filter>
@@ -11,8 +11,9 @@
     <None Include="..\..\Source\UE4CCP_Assignment1Editor.Target.cs">
       <Filter>Source</Filter>
     </None>
+    <None Include="..\..\.gitignore" />
     <Filter Include="Config">
-      <UniqueIdentifier>{F7C982F9-3C30-40CA-83C8-9B445CC80318}</UniqueIdentifier>
+      <UniqueIdentifier>{858E1DE6-EDF0-4C95-AB49-75F68A6C86AF}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -30,8 +31,20 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\UE4CCP_Assignment1">
-      <UniqueIdentifier>{4548283E-39FC-4E27-91CC-176FA6CF098E}</UniqueIdentifier>
+      <UniqueIdentifier>{5E929597-F582-494E-ADA8-B57450A10159}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\UE4CCP_Assignment1\DamageComponent.cpp">
+      <Filter>Source\UE4CCP_Assignment1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UE4CCP_Assignment1\DamageComponent.h">
+      <Filter>Source\UE4CCP_Assignment1</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UE4CCP_Assignment1\InteractableBase.cpp">
+      <Filter>Source\UE4CCP_Assignment1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UE4CCP_Assignment1\InteractableBase.h">
+      <Filter>Source\UE4CCP_Assignment1</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\UE4CCP_Assignment1\Interinterface.cpp">
       <Filter>Source\UE4CCP_Assignment1</Filter>
     </ClCompile>
@@ -71,15 +84,5 @@
     <ClInclude Include="..\..\Source\UE4CCP_Assignment1\UE4CCP_Assignment1Projectile.h">
       <Filter>Source\UE4CCP_Assignment1</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\Source\UE4CCP_Assignment1\InteractableBase.h">
-      <Filter>Source\UE4CCP_Assignment1</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\Source\UE4CCP_Assignment1\InteractableBase.cpp">
-      <Filter>Source\UE4CCP_Assignment1</Filter>
-    </ClCompile>
   </ItemGroup>
 </Project>

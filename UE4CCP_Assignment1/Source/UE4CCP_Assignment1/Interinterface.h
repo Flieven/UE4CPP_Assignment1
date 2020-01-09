@@ -4,6 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "UObject/Interface.h"
+
+
 #include "Interinterface.generated.h"
 
 // This class does not need to be modified.
@@ -19,7 +21,7 @@ class UInterinterface : public UInterface
 class UE4CCP_ASSIGNMENT1_API IInterinterface
 {
 	GENERATED_BODY()
-
+		
 	// Add interface functions to this class. This is the class that will be inherited to implement this interface.
 public:
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Interaction")
