@@ -11,10 +11,11 @@ class UE4CCP_ASSIGNMENT1_API AATEST_OBJ : public AActor
 {
 	GENERATED_BODY()
 
-		UPROPERTY(VisibleDefaultsOnly, Category = Mesh)
-		class USkeletalMeshComponent* Mesh;
-
 public:	
+
+	UPROPERTY(VisibleDefaultsOnly, Category = Mesh)
+	class USkeletalMeshComponent* Mesh;
+	
 	// Sets default values for this actor's properties
 	AATEST_OBJ();
 

@@ -17,7 +17,7 @@ void EmptyLinkFunctionForGeneratedCodeUInventoryComponent() {}
 	UE4CCP_ASSIGNMENT1_API UClass* Z_Construct_UClass_UUInventoryComponent();
 	ENGINE_API UClass* Z_Construct_UClass_UActorComponent();
 	UPackage* Z_Construct_UPackage__Script_UE4CCP_Assignment1();
-	COREUOBJECT_API UClass* Z_Construct_UClass_UObject_NoRegister();
+	ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
 // End Cross Module References
 	void UUInventoryComponent::StaticRegisterNativesUUInventoryComponent()
 	{
@@ -60,7 +60,7 @@ void EmptyLinkFunctionForGeneratedCodeUInventoryComponent() {}
 	};
 #endif
 	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UClass_UUInventoryComponent_Statics::NewProp_inventory = { "inventory", nullptr, (EPropertyFlags)0x0040000000020001, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UUInventoryComponent, inventory), METADATA_PARAMS(Z_Construct_UClass_UUInventoryComponent_Statics::NewProp_inventory_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UUInventoryComponent_Statics::NewProp_inventory_MetaData)) };
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UUInventoryComponent_Statics::NewProp_inventory_Inner = { "inventory", nullptr, (EPropertyFlags)0x0000000000020000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UClass_UObject_NoRegister, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UUInventoryComponent_Statics::NewProp_inventory_Inner = { "inventory", nullptr, (EPropertyFlags)0x0000000000020000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UUInventoryComponent_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UUInventoryComponent_Statics::NewProp_inventory,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UUInventoryComponent_Statics::NewProp_inventory_Inner,
@@ -92,7 +92,7 @@ void EmptyLinkFunctionForGeneratedCodeUInventoryComponent() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UUInventoryComponent, 531328609);
+	IMPLEMENT_CLASS(UUInventoryComponent, 499117701);
 	template<> UE4CCP_ASSIGNMENT1_API UClass* StaticClass<UUInventoryComponent>()
 	{
 		return UUInventoryComponent::StaticClass();

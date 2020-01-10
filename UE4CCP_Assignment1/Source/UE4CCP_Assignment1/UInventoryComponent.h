@@ -14,7 +14,7 @@ class UE4CCP_ASSIGNMENT1_API UUInventoryComponent : public UActorComponent
 
 private:
 	UPROPERTY(VisibleAnywhere, Category = Inventory)
-		TArray<class UObject*> inventory;
+		TArray<class AActor*> inventory;
 
 public:	
 	// Sets default values for this component's properties
@@ -24,9 +24,15 @@ public:
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
 	bool hasEmptySlot();
-	void add(class UObject* obj);
+	void add(class AActor* obj);
+	void remove(int slot);
 
-	class UObject* getFromSlot(int slot);
+	class AActor* getFromSlot(int slot);
+
+	int size();
+	int find(AActor* obj);
+
+	void debugInventory();
 
 protected:
 	// Called when the game starts

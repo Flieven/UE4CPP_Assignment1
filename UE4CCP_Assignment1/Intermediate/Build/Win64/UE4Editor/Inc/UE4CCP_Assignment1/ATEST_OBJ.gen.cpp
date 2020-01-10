@@ -57,7 +57,7 @@ void EmptyLinkFunctionForGeneratedCodeATEST_OBJ() {}
 		{ "ModuleRelativePath", "ATEST_OBJ.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AATEST_OBJ_Statics::NewProp_Mesh = { "Mesh", nullptr, (EPropertyFlags)0x00400000000b0009, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AATEST_OBJ, Mesh), Z_Construct_UClass_USkeletalMeshComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AATEST_OBJ_Statics::NewProp_Mesh_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AATEST_OBJ_Statics::NewProp_Mesh_MetaData)) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AATEST_OBJ_Statics::NewProp_Mesh = { "Mesh", nullptr, (EPropertyFlags)0x00100000000b0009, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AATEST_OBJ, Mesh), Z_Construct_UClass_USkeletalMeshComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AATEST_OBJ_Statics::NewProp_Mesh_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AATEST_OBJ_Statics::NewProp_Mesh_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AATEST_OBJ_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AATEST_OBJ_Statics::NewProp_Mesh,
 	};
@@ -88,7 +88,7 @@ void EmptyLinkFunctionForGeneratedCodeATEST_OBJ() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AATEST_OBJ, 1382795536);
+	IMPLEMENT_CLASS(AATEST_OBJ, 4114722162);
 	template<> UE4CCP_ASSIGNMENT1_API UClass* StaticClass<AATEST_OBJ>()
 	{
 		return AATEST_OBJ::StaticClass();

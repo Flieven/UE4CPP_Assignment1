@@ -29,7 +29,9 @@ private:
 	UPROPERTY()
 		class UUInventoryComponent* inventory;
 
-	void updateEquipedWeapon(AActor* obj);
+	void updateEquippedWeapon(AActor* obj);
+
+	void YeetEquippedWeapon();
 
 public:
 	AUE4CCP_Assignment1Character();
@@ -55,6 +57,9 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Inventory)
 		float interactionDist;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
+		float yeetStrength = 1000.0f;
 
 	/** Returns Mesh1P subobject **/
 	FORCEINLINE class USkeletalMeshComponent* GetMesh1P() const { return Mesh1P; }
@@ -84,6 +89,9 @@ protected:
 	 * @param Rate	This is a normalized rate, i.e. 1.0 means 100% of desired turn rate
 	 */
 	void LookUpAtRate(float Rate);
+
+	void updateCurrentSlot();
+	void updateCurrentSlot(float value);
 
 	void dropItem();
 

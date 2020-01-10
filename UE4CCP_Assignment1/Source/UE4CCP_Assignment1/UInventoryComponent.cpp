@@ -1,6 +1,6 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-
+#include "GameFramework/Actor.h"
 #include "UInventoryComponent.h"
 
 // Sets default values for this component's properties
@@ -36,9 +36,9 @@ void UUInventoryComponent::TickComponent(float DeltaTime, ELevelTick TickType, F
 
 bool UUInventoryComponent::hasEmptySlot()
 {
-	for (int i = 0; i < inventory.Max(); i++)
+	for (int i = 0; i < inventory.Num() -1; i++)
 	{
-		if (inventory[i] == NULL)
+		if (inventory[i] == nullptr)
 		{
 			UE_LOG(LogTemp, Display, TEXT("Empty Slot found!"));
 			return true;
@@ -47,19 +47,46 @@ bool UUInventoryComponent::hasEmptySlot()
 	return false;
 }
 
-void UUInventoryComponent::add(UObject* obj)
+void UUInventoryComponent::add(AActor* obj)
 {
-	for (int i = 0; i < inventory.Max(); i++)
+	bool added = false;
+
+	for (int i = 0; i < inventory.Num() -1; i++)
 	{
-		if (inventory[i] == NULL)
+		if (inventory[i] == nullptr && !added)
 		{
 			inventory[i] = obj;
+			added = true;
 		}
 	}
 }
 
-UObject* UUInventoryComponent::getFromSlot(int slot)
+void UUInventoryComponent::remove(int slot)
+{
+	inventory[slot] = nullptr;
+}
+
+AActor* UUInventoryComponent::getFromSlot(int slot)
 {
 	return inventory[slot];
+}
+
+int UUInventoryComponent::size()
+{
+	return inventory.Max() -1;
+}
+
+int UUInventoryComponent::find(AActor* obj)
+{
+	return inventory.Find(obj);
+}
+
+void UUInventoryComponent::debugInventory()
+{
+	for (int i = 0; i < inventory.Num(); i++)
+	{
+		if (inventory[i] != nullptr) { UE_LOG(LogTemp, Display, TEXT("[DEBUG] slot: %d contains: %s"), i, *getFromSlot(i)->GetFName().ToString()); }
+		else { UE_LOG(LogTemp, Display, TEXT("[DEBUG] slot: %d is empty"), i); }
+	}
 }
 
