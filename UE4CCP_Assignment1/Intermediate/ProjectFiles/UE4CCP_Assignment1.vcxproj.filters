@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\UE4CCP_Assignment1.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{6E02BDB5-A741-46DA-B402-4664E2C481B7}</UniqueIdentifier>
+      <UniqueIdentifier>{29B7ABD5-F17E-4838-B89E-630BF7F89607}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\UE4CCP_Assignment1.Target.cs">
       <Filter>Source</Filter>
@@ -13,7 +13,7 @@
     </None>
     <None Include="..\..\.gitignore" />
     <Filter Include="Config">
-      <UniqueIdentifier>{858E1DE6-EDF0-4C95-AB49-75F68A6C86AF}</UniqueIdentifier>
+      <UniqueIdentifier>{BCDD279A-FA77-41AB-8FC6-B2EF32B3C3BF}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -31,7 +31,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\UE4CCP_Assignment1">
-      <UniqueIdentifier>{5E929597-F582-494E-ADA8-B57450A10159}</UniqueIdentifier>
+      <UniqueIdentifier>{220DE5CD-255F-4EB5-AC35-02620DE6FAC7}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\UE4CCP_Assignment1\DamageComponent.cpp">
       <Filter>Source\UE4CCP_Assignment1</Filter>
