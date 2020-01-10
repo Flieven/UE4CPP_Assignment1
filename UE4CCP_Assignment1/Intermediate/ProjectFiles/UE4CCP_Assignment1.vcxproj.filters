@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\UE4CCP_Assignment1.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{4198DB8D-76E2-45D6-93DE-CD6734AFAE92}</UniqueIdentifier>
+      <UniqueIdentifier>{ACC73CE1-44E0-4DD7-8F8A-F9A6B4D70524}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\UE4CCP_Assignment1.Target.cs">
       <Filter>Source</Filter>
@@ -11,8 +11,9 @@
     <None Include="..\..\Source\UE4CCP_Assignment1Editor.Target.cs">
       <Filter>Source</Filter>
     </None>
+    <None Include="..\..\.gitignore" />
     <Filter Include="Config">
-      <UniqueIdentifier>{22F8D46C-2988-401D-BF4E-6DD9D79EBF91}</UniqueIdentifier>
+      <UniqueIdentifier>{C6FCDEBC-8056-46A6-93A9-E06909FD2CCD}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -30,12 +31,30 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\UE4CCP_Assignment1">
-      <UniqueIdentifier>{2C6E126B-0E8A-4A73-AE2A-CA242F247C67}</UniqueIdentifier>
+      <UniqueIdentifier>{245F6E6E-8FE8-4F59-8AAD-F49AE34B45FB}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\UE4CCP_Assignment1\ATEST_OBJ.cpp">
       <Filter>Source\UE4CCP_Assignment1</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\UE4CCP_Assignment1\ATEST_OBJ.h">
+      <Filter>Source\UE4CCP_Assignment1</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UE4CCP_Assignment1\DamageComponent.cpp">
+      <Filter>Source\UE4CCP_Assignment1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UE4CCP_Assignment1\DamageComponent.h">
+      <Filter>Source\UE4CCP_Assignment1</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UE4CCP_Assignment1\InteractableBase.cpp">
+      <Filter>Source\UE4CCP_Assignment1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UE4CCP_Assignment1\InteractableBase.h">
+      <Filter>Source\UE4CCP_Assignment1</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UE4CCP_Assignment1\Interinterface.cpp">
+      <Filter>Source\UE4CCP_Assignment1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UE4CCP_Assignment1\Interinterface.h">
       <Filter>Source\UE4CCP_Assignment1</Filter>
     </ClInclude>
     <None Include="..\..\Source\UE4CCP_Assignment1\UE4CCP_Assignment1.Build.cs">

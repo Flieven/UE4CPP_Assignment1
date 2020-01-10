@@ -18,6 +18,7 @@
 
 #include "UInventoryComponent.h"
 #include "ATEST_OBJ.h"
+#include "Interinterface.h"
 
 #include "DrawDebugHelpers.h"
 
@@ -91,7 +92,7 @@ void AUE4CCP_Assignment1Character::interact()
 
 	if (GetWorld()->LineTraceSingleByChannel(hit, start, end, ECC_Visibility, traceParams))
 	{
-		if (hit.GetActor() != nullptr && hit.GetActor()->Tags.Contains("PickUp"))
+		if (hit.GetActor()->Tags.Contains("PickUp") && Cast<IInterinterface>(hit.Actor))
 		{
 			UE_LOG(LogTemp, Display, TEXT("Hit detected!"));
 			if (inventory && inventory->hasEmptySlot())
@@ -100,14 +101,7 @@ void AUE4CCP_Assignment1Character::interact()
 
 				inventory->debugInventory();
 
-				Cast<AATEST_OBJ>(hit.GetActor())->Mesh->SetAllBodiesSimulatePhysics(false);
-				hit.GetActor()->AttachToComponent(Mesh1P, FAttachmentTransformRules::SnapToTargetIncludingScale, "GripPoint");
-				hit.GetActor()->SetActorLocation(Mesh1P->GetSocketLocation("GripPoint"), false, 0 , ETeleportType::TeleportPhysics);
-
-				hit.GetActor()->SetActorHiddenInGame(true);
-				hit.GetActor()->SetActorTickEnabled(false);
-
-				if (EquipedWeapon == nullptr) { updateEquippedWeapon(hit.GetActor()); }
+				Cast<IInterinterface>(hit.GetActor())->OnInteract(this);
 			}
 			else { UE_LOG(LogTemp, Display, TEXT("ERROR 404: Inventory Not Found")); }
 		}

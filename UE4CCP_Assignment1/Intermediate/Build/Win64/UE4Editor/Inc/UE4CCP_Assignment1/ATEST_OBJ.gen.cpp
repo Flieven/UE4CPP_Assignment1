@@ -18,6 +18,7 @@ void EmptyLinkFunctionForGeneratedCodeATEST_OBJ() {}
 	ENGINE_API UClass* Z_Construct_UClass_AActor();
 	UPackage* Z_Construct_UPackage__Script_UE4CCP_Assignment1();
 	ENGINE_API UClass* Z_Construct_UClass_USkeletalMeshComponent_NoRegister();
+	UE4CCP_ASSIGNMENT1_API UClass* Z_Construct_UClass_UInterinterface_NoRegister();
 // End Cross Module References
 	void AATEST_OBJ::StaticRegisterNativesAATEST_OBJ()
 	{
@@ -37,6 +38,7 @@ void EmptyLinkFunctionForGeneratedCodeATEST_OBJ() {}
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_Mesh;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+		static const UE4CodeGen_Private::FImplementedInterfaceParams InterfaceParams[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
 	};
@@ -61,6 +63,9 @@ void EmptyLinkFunctionForGeneratedCodeATEST_OBJ() {}
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AATEST_OBJ_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AATEST_OBJ_Statics::NewProp_Mesh,
 	};
+		const UE4CodeGen_Private::FImplementedInterfaceParams Z_Construct_UClass_AATEST_OBJ_Statics::InterfaceParams[] = {
+			{ Z_Construct_UClass_UInterinterface_NoRegister, (int32)VTABLE_OFFSET(AATEST_OBJ, IInterinterface), false },
+		};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AATEST_OBJ_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AATEST_OBJ>::IsAbstract,
 	};
@@ -71,11 +76,11 @@ void EmptyLinkFunctionForGeneratedCodeATEST_OBJ() {}
 		DependentSingletons,
 		nullptr,
 		Z_Construct_UClass_AATEST_OBJ_Statics::PropPointers,
-		nullptr,
+		InterfaceParams,
 		UE_ARRAY_COUNT(DependentSingletons),
 		0,
 		UE_ARRAY_COUNT(Z_Construct_UClass_AATEST_OBJ_Statics::PropPointers),
-		0,
+		UE_ARRAY_COUNT(InterfaceParams),
 		0x009000A4u,
 		METADATA_PARAMS(Z_Construct_UClass_AATEST_OBJ_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_AATEST_OBJ_Statics::Class_MetaDataParams))
 	};
@@ -88,7 +93,7 @@ void EmptyLinkFunctionForGeneratedCodeATEST_OBJ() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AATEST_OBJ, 4114722162);
+	IMPLEMENT_CLASS(AATEST_OBJ, 3398775287);
 	template<> UE4CCP_ASSIGNMENT1_API UClass* StaticClass<AATEST_OBJ>()
 	{
 		return AATEST_OBJ::StaticClass();

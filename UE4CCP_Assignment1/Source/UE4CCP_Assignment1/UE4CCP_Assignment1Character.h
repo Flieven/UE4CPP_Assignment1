@@ -13,10 +13,6 @@ class AUE4CCP_Assignment1Character : public ACharacter
 {
 	GENERATED_BODY()
 
-	/** Pawn mesh: 1st person view (arms; seen only by self) */
-	UPROPERTY(VisibleDefaultsOnly, Category=Mesh)
-	class USkeletalMeshComponent* Mesh1P;
-
 	/** First person camera */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
 	class UCameraComponent* FirstPersonCameraComponent;
@@ -29,12 +25,14 @@ private:
 	UPROPERTY()
 		class UUInventoryComponent* inventory;
 
-	void updateEquippedWeapon(AActor* obj);
-
 	void YeetEquippedWeapon();
 
 public:
 	AUE4CCP_Assignment1Character();
+
+	/** Pawn mesh: 1st person view (arms; seen only by self) */
+	UPROPERTY(VisibleDefaultsOnly, Category = Mesh)
+		class USkeletalMeshComponent* Mesh1P;
 
 	/** Base turn rate, in deg/sec. Other scaling may affect final turn rate. */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera)
@@ -60,6 +58,9 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
 		float yeetStrength = 1000.0f;
+
+	UFUNCTION()
+		void updateEquippedWeapon(AActor* obj);
 
 	/** Returns Mesh1P subobject **/
 	FORCEINLINE class USkeletalMeshComponent* GetMesh1P() const { return Mesh1P; }
