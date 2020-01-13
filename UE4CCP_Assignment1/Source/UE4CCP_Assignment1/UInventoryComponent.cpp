@@ -36,11 +36,10 @@ void UUInventoryComponent::TickComponent(float DeltaTime, ELevelTick TickType, F
 
 bool UUInventoryComponent::hasEmptySlot()
 {
-	for (int i = 0; i < inventory.Max(); i++)
+	for (int i = 0; i < inventory.Max()-1; i++)
 	{
 		if (inventory[i] == nullptr)
 		{
-			UE_LOG(LogTemp, Display, TEXT("Empty Slot found!"));
 			return true;
 		}
 	}
@@ -51,7 +50,7 @@ void UUInventoryComponent::add(AActor* obj)
 {
 	bool added = false;
 
-	for (int i = 0; i < inventory.Max(); i++)
+	for (int i = 0; i < inventory.Max()-1; i++)
 	{
 		if (inventory[i] == nullptr && !added)
 		{
@@ -73,7 +72,7 @@ AActor* UUInventoryComponent::getFromSlot(int slot)
 
 int UUInventoryComponent::size()
 {
-	return inventory.Max();
+	return inventory.Max()-1;
 }
 
 int UUInventoryComponent::find(AActor* obj)
@@ -83,7 +82,7 @@ int UUInventoryComponent::find(AActor* obj)
 
 void UUInventoryComponent::debugInventory()
 {
-	for (int i = 0; i < inventory.Num(); i++)
+	for (int i = 0; i < inventory.Num()-1; i++)
 	{
 		if (inventory[i] != nullptr) { UE_LOG(LogTemp, Display, TEXT("[DEBUG] slot: %d contains: %s"), i, *getFromSlot(i)->GetFName().ToString()); }
 		else { UE_LOG(LogTemp, Display, TEXT("[DEBUG] slot: %d is empty"), i); }

@@ -92,20 +92,25 @@ void AUE4CCP_Assignment1Character::interact()
 
 	if (GetWorld()->LineTraceSingleByChannel(hit, start, end, ECC_Visibility, traceParams))
 	{
-		if (hit.GetActor()->Tags.Contains("PickUp") && Cast<IInterinterface>(hit.Actor))
+		if (hit.GetActor())
 		{
-			UE_LOG(LogTemp, Display, TEXT("Hit detected!"));
-			if (inventory && inventory->hasEmptySlot())
+			if (hit.GetActor()->Tags.Contains("PickUp") && Cast<IInterinterface>(hit.Actor))
 			{
-				inventory->add(hit.GetActor());;
+				UE_LOG(LogTemp, Display, TEXT("Hit detected!"));
+				if (inventory && inventory->hasEmptySlot())
+				{
+					inventory->add(hit.GetActor());;
 
-				inventory->debugInventory();
+					inventory->debugInventory();
 
-				Cast<IInterinterface>(hit.GetActor())->OnInteract(this);
+					Cast<IInterinterface>(hit.GetActor())->OnInteract_Implementation(this);
+				}
+				else { UE_LOG(LogTemp, Display, TEXT("ERROR 404: Inventory Not Found")); }
 			}
-			else { UE_LOG(LogTemp, Display, TEXT("ERROR 404: Inventory Not Found")); }
+			else {}
 		}
 	}
+	else {}
 }
 
 void AUE4CCP_Assignment1Character::updateEquippedWeapon(AActor* obj)

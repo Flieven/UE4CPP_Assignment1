@@ -23,7 +23,9 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	void OnInteract(AActor* Caller) override;
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Interaction")
+		void OnInteract(AActor* Caller);
+	virtual void OnInteract_Implementation(AActor* Caller);
 
 protected:
 	// Called when the game starts or when spawned

@@ -8,14 +8,37 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class AActor;
 #ifdef UE4CCP_ASSIGNMENT1_UE4CCP_Assignment1Character_generated_h
 #error "UE4CCP_Assignment1Character.generated.h already included, missing '#pragma once' in UE4CCP_Assignment1Character.h"
 #endif
 #define UE4CCP_ASSIGNMENT1_UE4CCP_Assignment1Character_generated_h
 
 #define UE4CCP_Assignment1_Source_UE4CCP_Assignment1_UE4CCP_Assignment1Character_h_14_SPARSE_DATA
-#define UE4CCP_Assignment1_Source_UE4CCP_Assignment1_UE4CCP_Assignment1Character_h_14_RPC_WRAPPERS
-#define UE4CCP_Assignment1_Source_UE4CCP_Assignment1_UE4CCP_Assignment1Character_h_14_RPC_WRAPPERS_NO_PURE_DECLS
+#define UE4CCP_Assignment1_Source_UE4CCP_Assignment1_UE4CCP_Assignment1Character_h_14_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execupdateEquippedWeapon) \
+	{ \
+		P_GET_OBJECT(AActor,Z_Param_obj); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->updateEquippedWeapon(Z_Param_obj); \
+		P_NATIVE_END; \
+	}
+
+
+#define UE4CCP_Assignment1_Source_UE4CCP_Assignment1_UE4CCP_Assignment1Character_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execupdateEquippedWeapon) \
+	{ \
+		P_GET_OBJECT(AActor,Z_Param_obj); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->updateEquippedWeapon(Z_Param_obj); \
+		P_NATIVE_END; \
+	}
+
+
 #define UE4CCP_Assignment1_Source_UE4CCP_Assignment1_UE4CCP_Assignment1Character_h_14_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAUE4CCP_Assignment1Character(); \

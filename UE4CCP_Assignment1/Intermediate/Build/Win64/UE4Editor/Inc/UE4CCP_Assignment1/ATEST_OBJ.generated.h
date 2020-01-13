@@ -8,14 +8,46 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class AActor;
 #ifdef UE4CCP_ASSIGNMENT1_ATEST_OBJ_generated_h
 #error "ATEST_OBJ.generated.h already included, missing '#pragma once' in ATEST_OBJ.h"
 #endif
 #define UE4CCP_ASSIGNMENT1_ATEST_OBJ_generated_h
 
 #define UE4CCP_Assignment1_Source_UE4CCP_Assignment1_ATEST_OBJ_h_13_SPARSE_DATA
-#define UE4CCP_Assignment1_Source_UE4CCP_Assignment1_ATEST_OBJ_h_13_RPC_WRAPPERS
-#define UE4CCP_Assignment1_Source_UE4CCP_Assignment1_ATEST_OBJ_h_13_RPC_WRAPPERS_NO_PURE_DECLS
+#define UE4CCP_Assignment1_Source_UE4CCP_Assignment1_ATEST_OBJ_h_13_RPC_WRAPPERS \
+	virtual void OnInteract_Implementation(AActor* Caller); \
+ \
+	DECLARE_FUNCTION(execOnInteract) \
+	{ \
+		P_GET_OBJECT(AActor,Z_Param_Caller); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->OnInteract_Implementation(Z_Param_Caller); \
+		P_NATIVE_END; \
+	}
+
+
+#define UE4CCP_Assignment1_Source_UE4CCP_Assignment1_ATEST_OBJ_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execOnInteract) \
+	{ \
+		P_GET_OBJECT(AActor,Z_Param_Caller); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->OnInteract_Implementation(Z_Param_Caller); \
+		P_NATIVE_END; \
+	}
+
+
+#define UE4CCP_Assignment1_Source_UE4CCP_Assignment1_ATEST_OBJ_h_13_EVENT_PARMS \
+	struct ATEST_OBJ_eventOnInteract_Parms \
+	{ \
+		AActor* Caller; \
+	};
+
+
+#define UE4CCP_Assignment1_Source_UE4CCP_Assignment1_ATEST_OBJ_h_13_CALLBACK_WRAPPERS
 #define UE4CCP_Assignment1_Source_UE4CCP_Assignment1_ATEST_OBJ_h_13_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAATEST_OBJ(); \
@@ -61,13 +93,17 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AATEST_OBJ); \
 
 
 #define UE4CCP_Assignment1_Source_UE4CCP_Assignment1_ATEST_OBJ_h_13_PRIVATE_PROPERTY_OFFSET
-#define UE4CCP_Assignment1_Source_UE4CCP_Assignment1_ATEST_OBJ_h_10_PROLOG
+#define UE4CCP_Assignment1_Source_UE4CCP_Assignment1_ATEST_OBJ_h_10_PROLOG \
+	UE4CCP_Assignment1_Source_UE4CCP_Assignment1_ATEST_OBJ_h_13_EVENT_PARMS
+
+
 #define UE4CCP_Assignment1_Source_UE4CCP_Assignment1_ATEST_OBJ_h_13_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
 	UE4CCP_Assignment1_Source_UE4CCP_Assignment1_ATEST_OBJ_h_13_PRIVATE_PROPERTY_OFFSET \
 	UE4CCP_Assignment1_Source_UE4CCP_Assignment1_ATEST_OBJ_h_13_SPARSE_DATA \
 	UE4CCP_Assignment1_Source_UE4CCP_Assignment1_ATEST_OBJ_h_13_RPC_WRAPPERS \
+	UE4CCP_Assignment1_Source_UE4CCP_Assignment1_ATEST_OBJ_h_13_CALLBACK_WRAPPERS \
 	UE4CCP_Assignment1_Source_UE4CCP_Assignment1_ATEST_OBJ_h_13_INCLASS \
 	UE4CCP_Assignment1_Source_UE4CCP_Assignment1_ATEST_OBJ_h_13_STANDARD_CONSTRUCTORS \
 public: \
@@ -80,6 +116,7 @@ public: \
 	UE4CCP_Assignment1_Source_UE4CCP_Assignment1_ATEST_OBJ_h_13_PRIVATE_PROPERTY_OFFSET \
 	UE4CCP_Assignment1_Source_UE4CCP_Assignment1_ATEST_OBJ_h_13_SPARSE_DATA \
 	UE4CCP_Assignment1_Source_UE4CCP_Assignment1_ATEST_OBJ_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
+	UE4CCP_Assignment1_Source_UE4CCP_Assignment1_ATEST_OBJ_h_13_CALLBACK_WRAPPERS \
 	UE4CCP_Assignment1_Source_UE4CCP_Assignment1_ATEST_OBJ_h_13_INCLASS_NO_PURE_DECLS \
 	UE4CCP_Assignment1_Source_UE4CCP_Assignment1_ATEST_OBJ_h_13_ENHANCED_CONSTRUCTORS \
 private: \

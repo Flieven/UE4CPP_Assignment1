@@ -32,9 +32,9 @@ void AATEST_OBJ::Tick(float DeltaTime)
 
 }
 
-void AATEST_OBJ::OnInteract(AActor* Caller)
+void AATEST_OBJ::OnInteract_Implementation(AActor* Caller)
 {
-	AUE4CCP_Assignment1Character* owner =  Cast<AUE4CCP_Assignment1Character>(Caller);
+	AUE4CCP_Assignment1Character* owner = Cast<AUE4CCP_Assignment1Character>(Caller);
 
 	Mesh->SetAllBodiesSimulatePhysics(false);
 	AttachToComponent(owner->Mesh1P, FAttachmentTransformRules::SnapToTargetIncludingScale, "GripPoint");
