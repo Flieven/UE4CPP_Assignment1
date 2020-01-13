@@ -97,4 +97,14 @@
       <Filter>Source\UE4CCP_Assignment1</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Source\UE4CCP_Assignment1\RecoilComponent.h">
+      <Filter>Source\UE4CCP_Assignment1</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Source\UE4CCP_Assignment1\RecoilComponent.cpp">
+      <Filter>Source\UE4CCP_Assignment1</Filter>
+    </ClCompile>
+  </ItemGroup>
 </Project>
