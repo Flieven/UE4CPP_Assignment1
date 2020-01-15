@@ -20,10 +20,10 @@ class AUE4CCP_Assignment1Character : public ACharacter
 private:
 
 	UPROPERTY()
-		int currentInventorySlot = 0;
+		int CurrentInventorySlot = 0;
 
 	UPROPERTY()
-		class UUInventoryComponent* inventory;
+		class UUInventoryComponent* Inventory;
 
 	void YeetEquippedWeapon();
 
@@ -54,13 +54,13 @@ public:
 		class AActor* EquipedWeapon;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Inventory)
-		float interactionDist;
+		float InteractionDist;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
-		float yeetStrength = 1000.0f;
+		float YeetStrength = 1000.0f;
 
 	UFUNCTION()
-		void updateEquippedWeapon(AActor* obj);
+		void UpdateEquippedWeapon(AActor* obj);
 
 	/** Returns Mesh1P subobject **/
 	FORCEINLINE class USkeletalMeshComponent* GetMesh1P() const { return Mesh1P; }
@@ -91,12 +91,12 @@ protected:
 	 */
 	void LookUpAtRate(float Rate);
 
-	void updateCurrentSlot();
-	void updateCurrentSlot(float value);
+	void UpdateCurrentSlot();
+	void UpdateSlotNumber(float value);
 
-	void dropItem();
+	void DropItem();
 
-	void interact();
+	void Interact();
 	
 	// APawn interface
 	virtual void SetupPlayerInputComponent(UInputComponent* InputComponent) override;

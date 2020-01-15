@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\UE4CCP_Assignment1.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{ACC73CE1-44E0-4DD7-8F8A-F9A6B4D70524}</UniqueIdentifier>
+      <UniqueIdentifier>{CBCA5F21-7959-4CEA-A517-24DBDF3D9C24}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\UE4CCP_Assignment1.Target.cs">
       <Filter>Source</Filter>
@@ -13,7 +13,7 @@
     </None>
     <None Include="..\..\.gitignore" />
     <Filter Include="Config">
-      <UniqueIdentifier>{C6FCDEBC-8056-46A6-93A9-E06909FD2CCD}</UniqueIdentifier>
+      <UniqueIdentifier>{D2784A17-A927-4006-8B92-CB3C48702B76}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -31,7 +31,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\UE4CCP_Assignment1">
-      <UniqueIdentifier>{245F6E6E-8FE8-4F59-8AAD-F49AE34B45FB}</UniqueIdentifier>
+      <UniqueIdentifier>{1C4FAECE-B685-4822-9EFB-5C3996C403A9}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\UE4CCP_Assignment1\ATEST_OBJ.cpp">
       <Filter>Source\UE4CCP_Assignment1</Filter>
@@ -57,6 +57,12 @@
     <ClInclude Include="..\..\Source\UE4CCP_Assignment1\Interinterface.h">
       <Filter>Source\UE4CCP_Assignment1</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\UE4CCP_Assignment1\RecoilComponent.cpp">
+      <Filter>Source\UE4CCP_Assignment1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UE4CCP_Assignment1\RecoilComponent.h">
+      <Filter>Source\UE4CCP_Assignment1</Filter>
+    </ClInclude>
     <None Include="..\..\Source\UE4CCP_Assignment1\UE4CCP_Assignment1.Build.cs">
       <Filter>Source\UE4CCP_Assignment1</Filter>
     </None>
@@ -64,12 +70,6 @@
       <Filter>Source\UE4CCP_Assignment1</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\UE4CCP_Assignment1\UE4CCP_Assignment1.h">
-      <Filter>Source\UE4CCP_Assignment1</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\UE4CCP_Assignment1\UE4CCP_Assignment1Character.cpp">
-      <Filter>Source\UE4CCP_Assignment1</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\UE4CCP_Assignment1\UE4CCP_Assignment1Character.h">
       <Filter>Source\UE4CCP_Assignment1</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\UE4CCP_Assignment1\UE4CCP_Assignment1GameMode.cpp">
@@ -96,15 +96,20 @@
     <ClInclude Include="..\..\Source\UE4CCP_Assignment1\UInventoryComponent.h">
       <Filter>Source\UE4CCP_Assignment1</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\Source\UE4CCP_Assignment1\RecoilComponent.h">
-      <Filter>Source\UE4CCP_Assignment1</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\Source\UE4CCP_Assignment1\RecoilComponent.cpp">
-      <Filter>Source\UE4CCP_Assignment1</Filter>
+    <Filter Include="Source\UE4CCP_Assignment1\Actors">
+      <UniqueIdentifier>{FE2B9609-521F-4547-99EC-D8197F4F2E3A}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\UE4CCP_Assignment1\Actors\TargetDummy.cpp">
+      <Filter>Source\UE4CCP_Assignment1\Actors</Filter>
     </ClCompile>
+    <ClInclude Include="..\..\Source\UE4CCP_Assignment1\Actors\TargetDummy.h">
+      <Filter>Source\UE4CCP_Assignment1\Actors</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UE4CCP_Assignment1\Actors\UE4CCP_Assignment1Character.cpp">
+      <Filter>Source\UE4CCP_Assignment1\Actors</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UE4CCP_Assignment1\Actors\UE4CCP_Assignment1Character.h">
+      <Filter>Source\UE4CCP_Assignment1\Actors</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -10,7 +10,7 @@ UUInventoryComponent::UUInventoryComponent()
 	// off to improve performance if you don't need them.
 	PrimaryComponentTick.bCanEverTick = true;
 
-	inventory.SetNum(4);
+	Inventory.SetNum(4);
 
 	// ...
 }
@@ -34,11 +34,11 @@ void UUInventoryComponent::TickComponent(float DeltaTime, ELevelTick TickType, F
 	// ...
 }
 
-bool UUInventoryComponent::hasEmptySlot()
+bool UUInventoryComponent::bHasEmptySlot()
 {
-	for (int i = 0; i < inventory.Max()-1; i++)
+	for (int i = 0; i < Inventory.Max()-1; i++)
 	{
-		if (inventory[i] == nullptr)
+		if (Inventory[i] == nullptr)
 		{
 			return true;
 		}
@@ -46,45 +46,45 @@ bool UUInventoryComponent::hasEmptySlot()
 	return false;
 }
 
-void UUInventoryComponent::add(AActor* obj)
+void UUInventoryComponent::Add(AActor* obj)
 {
 	bool added = false;
 
-	for (int i = 0; i < inventory.Max()-1; i++)
+	for (int i = 0; i < Inventory.Max()-1; i++)
 	{
-		if (inventory[i] == nullptr && !added)
+		if (Inventory[i] == nullptr && !added)
 		{
-			inventory[i] = obj;
+			Inventory[i] = obj;
 			added = true;
 		}
 	}
 }
 
-void UUInventoryComponent::remove(int slot)
+void UUInventoryComponent::Remove(int slot)
 {
-	inventory[slot] = nullptr;
+	Inventory[slot] = nullptr;
 }
 
-AActor* UUInventoryComponent::getFromSlot(int slot)
+AActor* UUInventoryComponent::GetFromSlot(int slot)
 {
-	return inventory[slot];
+	return Inventory[slot];
 }
 
-int UUInventoryComponent::size()
+int UUInventoryComponent::Size()
 {
-	return inventory.Max()-1;
+	return Inventory.Max()-1;
 }
 
-int UUInventoryComponent::find(AActor* obj)
+int UUInventoryComponent::Find(AActor* obj)
 {
-	return inventory.Find(obj);
+	return Inventory.Find(obj);
 }
 
-void UUInventoryComponent::debugInventory()
+void UUInventoryComponent::DebugInventory()
 {
-	for (int i = 0; i < inventory.Num()-1; i++)
+	for (int i = 0; i < Inventory.Num()-1; i++)
 	{
-		if (inventory[i] != nullptr) { UE_LOG(LogTemp, Display, TEXT("[DEBUG] slot: %d contains: %s"), i, *getFromSlot(i)->GetFName().ToString()); }
+		if (Inventory[i] != nullptr) { UE_LOG(LogTemp, Display, TEXT("[DEBUG] slot: %d contains: %s"), i, *GetFromSlot(i)->GetFName().ToString()); }
 		else { UE_LOG(LogTemp, Display, TEXT("[DEBUG] slot: %d is empty"), i); }
 	}
 }

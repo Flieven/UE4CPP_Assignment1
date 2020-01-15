@@ -43,6 +43,6 @@ void AATEST_OBJ::OnInteract_Implementation(AActor* Caller)
 	SetActorHiddenInGame(true);
 	SetActorTickEnabled(false);
 
-	if (owner->EquipedWeapon == nullptr) { owner->updateEquippedWeapon(this); }
+	if (owner->EquipedWeapon == nullptr) { owner->UpdateEquippedWeapon(this); }
 }
 

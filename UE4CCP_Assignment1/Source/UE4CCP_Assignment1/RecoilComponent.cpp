@@ -23,16 +23,16 @@ URecoilComponent::URecoilComponent()
 void URecoilComponent::DoRecoil(AController* controller, TArray<FRotator> BarrelRecoils)
 {
 	TotalRecoil = FRotator::ZeroRotator;
-	if (!controllerRef) { controllerRef = controller; }
+	if (!ControllerRef) { ControllerRef = controller; }
 
 	for (int i = 0; i < BarrelRecoils.Num(); i++)
 	{
 		TotalRecoil += BarrelRecoils[i];
 	}
 
-	TotalRecoil += controllerRef->GetControlRotation();
-	GetOwner()->GetWorldTimerManager().SetTimer(RecoilHandle, this, &URecoilComponent::StopInterpolation, interpolationTime, false);
-	activeInterpolation = true;
+	TotalRecoil += ControllerRef->GetControlRotation();
+	GetOwner()->GetWorldTimerManager().SetTimer(RecoilHandle, this, &URecoilComponent::StopInterpolation, InterpolationTime, false);
+	bActiveInterpolation = true;
 }
 
 // Called when the game starts
@@ -49,24 +49,24 @@ void URecoilComponent::BeginPlay()
 void URecoilComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
-	if(activeInterpolation) { InterpolateRotation(DeltaTime); }
+	if(bActiveInterpolation) { InterpolateRotation(DeltaTime); }
 	// ...
 }
 
 void URecoilComponent::InterpolateRotation(float dTime)
 {
 	UE_LOG(LogTemp, Warning, TEXT("[DEBUG] Running Interpolation: %f"), GetOwner()->GetWorldTimerManager().GetTimerRemaining(RecoilHandle));
-	if(!controllerRef->GetControlRotation().Equals(TotalRecoil, 1.0f))
+	if(!ControllerRef->GetControlRotation().Equals(TotalRecoil, 1.0f))
 	{
-		controllerRef->SetControlRotation(FMath::RInterpTo(controllerRef->GetControlRotation(), TotalRecoil, dTime, interpolationSpeed));
+		ControllerRef->SetControlRotation(FMath::RInterpTo(ControllerRef->GetControlRotation(), TotalRecoil, dTime, InterpolationSpeed));
 	}
-	else { activeInterpolation = false; }
+	else { bActiveInterpolation = false; }
 }
 
 void URecoilComponent::StopInterpolation()
 {
 	UE_LOG(LogTemp, Warning, TEXT("[DEBUG] Stopping interpolation!"));
-	activeInterpolation = false;
+	bActiveInterpolation = false;
 	GetOwner()->GetWorldTimerManager().ClearTimer(RecoilHandle);
 }
 

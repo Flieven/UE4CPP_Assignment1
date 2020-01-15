@@ -17,24 +17,24 @@ class AActor;
 #define UE4CCP_Assignment1_Source_UE4CCP_Assignment1_UE4CCP_Assignment1Character_h_14_SPARSE_DATA
 #define UE4CCP_Assignment1_Source_UE4CCP_Assignment1_UE4CCP_Assignment1Character_h_14_RPC_WRAPPERS \
  \
-	DECLARE_FUNCTION(execupdateEquippedWeapon) \
+	DECLARE_FUNCTION(execUpdateEquippedWeapon) \
 	{ \
 		P_GET_OBJECT(AActor,Z_Param_obj); \
 		P_FINISH; \
 		P_NATIVE_BEGIN; \
-		P_THIS->updateEquippedWeapon(Z_Param_obj); \
+		P_THIS->UpdateEquippedWeapon(Z_Param_obj); \
 		P_NATIVE_END; \
 	}
 
 
 #define UE4CCP_Assignment1_Source_UE4CCP_Assignment1_UE4CCP_Assignment1Character_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
  \
-	DECLARE_FUNCTION(execupdateEquippedWeapon) \
+	DECLARE_FUNCTION(execUpdateEquippedWeapon) \
 	{ \
 		P_GET_OBJECT(AActor,Z_Param_obj); \
 		P_FINISH; \
 		P_NATIVE_BEGIN; \
-		P_THIS->updateEquippedWeapon(Z_Param_obj); \
+		P_THIS->UpdateEquippedWeapon(Z_Param_obj); \
 		P_NATIVE_END; \
 	}
 
@@ -83,8 +83,8 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AUE4CCP_Assignment1Character); \
 
 #define UE4CCP_Assignment1_Source_UE4CCP_Assignment1_UE4CCP_Assignment1Character_h_14_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__FirstPersonCameraComponent() { return STRUCT_OFFSET(AUE4CCP_Assignment1Character, FirstPersonCameraComponent); } \
-	FORCEINLINE static uint32 __PPO__currentInventorySlot() { return STRUCT_OFFSET(AUE4CCP_Assignment1Character, currentInventorySlot); } \
-	FORCEINLINE static uint32 __PPO__inventory() { return STRUCT_OFFSET(AUE4CCP_Assignment1Character, inventory); }
+	FORCEINLINE static uint32 __PPO__CurrentInventorySlot() { return STRUCT_OFFSET(AUE4CCP_Assignment1Character, CurrentInventorySlot); } \
+	FORCEINLINE static uint32 __PPO__Inventory() { return STRUCT_OFFSET(AUE4CCP_Assignment1Character, Inventory); }
 
 
 #define UE4CCP_Assignment1_Source_UE4CCP_Assignment1_UE4CCP_Assignment1Character_h_11_PROLOG

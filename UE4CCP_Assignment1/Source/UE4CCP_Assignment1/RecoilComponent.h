@@ -20,9 +20,9 @@ public:
 		void DoRecoil(AController* controller, TArray<FRotator> BarrelRecoils);
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Interpolation")
-		float interpolationSpeed = 0.1f;
+		float InterpolationSpeed = 0.1f;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Interpolation")
-		float interpolationTime = 0.1f;
+		float InterpolationTime = 0.1f;
 
 protected:
 	// Called when the game starts
@@ -39,11 +39,11 @@ private:
 	void StopInterpolation();
 
 	UPROPERTY()
-	AController* controllerRef = nullptr;
+	AController* ControllerRef = nullptr;
 	UPROPERTY()
 	FRotator TotalRecoil = FRotator::ZeroRotator;
 	UPROPERTY()
-	bool activeInterpolation = false;
+	bool bActiveInterpolation = false;
 
 	FTimerHandle RecoilHandle;
 };
