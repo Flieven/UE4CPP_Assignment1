@@ -19,6 +19,11 @@ public:
 	UFUNCTION(BlueprintCallable)
 		void DoRecoil(AController* controller, TArray<FRotator> BarrelRecoils);
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Interpolation")
+		float interpolationSpeed = 0.1f;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Interpolation")
+		float interpolationTime = 0.1f;
+
 protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
@@ -27,5 +32,18 @@ public:
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
-		
+private:
+	UFUNCTION()
+	void InterpolateRotation(float dTime);
+	UFUNCTION()
+	void StopInterpolation();
+
+	UPROPERTY()
+	AController* controllerRef = nullptr;
+	UPROPERTY()
+	FRotator TotalRecoil = FRotator::ZeroRotator;
+	UPROPERTY()
+	bool activeInterpolation = false;
+
+	FTimerHandle RecoilHandle;
 };

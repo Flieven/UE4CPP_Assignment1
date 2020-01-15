@@ -226,8 +226,8 @@ void AUE4CCP_Assignment1Character::updateCurrentSlot()
 	if (currentInventorySlot < 0) { currentInventorySlot = inventory->size(); }
 	else if (currentInventorySlot > inventory->size()) { currentInventorySlot = 0; }
 
-	UE_LOG(LogTemp, Display, TEXT("[DEBUG] CurrentSlot: %d"), currentInventorySlot);
-	UE_LOG(LogTemp, Display, TEXT("[DEBUG] Contains: %d"), inventory->getFromSlot(currentInventorySlot));
+	/*UE_LOG(LogTemp, Display, TEXT("[DEBUG] CurrentSlot: %d"), currentInventorySlot);
+	UE_LOG(LogTemp, Display, TEXT("[DEBUG] Contains: %d"), inventory->getFromSlot(currentInventorySlot));*/
 
 	if (inventory->getFromSlot(currentInventorySlot))
 	{
