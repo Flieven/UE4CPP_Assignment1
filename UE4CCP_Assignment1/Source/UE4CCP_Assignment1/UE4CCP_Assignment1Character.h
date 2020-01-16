@@ -7,6 +7,7 @@
 #include "UE4CCP_Assignment1Character.generated.h"
 
 class UInputComponent;
+class UDamageComponent;
 
 UCLASS(config=Game)
 class AUE4CCP_Assignment1Character : public ACharacter
@@ -51,7 +52,7 @@ public:
 		class UAnimMontage* FireAnimation;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Inventory)
-		class AActor* EquipedWeapon;
+		class AActor* EquippedObject;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Inventory)
 		float InteractionDist;

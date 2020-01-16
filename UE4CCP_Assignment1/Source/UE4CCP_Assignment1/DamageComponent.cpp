@@ -26,7 +26,7 @@ void UDamageComponent::BeginPlay()
 
 	if (Owner)
 	{
-		Owner->OnTakeAnyDamage.AddDynamic(this, &UDamageComponent ::TakeDamage);
+		Owner->OnTakeAnyDamage.AddDynamic(this, &UDamageComponent::TakeDamage);
 	}
 	
 }

@@ -85,9 +85,9 @@ void EmptyLinkFunctionForGeneratedCodeUE4CCP_Assignment1Character() {}
 #endif
 		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_InteractionDist;
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_EquipedWeapon_MetaData[];
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_EquippedObject_MetaData[];
 #endif
-		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_EquipedWeapon;
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_EquippedObject;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_FireAnimation_MetaData[];
 #endif
@@ -153,12 +153,12 @@ void EmptyLinkFunctionForGeneratedCodeUE4CCP_Assignment1Character() {}
 #endif
 	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_InteractionDist = { "InteractionDist", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AUE4CCP_Assignment1Character, InteractionDist), METADATA_PARAMS(Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_InteractionDist_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_InteractionDist_MetaData)) };
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_EquipedWeapon_MetaData[] = {
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_EquippedObject_MetaData[] = {
 		{ "Category", "Inventory" },
 		{ "ModuleRelativePath", "UE4CCP_Assignment1Character.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_EquipedWeapon = { "EquipedWeapon", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AUE4CCP_Assignment1Character, EquipedWeapon), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_EquipedWeapon_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_EquipedWeapon_MetaData)) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_EquippedObject = { "EquippedObject", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AUE4CCP_Assignment1Character, EquippedObject), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_EquippedObject_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_EquippedObject_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_FireAnimation_MetaData[] = {
 		{ "Category", "Gameplay" },
@@ -232,7 +232,7 @@ void EmptyLinkFunctionForGeneratedCodeUE4CCP_Assignment1Character() {}
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_YeetStrength,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_InteractionDist,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_EquipedWeapon,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_EquippedObject,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_FireAnimation,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_FireSound,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_BaseLookUpRate,
@@ -269,7 +269,7 @@ void EmptyLinkFunctionForGeneratedCodeUE4CCP_Assignment1Character() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AUE4CCP_Assignment1Character, 3392519702);
+	IMPLEMENT_CLASS(AUE4CCP_Assignment1Character, 627103137);
 	template<> UE4CCP_ASSIGNMENT1_API UClass* StaticClass<AUE4CCP_Assignment1Character>()
 	{
 		return AUE4CCP_Assignment1Character::StaticClass();

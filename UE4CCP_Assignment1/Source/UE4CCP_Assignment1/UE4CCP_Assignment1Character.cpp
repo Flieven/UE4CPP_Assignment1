@@ -18,6 +18,7 @@
 #include "HeadMountedDisplayFunctionLibrary.h"
 
 #include "UInventoryComponent.h"
+#include "DamageComponent.h"
 #include "ATEST_OBJ.h"
 #include "Interinterface.h"
 
@@ -68,10 +69,10 @@ void AUE4CCP_Assignment1Character::BeginPlay()
 
 void AUE4CCP_Assignment1Character::DropItem()
 {
-	if (EquipedWeapon)
+	if (EquippedObject)
 	{
 		UE_LOG(LogTemp, Display, TEXT("Dropping weapon"));
-		Inventory->Remove(Inventory->Find(EquipedWeapon));
+		Inventory->Remove(Inventory->Find(EquippedObject));
 		YeetEquippedWeapon();
 	}
 }
@@ -108,6 +109,12 @@ void AUE4CCP_Assignment1Character::Interact()
 				}
 				else { UE_LOG(LogTemp, Display, TEXT("ERROR 404: Inventory Not Found")); }
 			}
+			else if (hit.GetActor()->FindComponentByClass<UDamageComponent>()) 
+			{ 
+				UE_LOG(LogTemp, Display, TEXT("Damage Component Found!"));
+				hit.GetActor()->FindComponentByClass<UDamageComponent>()->TakeDamage(hit.GetActor(), 5.0f, nullptr, GetController(), this);
+			}
+
 			else {}
 		}
 	}
@@ -116,27 +123,27 @@ void AUE4CCP_Assignment1Character::Interact()
 
 void AUE4CCP_Assignment1Character::UpdateEquippedWeapon(AActor* obj)
 {
-	if (EquipedWeapon != nullptr)
+	if (EquippedObject != nullptr)
 	{
-		EquipedWeapon->SetActorHiddenInGame(true);
-		EquipedWeapon->SetActorTickEnabled(false);
+		EquippedObject->SetActorHiddenInGame(true);
+		EquippedObject->SetActorTickEnabled(false);
 	}
 
-	EquipedWeapon = obj;
+	EquippedObject = obj;
 
-	EquipedWeapon->SetActorHiddenInGame(false);
-	EquipedWeapon->SetActorTickEnabled(true);
+	EquippedObject->SetActorHiddenInGame(false);
+	EquippedObject->SetActorTickEnabled(true);
 
-	UE_LOG(LogTemp, Display, TEXT("Equiped: %s"), *EquipedWeapon->GetFName().ToString());
+	UE_LOG(LogTemp, Display, TEXT("Equiped: %s"), *EquippedObject->GetFName().ToString());
 
 }
 
 void AUE4CCP_Assignment1Character::YeetEquippedWeapon()
 {
-	EquipedWeapon->DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
-	Cast<AATEST_OBJ>(EquipedWeapon)->Mesh->SetAllBodiesSimulatePhysics(true);
-	Cast<AATEST_OBJ>(EquipedWeapon)->Mesh->AddImpulse(FirstPersonCameraComponent->GetForwardVector() * YeetStrength, NAME_None , true);
-	EquipedWeapon = nullptr;
+	EquippedObject->DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
+	Cast<AATEST_OBJ>(EquippedObject)->Mesh->SetAllBodiesSimulatePhysics(true);
+	Cast<AATEST_OBJ>(EquippedObject)->Mesh->AddImpulse(FirstPersonCameraComponent->GetForwardVector() * YeetStrength, NAME_None , true);
+	EquippedObject = nullptr;
 }
 
 #pragma endregion
@@ -149,9 +156,6 @@ void AUE4CCP_Assignment1Character::SetupPlayerInputComponent(class UInputCompone
 	// Bind jump events
 	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ACharacter::Jump);
 	PlayerInputComponent->BindAction("Jump", IE_Released, this, &ACharacter::StopJumping);
-
-	// Bind fire event
-	PlayerInputComponent->BindAction("Fire", IE_Pressed, this, &AUE4CCP_Assignment1Character::OnFire);
 
 	PlayerInputComponent->BindAction("PickUp", IE_Pressed, this, &AUE4CCP_Assignment1Character::Interact);
 
@@ -170,26 +174,6 @@ void AUE4CCP_Assignment1Character::SetupPlayerInputComponent(class UInputCompone
 	PlayerInputComponent->BindAxis("TurnRate", this, &AUE4CCP_Assignment1Character::TurnAtRate);
 	PlayerInputComponent->BindAxis("LookUp", this, &APawn::AddControllerPitchInput);
 	PlayerInputComponent->BindAxis("LookUpRate", this, &AUE4CCP_Assignment1Character::LookUpAtRate);
-}
-
-void AUE4CCP_Assignment1Character::OnFire()
-{
-	// try and play the sound if specified
-	if (FireSound != nullptr)
-	{
-		UGameplayStatics::PlaySoundAtLocation(this, FireSound, GetActorLocation());
-	}
-
-	// try and play a firing animation if specified
-	if (FireAnimation != nullptr)
-	{
-		// Get the animation object for the arms mesh
-		UAnimInstance* AnimInstance = Mesh1P->GetAnimInstance();
-		if (AnimInstance != nullptr)
-		{
-			AnimInstance->Montage_Play(FireAnimation, 1.f);
-		}
-	}
 }
 
 #pragma region Movement Functions
