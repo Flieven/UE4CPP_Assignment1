@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\UE4CCP_Assignment1.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{CBCA5F21-7959-4CEA-A517-24DBDF3D9C24}</UniqueIdentifier>
+      <UniqueIdentifier>{B45F9BD5-0ACE-45BF-8426-168AC57F1EB5}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\UE4CCP_Assignment1.Target.cs">
       <Filter>Source</Filter>
@@ -13,7 +13,7 @@
     </None>
     <None Include="..\..\.gitignore" />
     <Filter Include="Config">
-      <UniqueIdentifier>{D2784A17-A927-4006-8B92-CB3C48702B76}</UniqueIdentifier>
+      <UniqueIdentifier>{4BDE708B-3900-4840-9120-A1D9065BB48A}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -31,12 +31,18 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\UE4CCP_Assignment1">
-      <UniqueIdentifier>{1C4FAECE-B685-4822-9EFB-5C3996C403A9}</UniqueIdentifier>
+      <UniqueIdentifier>{12D4119F-B340-490C-8739-3FC7340B41DF}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\UE4CCP_Assignment1\ATEST_OBJ.cpp">
       <Filter>Source\UE4CCP_Assignment1</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\UE4CCP_Assignment1\ATEST_OBJ.h">
+      <Filter>Source\UE4CCP_Assignment1</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UE4CCP_Assignment1\Barrel.cpp">
+      <Filter>Source\UE4CCP_Assignment1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UE4CCP_Assignment1\Barrel.h">
       <Filter>Source\UE4CCP_Assignment1</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\UE4CCP_Assignment1\DamageComponent.cpp">
@@ -63,6 +69,12 @@
     <ClInclude Include="..\..\Source\UE4CCP_Assignment1\RecoilComponent.h">
       <Filter>Source\UE4CCP_Assignment1</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\UE4CCP_Assignment1\TestBase.cpp">
+      <Filter>Source\UE4CCP_Assignment1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UE4CCP_Assignment1\TestBase.h">
+      <Filter>Source\UE4CCP_Assignment1</Filter>
+    </ClInclude>
     <None Include="..\..\Source\UE4CCP_Assignment1\UE4CCP_Assignment1.Build.cs">
       <Filter>Source\UE4CCP_Assignment1</Filter>
     </None>
@@ -70,6 +82,12 @@
       <Filter>Source\UE4CCP_Assignment1</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\UE4CCP_Assignment1\UE4CCP_Assignment1.h">
+      <Filter>Source\UE4CCP_Assignment1</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UE4CCP_Assignment1\UE4CCP_Assignment1Character.cpp">
+      <Filter>Source\UE4CCP_Assignment1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UE4CCP_Assignment1\UE4CCP_Assignment1Character.h">
       <Filter>Source\UE4CCP_Assignment1</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\UE4CCP_Assignment1\UE4CCP_Assignment1GameMode.cpp">
@@ -96,19 +114,19 @@
     <ClInclude Include="..\..\Source\UE4CCP_Assignment1\UInventoryComponent.h">
       <Filter>Source\UE4CCP_Assignment1</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\UE4CCP_Assignment1\Weapon.cpp">
+      <Filter>Source\UE4CCP_Assignment1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UE4CCP_Assignment1\Weapon.h">
+      <Filter>Source\UE4CCP_Assignment1</Filter>
+    </ClInclude>
     <Filter Include="Source\UE4CCP_Assignment1\Actors">
-      <UniqueIdentifier>{FE2B9609-521F-4547-99EC-D8197F4F2E3A}</UniqueIdentifier>
+      <UniqueIdentifier>{4E4C00B2-D91C-4E01-84F8-B21741FCAE61}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\UE4CCP_Assignment1\Actors\TargetDummy.cpp">
       <Filter>Source\UE4CCP_Assignment1\Actors</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\UE4CCP_Assignment1\Actors\TargetDummy.h">
-      <Filter>Source\UE4CCP_Assignment1\Actors</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\UE4CCP_Assignment1\Actors\UE4CCP_Assignment1Character.cpp">
-      <Filter>Source\UE4CCP_Assignment1\Actors</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\UE4CCP_Assignment1\Actors\UE4CCP_Assignment1Character.h">
       <Filter>Source\UE4CCP_Assignment1\Actors</Filter>
     </ClInclude>
   </ItemGroup>

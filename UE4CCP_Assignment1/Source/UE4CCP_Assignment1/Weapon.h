@@ -7,6 +7,8 @@
 #include "InputCoreTypes.h"
 #include "Engine/EngineTypes.h"
 #include "Barrel.h"
+#include "Interinterface.h"
+#include "UE4CCP_Assignment1Character.h"
 #include "Weapon.generated.h"
 
 
@@ -26,13 +28,13 @@ enum class ERepeat : uint8 {
 
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
-class UE4CCP_ASSIGNMENT1_API UWeapon : public USceneComponent
+class UE4CCP_ASSIGNMENT1_API AWeapon : public AActor, public IInterinterface
 {
 	GENERATED_BODY()
 
 public:	
 	// Sets default values for this component's properties
-	UWeapon();
+	AWeapon();
 
 protected:
 	// Called when the game starts
@@ -40,8 +42,8 @@ protected:
 
 public:
 
-	UPROPERTY(EditInstanceOnly, Category = "Weapon Assets")
-	class USkeletalMesh* WeaponMesh;
+	UPROPERTY(VisibleDefaultsOnly, Category = "Weapon Assets")
+	class USkeletalMeshComponent* WeaponMesh;
 
 	UPROPERTY(EditInstanceOnly, Category = "Weapon Assets")
 	class UMaterial* WeaponMat;
@@ -75,7 +77,7 @@ public:
 	FVector2D BulletSpread;
 
 	// Called every frame
-	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
+	virtual void Tick(float DeltaTime) override;
 
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, meta = (HideSelfPin), Category = "Weapon Functions")
 	void Fire(UPARAM(ref) TArray<UBarrel*>& Barrels, FVector EndPoint, FVector2D Spread, TArray<FHitResult>& Hits, bool& bHitResult);
@@ -89,6 +91,10 @@ public:
 	
 	UFUNCTION()
 	void Fire_Burst_Hidden(UPARAM(ref) TArray<UBarrel*>& Barrels, FVector EndPoint, FVector2D Spread, TArray<FHitResult>& Hits, bool& bHitResult);*/
+
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Interaction")
+	void OnInteract(AActor* Caller);
+	virtual void OnInteract_Implementation(AActor* Caller);
 
 private:
 	//int BurstCount = 0;

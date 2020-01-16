@@ -20,6 +20,7 @@
 #include "UInventoryComponent.h"
 #include "DamageComponent.h"
 #include "ATEST_OBJ.h"
+#include "Weapon.h"
 #include "Interinterface.h"
 
 #include "DrawDebugHelpers.h"
@@ -134,15 +135,23 @@ void AUE4CCP_Assignment1Character::UpdateEquippedWeapon(AActor* obj)
 	EquippedObject->SetActorHiddenInGame(false);
 	EquippedObject->SetActorTickEnabled(true);
 
-	UE_LOG(LogTemp, Display, TEXT("Equiped: %s"), *EquippedObject->GetFName().ToString());
+	//UE_LOG(LogTemp, Display, TEXT("Equipped: %s"), *EquippedObject->GetFName().ToString());
 
 }
 
 void AUE4CCP_Assignment1Character::YeetEquippedWeapon()
 {
 	EquippedObject->DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
-	Cast<AATEST_OBJ>(EquippedObject)->Mesh->SetAllBodiesSimulatePhysics(true);
-	Cast<AATEST_OBJ>(EquippedObject)->Mesh->AddImpulse(FirstPersonCameraComponent->GetForwardVector() * YeetStrength, NAME_None , true);
+
+	if (EquippedObject->GetFName().ToString().Find(TEXT("BP_Weapon"), ESearchCase::CaseSensitive) != -1) {
+		Cast<AWeapon>(EquippedObject)->WeaponMesh->SetAllBodiesSimulatePhysics(true);
+		Cast<AWeapon>(EquippedObject)->WeaponMesh->AddImpulse(FirstPersonCameraComponent->GetForwardVector() * YeetStrength, NAME_None, true);
+	}
+	else if (EquippedObject->GetFName().ToString().Find(TEXT("TEST_OBJ"), ESearchCase::CaseSensitive) != -1) {
+		Cast<AATEST_OBJ>(EquippedObject)->Mesh->SetAllBodiesSimulatePhysics(true);
+		Cast<AATEST_OBJ>(EquippedObject)->Mesh->AddImpulse(FirstPersonCameraComponent->GetForwardVector() * YeetStrength, NAME_None, true);
+	}
+
 	EquippedObject = nullptr;
 }
 
