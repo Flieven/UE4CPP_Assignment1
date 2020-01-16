@@ -1,5 +1,5 @@
-C:\Users\Uhuru.Mccray\source\repos\UE4CPP_Assignment1\UE4CCP_Assignment1\Intermediate\Build\Win64\UE4Editor\Development\UE4CCP_Assignment1\Definitions.UE4CCP_Assignment1.h
+C:\Users\theodor.brandt\Documents\Unreal Projects\UE4CCP_Assignment1\UE4CCP_Assignment1\Intermediate\Build\Win64\UE4Editor\Development\UE4CCP_Assignment1\Definitions.UE4CCP_Assignment1.h
 C:\Program Files\Epic Games\UE_4.24\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
 C:\Program Files\Epic Games\UE_4.24\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
-C:\Users\Uhuru.Mccray\source\repos\UE4CPP_Assignment1\UE4CCP_Assignment1\Source\UE4CCP_Assignment1/UE4CCP_Assignment1Projectile.h
-C:\Users\Uhuru.Mccray\source\repos\UE4CPP_Assignment1\UE4CCP_Assignment1\Intermediate\Build\Win64\UE4Editor\Inc\UE4CCP_Assignment1\UE4CCP_Assignment1Projectile.generated.h
+C:\Users\theodor.brandt\Documents\Unreal Projects\UE4CCP_Assignment1\UE4CCP_Assignment1\Source\UE4CCP_Assignment1/UE4CCP_Assignment1Projectile.h
+C:\Users\theodor.brandt\Documents\Unreal Projects\UE4CCP_Assignment1\UE4CCP_Assignment1\Intermediate\Build\Win64\UE4Editor\Inc\UE4CCP_Assignment1\UE4CCP_Assignment1Projectile.generated.h

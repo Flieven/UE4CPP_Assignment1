@@ -1,11 +1,11 @@
-C:\Users\Uhuru.Mccray\source\repos\UE4CPP_Assignment1\UE4CCP_Assignment1\Intermediate\Build\Win64\UE4Editor\Development\UE4CCP_Assignment1\Definitions.UE4CCP_Assignment1.h
-C:\Users\Uhuru.Mccray\source\repos\UE4CPP_Assignment1\UE4CCP_Assignment1\Source\UE4CCP_Assignment1\UE4CCP_Assignment1HUD.h
+C:\Users\theodor.brandt\Documents\Unreal Projects\UE4CCP_Assignment1\UE4CCP_Assignment1\Intermediate\Build\Win64\UE4Editor\Development\UE4CCP_Assignment1\Definitions.UE4CCP_Assignment1.h
+C:\Users\theodor.brandt\Documents\Unreal Projects\UE4CCP_Assignment1\UE4CCP_Assignment1\Source\UE4CCP_Assignment1\UE4CCP_Assignment1HUD.h
 C:\Program Files\Epic Games\UE_4.24\Engine\Source\Runtime\Engine\Classes\GameFramework/HUD.h
 C:\Program Files\Epic Games\UE_4.24\Engine\Source\Runtime\Engine\Classes\GameFramework/HUDHitBox.h
 C:\Program Files\Epic Games\UE_4.24\Engine\Source\Runtime\Engine\Classes\GameFramework/DebugTextInfo.h
 C:\Program Files\Epic Games\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\DebugTextInfo.generated.h
 C:\Program Files\Epic Games\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\HUD.generated.h
-C:\Users\Uhuru.Mccray\source\repos\UE4CPP_Assignment1\UE4CCP_Assignment1\Intermediate\Build\Win64\UE4Editor\Inc\UE4CCP_Assignment1\UE4CCP_Assignment1HUD.generated.h
+C:\Users\theodor.brandt\Documents\Unreal Projects\UE4CCP_Assignment1\UE4CCP_Assignment1\Intermediate\Build\Win64\UE4Editor\Inc\UE4CCP_Assignment1\UE4CCP_Assignment1HUD.generated.h
 C:\Program Files\Epic Games\UE_4.24\Engine\Source\Runtime\Engine\Classes\Engine/Canvas.h
 C:\Program Files\Epic Games\UE_4.24\Engine\Source\Runtime\Engine\Public\CanvasItem.h
 C:\Program Files\Epic Games\UE_4.24\Engine\Source\Runtime\Engine\Classes\Engine/Font.h
