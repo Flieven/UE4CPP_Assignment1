@@ -4,10 +4,11 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "Interinterface.h"
 #include "ATEST_OBJ.generated.h"
 
 UCLASS()
-class UE4CCP_ASSIGNMENT1_API AATEST_OBJ : public AActor
+class UE4CCP_ASSIGNMENT1_API AATEST_OBJ : public AActor, public IInterinterface
 {
 	GENERATED_BODY()
 
@@ -21,6 +22,10 @@ public:
 
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Interaction")
+		void OnInteract(AActor* Caller);
+	virtual void OnInteract_Implementation(AActor* Caller);
 
 protected:
 	// Called when the game starts or when spawned

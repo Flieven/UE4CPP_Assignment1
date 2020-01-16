@@ -2,6 +2,7 @@
 
 
 #include "ATEST_OBJ.h"
+#include "UE4CCP_Assignment1Character.h"
 #include "Components/SkeletalMeshComponent.h"
 
 // Sets default values
@@ -29,5 +30,19 @@ void AATEST_OBJ::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+}
+
+void AATEST_OBJ::OnInteract_Implementation(AActor* Caller)
+{
+	AUE4CCP_Assignment1Character* owner = Cast<AUE4CCP_Assignment1Character>(Caller);
+
+	Mesh->SetAllBodiesSimulatePhysics(false);
+	AttachToComponent(owner->Mesh1P, FAttachmentTransformRules::SnapToTargetIncludingScale, "GripPoint");
+	SetActorLocation(owner->Mesh1P->GetSocketLocation("GripPoint"), false, 0, ETeleportType::TeleportPhysics);
+
+	SetActorHiddenInGame(true);
+	SetActorTickEnabled(false);
+
+	if (owner->EquippedObject == nullptr) { owner->UpdateEquippedWeapon(this); }
 }
 

@@ -1,3 +1,4 @@
+#include "UE4CCP_Assignment1Character.h"
 // Copyright 1998-2019 Epic Games, Inc. All Rights Reserved.
 
 #include "UE4CCP_Assignment1Character.h"
@@ -17,7 +18,9 @@
 #include "HeadMountedDisplayFunctionLibrary.h"
 
 #include "UInventoryComponent.h"
+#include "DamageComponent.h"
 #include "ATEST_OBJ.h"
+#include "Interinterface.h"
 
 #include "DrawDebugHelpers.h"
 
@@ -50,7 +53,7 @@ AUE4CCP_Assignment1Character::AUE4CCP_Assignment1Character()
 	Mesh1P->SetRelativeRotation(FRotator(1.9f, -19.19f, 5.2f));
 	Mesh1P->SetRelativeLocation(FVector(-0.5f, -4.4f, -155.7f));
 
-	inventory = CreateDefaultSubobject<UUInventoryComponent>(TEXT("CharacterInventory"));
+	Inventory = CreateDefaultSubobject<UUInventoryComponent>(TEXT("CharacterInventory"));
 }
 
 void AUE4CCP_Assignment1Character::BeginPlay()
@@ -64,17 +67,17 @@ void AUE4CCP_Assignment1Character::BeginPlay()
 
 #pragma region Interactions
 
-void AUE4CCP_Assignment1Character::dropItem()
+void AUE4CCP_Assignment1Character::DropItem()
 {
-	if (EquipedWeapon)
+	if (EquippedObject)
 	{
 		UE_LOG(LogTemp, Display, TEXT("Dropping weapon"));
-		inventory->remove(inventory->find(EquipedWeapon));
+		Inventory->Remove(Inventory->Find(EquippedObject));
 		YeetEquippedWeapon();
 	}
 }
 
-void AUE4CCP_Assignment1Character::interact()
+void AUE4CCP_Assignment1Character::Interact()
 {
 	FVector loc;
 	FRotator rot;
@@ -83,7 +86,7 @@ void AUE4CCP_Assignment1Character::interact()
 	GetController()->GetPlayerViewPoint(loc, rot);
 
 	FVector start = loc;
-	FVector end = start + (rot.Vector() * interactionDist);
+	FVector end = start + (rot.Vector() * InteractionDist);
 
 	FCollisionQueryParams traceParams;
 
@@ -91,52 +94,56 @@ void AUE4CCP_Assignment1Character::interact()
 
 	if (GetWorld()->LineTraceSingleByChannel(hit, start, end, ECC_Visibility, traceParams))
 	{
-		if (hit.GetActor() != nullptr && hit.GetActor()->Tags.Contains("PickUp"))
+		if (hit.GetActor())
 		{
-			UE_LOG(LogTemp, Display, TEXT("Hit detected!"));
-			if (inventory && inventory->hasEmptySlot())
+			if (hit.GetActor()->Tags.Contains("PickUp") && Cast<IInterinterface>(hit.Actor))
 			{
-				inventory->add(hit.GetActor());;
+				UE_LOG(LogTemp, Display, TEXT("Hit detected!"));
+				if (Inventory && Inventory->bHasEmptySlot())
+				{
+					Inventory->Add(hit.GetActor());;
 
-				inventory->debugInventory();
+					Inventory->DebugInventory();
 
-				Cast<AATEST_OBJ>(hit.GetActor())->Mesh->SetAllBodiesSimulatePhysics(false);
-				hit.GetActor()->AttachToComponent(Mesh1P, FAttachmentTransformRules::SnapToTargetIncludingScale, "GripPoint");
-				hit.GetActor()->SetActorLocation(Mesh1P->GetSocketLocation("GripPoint"), false, 0 , ETeleportType::TeleportPhysics);
-
-				hit.GetActor()->SetActorHiddenInGame(true);
-				hit.GetActor()->SetActorTickEnabled(false);
-
-				if (EquipedWeapon == nullptr) { updateEquippedWeapon(hit.GetActor()); }
+					Cast<IInterinterface>(hit.GetActor())->OnInteract_Implementation(this);
+				}
+				else { UE_LOG(LogTemp, Display, TEXT("ERROR 404: Inventory Not Found")); }
 			}
-			else { UE_LOG(LogTemp, Display, TEXT("ERROR 404: Inventory Not Found")); }
+			else if (hit.GetActor()->FindComponentByClass<UDamageComponent>()) 
+			{ 
+				UE_LOG(LogTemp, Display, TEXT("Damage Component Found!"));
+				hit.GetActor()->FindComponentByClass<UDamageComponent>()->TakeDamage(hit.GetActor(), 5.0f, nullptr, GetController(), this);
+			}
+
+			else {}
 		}
 	}
+	else {}
 }
 
-void AUE4CCP_Assignment1Character::updateEquippedWeapon(AActor* obj)
+void AUE4CCP_Assignment1Character::UpdateEquippedWeapon(AActor* obj)
 {
-	if (EquipedWeapon != nullptr)
+	if (EquippedObject != nullptr)
 	{
-		EquipedWeapon->SetActorHiddenInGame(true);
-		EquipedWeapon->SetActorTickEnabled(false);
+		EquippedObject->SetActorHiddenInGame(true);
+		EquippedObject->SetActorTickEnabled(false);
 	}
 
-	EquipedWeapon = obj;
+	EquippedObject = obj;
 
-	EquipedWeapon->SetActorHiddenInGame(false);
-	EquipedWeapon->SetActorTickEnabled(true);
+	EquippedObject->SetActorHiddenInGame(false);
+	EquippedObject->SetActorTickEnabled(true);
 
-	UE_LOG(LogTemp, Display, TEXT("Equiped: %s"), *EquipedWeapon->GetFName().ToString());
+	UE_LOG(LogTemp, Display, TEXT("Equiped: %s"), *EquippedObject->GetFName().ToString());
 
 }
 
 void AUE4CCP_Assignment1Character::YeetEquippedWeapon()
 {
-	EquipedWeapon->DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
-	Cast<AATEST_OBJ>(EquipedWeapon)->Mesh->SetAllBodiesSimulatePhysics(true);
-	Cast<AATEST_OBJ>(EquipedWeapon)->Mesh->AddImpulse(FirstPersonCameraComponent->GetForwardVector() * yeetStrength, NAME_None , true);
-	EquipedWeapon = nullptr;
+	EquippedObject->DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
+	Cast<AATEST_OBJ>(EquippedObject)->Mesh->SetAllBodiesSimulatePhysics(true);
+	Cast<AATEST_OBJ>(EquippedObject)->Mesh->AddImpulse(FirstPersonCameraComponent->GetForwardVector() * YeetStrength, NAME_None , true);
+	EquippedObject = nullptr;
 }
 
 #pragma endregion
@@ -150,14 +157,11 @@ void AUE4CCP_Assignment1Character::SetupPlayerInputComponent(class UInputCompone
 	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ACharacter::Jump);
 	PlayerInputComponent->BindAction("Jump", IE_Released, this, &ACharacter::StopJumping);
 
-	// Bind fire event
-	PlayerInputComponent->BindAction("Fire", IE_Pressed, this, &AUE4CCP_Assignment1Character::OnFire);
+	PlayerInputComponent->BindAction("PickUp", IE_Pressed, this, &AUE4CCP_Assignment1Character::Interact);
 
-	PlayerInputComponent->BindAction("PickUp", IE_Pressed, this, &AUE4CCP_Assignment1Character::interact);
+	PlayerInputComponent->BindAction("Drop", IE_Pressed, this, &AUE4CCP_Assignment1Character::DropItem);
 
-	PlayerInputComponent->BindAction("Drop", IE_Pressed, this, &AUE4CCP_Assignment1Character::dropItem);
-
-	PlayerInputComponent->BindAxis("MouseWheel", this, &AUE4CCP_Assignment1Character::updateCurrentSlot);
+	PlayerInputComponent->BindAxis("MouseWheel", this, &AUE4CCP_Assignment1Character::UpdateSlotNumber);
 	
 	// Bind movement events
 	PlayerInputComponent->BindAxis("MoveForward", this, &AUE4CCP_Assignment1Character::MoveForward);
@@ -170,26 +174,6 @@ void AUE4CCP_Assignment1Character::SetupPlayerInputComponent(class UInputCompone
 	PlayerInputComponent->BindAxis("TurnRate", this, &AUE4CCP_Assignment1Character::TurnAtRate);
 	PlayerInputComponent->BindAxis("LookUp", this, &APawn::AddControllerPitchInput);
 	PlayerInputComponent->BindAxis("LookUpRate", this, &AUE4CCP_Assignment1Character::LookUpAtRate);
-}
-
-void AUE4CCP_Assignment1Character::OnFire()
-{
-	// try and play the sound if specified
-	if (FireSound != nullptr)
-	{
-		UGameplayStatics::PlaySoundAtLocation(this, FireSound, GetActorLocation());
-	}
-
-	// try and play a firing animation if specified
-	if (FireAnimation != nullptr)
-	{
-		// Get the animation object for the arms mesh
-		UAnimInstance* AnimInstance = Mesh1P->GetAnimInstance();
-		if (AnimInstance != nullptr)
-		{
-			AnimInstance->Montage_Play(FireAnimation, 1.f);
-		}
-	}
 }
 
 #pragma region Movement Functions
@@ -222,24 +206,23 @@ void AUE4CCP_Assignment1Character::LookUpAtRate(float Rate)
 	// calculate delta for this frame from the rate information
 	AddControllerPitchInput(Rate * BaseLookUpRate * GetWorld()->GetDeltaSeconds());
 }
-void AUE4CCP_Assignment1Character::updateCurrentSlot()
+void AUE4CCP_Assignment1Character::UpdateCurrentSlot()
 {
-	if (currentInventorySlot < 0) { currentInventorySlot = inventory->size(); }
-	else if (currentInventorySlot > inventory->size()) { currentInventorySlot = 0; }
+	if (CurrentInventorySlot < 0) { CurrentInventorySlot = Inventory->Size(); }
+	else if (CurrentInventorySlot > Inventory->Size()) { CurrentInventorySlot = 0; }
 
-	UE_LOG(LogTemp, Display, TEXT("[DEBUG] CurrentSlot: %d"), currentInventorySlot);
-	UE_LOG(LogTemp, Display, TEXT("[DEBUG] Contains: %d"), inventory->getFromSlot(currentInventorySlot));
+	/*UE_LOG(LogTemp, Display, TEXT("[DEBUG] CurrentSlot: %d"), currentInventorySlot);
+	UE_LOG(LogTemp, Display, TEXT("[DEBUG] Contains: %d"), inventory->getFromSlot(currentInventorySlot));*/
 
-	if (inventory->getFromSlot(currentInventorySlot))
+	if (Inventory->GetFromSlot(CurrentInventorySlot))
 	{
-		updateEquippedWeapon(inventory->getFromSlot(currentInventorySlot));
+		UpdateEquippedWeapon(Inventory->GetFromSlot(CurrentInventorySlot));
 	}
 }
-
-void AUE4CCP_Assignment1Character::updateCurrentSlot(float value)
+void AUE4CCP_Assignment1Character::UpdateSlotNumber(float value)
 {
-	currentInventorySlot += value;
-	updateCurrentSlot();
+	CurrentInventorySlot += value;
+	UpdateCurrentSlot();
 }
 #pragma endregion
 

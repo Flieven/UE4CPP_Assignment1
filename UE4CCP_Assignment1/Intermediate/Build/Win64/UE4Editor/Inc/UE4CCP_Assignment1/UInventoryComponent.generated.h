@@ -59,7 +59,7 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UUInventoryComponent); \
 
 
 #define UE4CCP_Assignment1_Source_UE4CCP_Assignment1_UInventoryComponent_h_13_PRIVATE_PROPERTY_OFFSET \
-	FORCEINLINE static uint32 __PPO__inventory() { return STRUCT_OFFSET(UUInventoryComponent, inventory); }
+	FORCEINLINE static uint32 __PPO__Inventory() { return STRUCT_OFFSET(UUInventoryComponent, Inventory); }
 
 
 #define UE4CCP_Assignment1_Source_UE4CCP_Assignment1_UInventoryComponent_h_10_PROLOG
