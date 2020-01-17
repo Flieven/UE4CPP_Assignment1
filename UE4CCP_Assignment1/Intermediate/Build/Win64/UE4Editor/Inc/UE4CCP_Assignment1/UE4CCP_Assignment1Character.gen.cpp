@@ -17,15 +17,53 @@ void EmptyLinkFunctionForGeneratedCodeUE4CCP_Assignment1Character() {}
 	UE4CCP_ASSIGNMENT1_API UClass* Z_Construct_UClass_AUE4CCP_Assignment1Character();
 	ENGINE_API UClass* Z_Construct_UClass_ACharacter();
 	UPackage* Z_Construct_UPackage__Script_UE4CCP_Assignment1();
+	UE4CCP_ASSIGNMENT1_API UFunction* Z_Construct_UFunction_AUE4CCP_Assignment1Character_UpdateEquippedWeapon();
 	ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UAnimMontage_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_USoundBase_NoRegister();
+	ENGINE_API UClass* Z_Construct_UClass_USkeletalMeshComponent_NoRegister();
 	UE4CCP_ASSIGNMENT1_API UClass* Z_Construct_UClass_UUInventoryComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UCameraComponent_NoRegister();
-	ENGINE_API UClass* Z_Construct_UClass_USkeletalMeshComponent_NoRegister();
 // End Cross Module References
 	void AUE4CCP_Assignment1Character::StaticRegisterNativesAUE4CCP_Assignment1Character()
 	{
+		UClass* Class = AUE4CCP_Assignment1Character::StaticClass();
+		static const FNameNativePtrPair Funcs[] = {
+			{ "UpdateEquippedWeapon", &AUE4CCP_Assignment1Character::execUpdateEquippedWeapon },
+		};
+		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
+	}
+	struct Z_Construct_UFunction_AUE4CCP_Assignment1Character_UpdateEquippedWeapon_Statics
+	{
+		struct UE4CCP_Assignment1Character_eventUpdateEquippedWeapon_Parms
+		{
+			AActor* obj;
+		};
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_obj;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_AUE4CCP_Assignment1Character_UpdateEquippedWeapon_Statics::NewProp_obj = { "obj", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UE4CCP_Assignment1Character_eventUpdateEquippedWeapon_Parms, obj), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AUE4CCP_Assignment1Character_UpdateEquippedWeapon_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AUE4CCP_Assignment1Character_UpdateEquippedWeapon_Statics::NewProp_obj,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AUE4CCP_Assignment1Character_UpdateEquippedWeapon_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "UE4CCP_Assignment1Character.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AUE4CCP_Assignment1Character_UpdateEquippedWeapon_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AUE4CCP_Assignment1Character, nullptr, "UpdateEquippedWeapon", nullptr, nullptr, sizeof(UE4CCP_Assignment1Character_eventUpdateEquippedWeapon_Parms), Z_Construct_UFunction_AUE4CCP_Assignment1Character_UpdateEquippedWeapon_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AUE4CCP_Assignment1Character_UpdateEquippedWeapon_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AUE4CCP_Assignment1Character_UpdateEquippedWeapon_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AUE4CCP_Assignment1Character_UpdateEquippedWeapon_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AUE4CCP_Assignment1Character_UpdateEquippedWeapon()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AUE4CCP_Assignment1Character_UpdateEquippedWeapon_Statics::FuncParams);
+		}
+		return ReturnFunction;
 	}
 	UClass* Z_Construct_UClass_AUE4CCP_Assignment1Character_NoRegister()
 	{
@@ -34,21 +72,22 @@ void EmptyLinkFunctionForGeneratedCodeUE4CCP_Assignment1Character() {}
 	struct Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics
 	{
 		static UObject* (*const DependentSingletons[])();
+		static const FClassFunctionLinkInfo FuncInfo[];
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_yeetStrength_MetaData[];
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_YeetStrength_MetaData[];
 #endif
-		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_yeetStrength;
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_YeetStrength;
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_interactionDist_MetaData[];
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_InteractionDist_MetaData[];
 #endif
-		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_interactionDist;
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_InteractionDist;
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_EquipedWeapon_MetaData[];
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_EquippedObject_MetaData[];
 #endif
-		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_EquipedWeapon;
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_EquippedObject;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_FireAnimation_MetaData[];
 #endif
@@ -66,21 +105,21 @@ void EmptyLinkFunctionForGeneratedCodeUE4CCP_Assignment1Character() {}
 #endif
 		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_BaseTurnRate;
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_inventory_MetaData[];
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Mesh1P_MetaData[];
 #endif
-		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_inventory;
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_Mesh1P;
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_currentInventorySlot_MetaData[];
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Inventory_MetaData[];
 #endif
-		static const UE4CodeGen_Private::FUnsizedIntPropertyParams NewProp_currentInventorySlot;
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_Inventory;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_CurrentInventorySlot_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FUnsizedIntPropertyParams NewProp_CurrentInventorySlot;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_FirstPersonCameraComponent_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_FirstPersonCameraComponent;
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Mesh1P_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_Mesh1P;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
@@ -88,6 +127,9 @@ void EmptyLinkFunctionForGeneratedCodeUE4CCP_Assignment1Character() {}
 	UObject* (*const Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::DependentSingletons[])() = {
 		(UObject* (*)())Z_Construct_UClass_ACharacter,
 		(UObject* (*)())Z_Construct_UPackage__Script_UE4CCP_Assignment1,
+	};
+	const FClassFunctionLinkInfo Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::FuncInfo[] = {
+		{ &Z_Construct_UFunction_AUE4CCP_Assignment1Character_UpdateEquippedWeapon, "UpdateEquippedWeapon" }, // 4017960602
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::Class_MetaDataParams[] = {
@@ -97,26 +139,26 @@ void EmptyLinkFunctionForGeneratedCodeUE4CCP_Assignment1Character() {}
 	};
 #endif
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_yeetStrength_MetaData[] = {
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_YeetStrength_MetaData[] = {
 		{ "Category", "Gameplay" },
 		{ "ModuleRelativePath", "UE4CCP_Assignment1Character.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_yeetStrength = { "yeetStrength", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AUE4CCP_Assignment1Character, yeetStrength), METADATA_PARAMS(Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_yeetStrength_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_yeetStrength_MetaData)) };
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_YeetStrength = { "YeetStrength", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AUE4CCP_Assignment1Character, YeetStrength), METADATA_PARAMS(Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_YeetStrength_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_YeetStrength_MetaData)) };
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_interactionDist_MetaData[] = {
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_InteractionDist_MetaData[] = {
 		{ "Category", "Inventory" },
 		{ "ModuleRelativePath", "UE4CCP_Assignment1Character.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_interactionDist = { "interactionDist", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AUE4CCP_Assignment1Character, interactionDist), METADATA_PARAMS(Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_interactionDist_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_interactionDist_MetaData)) };
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_InteractionDist = { "InteractionDist", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AUE4CCP_Assignment1Character, InteractionDist), METADATA_PARAMS(Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_InteractionDist_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_InteractionDist_MetaData)) };
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_EquipedWeapon_MetaData[] = {
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_EquippedObject_MetaData[] = {
 		{ "Category", "Inventory" },
 		{ "ModuleRelativePath", "UE4CCP_Assignment1Character.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_EquipedWeapon = { "EquipedWeapon", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AUE4CCP_Assignment1Character, EquipedWeapon), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_EquipedWeapon_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_EquipedWeapon_MetaData)) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_EquippedObject = { "EquippedObject", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AUE4CCP_Assignment1Character, EquippedObject), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_EquippedObject_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_EquippedObject_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_FireAnimation_MetaData[] = {
 		{ "Category", "Gameplay" },
@@ -154,18 +196,28 @@ void EmptyLinkFunctionForGeneratedCodeUE4CCP_Assignment1Character() {}
 #endif
 	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_BaseTurnRate = { "BaseTurnRate", nullptr, (EPropertyFlags)0x0010000000020015, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AUE4CCP_Assignment1Character, BaseTurnRate), METADATA_PARAMS(Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_BaseTurnRate_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_BaseTurnRate_MetaData)) };
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_inventory_MetaData[] = {
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_Mesh1P_MetaData[] = {
+		{ "Category", "Mesh" },
+		{ "Comment", "/** Pawn mesh: 1st person view (arms; seen only by self) */" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "UE4CCP_Assignment1Character.h" },
+		{ "ToolTip", "Pawn mesh: 1st person view (arms; seen only by self)" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_Mesh1P = { "Mesh1P", nullptr, (EPropertyFlags)0x00100000000b0009, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AUE4CCP_Assignment1Character, Mesh1P), Z_Construct_UClass_USkeletalMeshComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_Mesh1P_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_Mesh1P_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_Inventory_MetaData[] = {
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "UE4CCP_Assignment1Character.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_inventory = { "inventory", nullptr, (EPropertyFlags)0x0040000000080008, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AUE4CCP_Assignment1Character, inventory), Z_Construct_UClass_UUInventoryComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_inventory_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_inventory_MetaData)) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_Inventory = { "Inventory", nullptr, (EPropertyFlags)0x0040000000080008, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AUE4CCP_Assignment1Character, Inventory), Z_Construct_UClass_UUInventoryComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_Inventory_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_Inventory_MetaData)) };
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_currentInventorySlot_MetaData[] = {
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_CurrentInventorySlot_MetaData[] = {
 		{ "ModuleRelativePath", "UE4CCP_Assignment1Character.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_currentInventorySlot = { "currentInventorySlot", nullptr, (EPropertyFlags)0x0040000000000000, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AUE4CCP_Assignment1Character, currentInventorySlot), METADATA_PARAMS(Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_currentInventorySlot_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_currentInventorySlot_MetaData)) };
+	const UE4CodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_CurrentInventorySlot = { "CurrentInventorySlot", nullptr, (EPropertyFlags)0x0040000000000000, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AUE4CCP_Assignment1Character, CurrentInventorySlot), METADATA_PARAMS(Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_CurrentInventorySlot_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_CurrentInventorySlot_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_FirstPersonCameraComponent_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
@@ -177,28 +229,18 @@ void EmptyLinkFunctionForGeneratedCodeUE4CCP_Assignment1Character() {}
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_FirstPersonCameraComponent = { "FirstPersonCameraComponent", nullptr, (EPropertyFlags)0x00400000000a001d, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AUE4CCP_Assignment1Character, FirstPersonCameraComponent), Z_Construct_UClass_UCameraComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_FirstPersonCameraComponent_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_FirstPersonCameraComponent_MetaData)) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_Mesh1P_MetaData[] = {
-		{ "Category", "Mesh" },
-		{ "Comment", "/** Pawn mesh: 1st person view (arms; seen only by self) */" },
-		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "UE4CCP_Assignment1Character.h" },
-		{ "ToolTip", "Pawn mesh: 1st person view (arms; seen only by self)" },
-	};
-#endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_Mesh1P = { "Mesh1P", nullptr, (EPropertyFlags)0x00400000000b0009, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AUE4CCP_Assignment1Character, Mesh1P), Z_Construct_UClass_USkeletalMeshComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_Mesh1P_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_Mesh1P_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_yeetStrength,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_interactionDist,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_EquipedWeapon,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_YeetStrength,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_InteractionDist,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_EquippedObject,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_FireAnimation,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_FireSound,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_BaseLookUpRate,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_BaseTurnRate,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_inventory,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_currentInventorySlot,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_FirstPersonCameraComponent,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_Mesh1P,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_Inventory,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_CurrentInventorySlot,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_FirstPersonCameraComponent,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AUE4CCP_Assignment1Character>::IsAbstract,
@@ -208,11 +250,11 @@ void EmptyLinkFunctionForGeneratedCodeUE4CCP_Assignment1Character() {}
 		"Game",
 		&StaticCppClassTypeInfo,
 		DependentSingletons,
-		nullptr,
+		FuncInfo,
 		Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::PropPointers,
 		nullptr,
 		UE_ARRAY_COUNT(DependentSingletons),
-		0,
+		UE_ARRAY_COUNT(FuncInfo),
 		UE_ARRAY_COUNT(Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::PropPointers),
 		0,
 		0x008000A4u,
@@ -227,7 +269,7 @@ void EmptyLinkFunctionForGeneratedCodeUE4CCP_Assignment1Character() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AUE4CCP_Assignment1Character, 2091484068);
+	IMPLEMENT_CLASS(AUE4CCP_Assignment1Character, 627103137);
 	template<> UE4CCP_ASSIGNMENT1_API UClass* StaticClass<AUE4CCP_Assignment1Character>()
 	{
 		return AUE4CCP_Assignment1Character::StaticClass();

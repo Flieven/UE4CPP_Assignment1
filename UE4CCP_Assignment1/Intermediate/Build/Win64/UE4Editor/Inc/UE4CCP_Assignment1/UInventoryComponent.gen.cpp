@@ -33,10 +33,10 @@ void EmptyLinkFunctionForGeneratedCodeUInventoryComponent() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_inventory_MetaData[];
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Inventory_MetaData[];
 #endif
-		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_inventory;
-		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_inventory_Inner;
+		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_Inventory;
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_Inventory_Inner;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
@@ -54,16 +54,16 @@ void EmptyLinkFunctionForGeneratedCodeUInventoryComponent() {}
 	};
 #endif
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UUInventoryComponent_Statics::NewProp_inventory_MetaData[] = {
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UUInventoryComponent_Statics::NewProp_Inventory_MetaData[] = {
 		{ "Category", "Inventory" },
 		{ "ModuleRelativePath", "UInventoryComponent.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UClass_UUInventoryComponent_Statics::NewProp_inventory = { "inventory", nullptr, (EPropertyFlags)0x0040000000020001, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UUInventoryComponent, inventory), METADATA_PARAMS(Z_Construct_UClass_UUInventoryComponent_Statics::NewProp_inventory_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UUInventoryComponent_Statics::NewProp_inventory_MetaData)) };
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UUInventoryComponent_Statics::NewProp_inventory_Inner = { "inventory", nullptr, (EPropertyFlags)0x0000000000020000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UClass_UUInventoryComponent_Statics::NewProp_Inventory = { "Inventory", nullptr, (EPropertyFlags)0x0040000000020001, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UUInventoryComponent, Inventory), METADATA_PARAMS(Z_Construct_UClass_UUInventoryComponent_Statics::NewProp_Inventory_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UUInventoryComponent_Statics::NewProp_Inventory_MetaData)) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UUInventoryComponent_Statics::NewProp_Inventory_Inner = { "Inventory", nullptr, (EPropertyFlags)0x0000000000020000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UUInventoryComponent_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UUInventoryComponent_Statics::NewProp_inventory,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UUInventoryComponent_Statics::NewProp_inventory_Inner,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UUInventoryComponent_Statics::NewProp_Inventory,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UUInventoryComponent_Statics::NewProp_Inventory_Inner,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_UUInventoryComponent_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<UUInventoryComponent>::IsAbstract,
@@ -92,7 +92,7 @@ void EmptyLinkFunctionForGeneratedCodeUInventoryComponent() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UUInventoryComponent, 499117701);
+	IMPLEMENT_CLASS(UUInventoryComponent, 2092768617);
 	template<> UE4CCP_ASSIGNMENT1_API UClass* StaticClass<UUInventoryComponent>()
 	{
 		return UUInventoryComponent::StaticClass();

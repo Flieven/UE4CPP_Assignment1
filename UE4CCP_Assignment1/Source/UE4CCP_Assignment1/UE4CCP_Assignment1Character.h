@@ -7,15 +7,12 @@
 #include "UE4CCP_Assignment1Character.generated.h"
 
 class UInputComponent;
+class UDamageComponent;
 
 UCLASS(config=Game)
 class AUE4CCP_Assignment1Character : public ACharacter
 {
 	GENERATED_BODY()
-
-	/** Pawn mesh: 1st person view (arms; seen only by self) */
-	UPROPERTY(VisibleDefaultsOnly, Category=Mesh)
-	class USkeletalMeshComponent* Mesh1P;
 
 	/** First person camera */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
@@ -24,17 +21,19 @@ class AUE4CCP_Assignment1Character : public ACharacter
 private:
 
 	UPROPERTY()
-		int currentInventorySlot = 0;
+		int CurrentInventorySlot = 0;
 
 	UPROPERTY()
-		class UUInventoryComponent* inventory;
-
-	void updateEquippedWeapon(AActor* obj);
+		class UUInventoryComponent* Inventory;
 
 	void YeetEquippedWeapon();
 
 public:
 	AUE4CCP_Assignment1Character();
+
+	/** Pawn mesh: 1st person view (arms; seen only by self) */
+	UPROPERTY(VisibleDefaultsOnly, Category = Mesh)
+		class USkeletalMeshComponent* Mesh1P;
 
 	/** Base turn rate, in deg/sec. Other scaling may affect final turn rate. */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera)
@@ -53,13 +52,16 @@ public:
 		class UAnimMontage* FireAnimation;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Inventory)
-		class AActor* EquipedWeapon;
+		class AActor* EquippedObject;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Inventory)
-		float interactionDist;
+		float InteractionDist;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
-		float yeetStrength = 1000.0f;
+		float YeetStrength = 1000.0f;
+
+	UFUNCTION()
+		void UpdateEquippedWeapon(AActor* obj);
 
 	/** Returns Mesh1P subobject **/
 	FORCEINLINE class USkeletalMeshComponent* GetMesh1P() const { return Mesh1P; }
@@ -90,12 +92,12 @@ protected:
 	 */
 	void LookUpAtRate(float Rate);
 
-	void updateCurrentSlot();
-	void updateCurrentSlot(float value);
+	void UpdateCurrentSlot();
+	void UpdateSlotNumber(float value);
 
-	void dropItem();
+	void DropItem();
 
-	void interact();
+	void Interact();
 	
 	// APawn interface
 	virtual void SetupPlayerInputComponent(UInputComponent* InputComponent) override;
