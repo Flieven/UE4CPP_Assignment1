@@ -7,6 +7,7 @@
 #include "Barrel.generated.h"
 
 
+
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class UE4CCP_ASSIGNMENT1_API UBarrel : public USceneComponent
 {
@@ -20,9 +21,12 @@ protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
 
+	/*UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Weapon Asset")
+	FAmmoDamage AmmoDamage; */
 public:	
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
+
 
 		
 };

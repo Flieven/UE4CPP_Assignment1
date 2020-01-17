@@ -21,11 +21,7 @@ protected:
 	virtual void BeginPlay() override;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Ammo Details")
-	float TraceDistance;
-	UFUNCTION(BlueprintNativeEvent)
-	void LineTrace();
-	void LineTrace_Implementation();
-
+		float TraceDistance;
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Ammo Details")
 		float TestBaseDamage;
 
