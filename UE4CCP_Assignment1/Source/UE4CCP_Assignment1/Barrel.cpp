@@ -39,16 +39,16 @@ void UBarrel::Fire(AController* controller)
 {
 }
 
-//void UBarrel::GetEndPoint(AController* controller, float travelDist)
-//{
-//	if (Cast<APlayerController>(controller))
-//	{
-//		APlayerController* PlayerController = Cast<APlayerController>(controller);
-//
-//		if (PlayerController->GetPawn()->HasActiveCameraComponent())
-//		{
-//			Cast<AUE4CCP_Assignment1Character>(PlayerController->GetPawn())->GetFirstPersonCameraComponent();
-//		}
-//	}
-//}
+void UBarrel::GetEndPoint(AController* controller, float travelDist)
+{
+	if (Cast<APlayerController>(controller))
+	{
+		APlayerController* PlayerController = Cast<APlayerController>(controller);
+
+		if (PlayerController->GetPawn()->HasActiveCameraComponent())
+		{
+			Cast<AUE4CCP_Assignment1Character>(PlayerController->GetPawn())->GetFirstPersonCameraComponent();
+		}
+	}
+}
 

@@ -29,6 +29,6 @@ public:
 
 	virtual void Fire(AController* controller);
 
-	//void GetEndPoint(AController* controller, float travelDist);
+	void GetEndPoint(AController* controller, float travelDist);
 		
 };
