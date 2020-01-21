@@ -1,41 +1,55 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
+#include <CoreMinimal.h>
 #include <UObject/Object.h>
-#include "CoreMinimal.h"
-#include "LineTraceAmmo.generated.h"
+#include <UObject/ObjectMacros.h>
+#include "AmmoBase.generated.h"
+
+
 
 /**
  Ammo Base and Derived classes
  */
-
-class UE4CCP_ASSIGNMENT1_API AmmoBase
+UCLASS(ClassGroup = (Custom), meta = (BlueprintSpawnableComponent))
+class UE4CCP_ASSIGNMENT1_API UAmmoBase : public UObject
 {
+	GENERATED_BODY()
+
 public:
-	AmmoBase();
-	~AmmoBase();
+	UAmmoBase();
+	~UAmmoBase();
 
 };
 
-class UE4CCP_ASSIGNMENT1_API LineTraceAmmo : public AmmoBase
+UCLASS(ClassGroup = (Custom), meta = (BlueprintSpawnableComponent))
+class UE4CCP_ASSIGNMENT1_API ULineTraceAmmo : public UAmmoBase
 {
+	GENERATED_BODY()
+
 public:
-	LineTraceAmmo();
-	~LineTraceAmmo();
+	ULineTraceAmmo();
+	~ULineTraceAmmo();
 
 protected:
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo Details")
 	float DamageValue = 0;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo Details")
 	float LineDistance = 0;
 };
 
-
-class UE4CCP_ASSIGNMENT1_API ProjectileAmmo : public AmmoBase
+UCLASS(ClassGroup	 = (Custom), meta = (BlueprintSpawnableComponent))
+class UE4CCP_ASSIGNMENT1_API UProjectileAmmo : public UAmmoBase
 {
+	GENERATED_BODY()
+
 public:
-	ProjectileAmmo();
-	~ProjectileAmmo();
+	UProjectileAmmo();
+	~UProjectileAmmo();
 
 protected:
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo Details")
 	float DamageValue = 0;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo Details")
 	class UObject* ProjectileObject; /**support for creating and using objects for projectile ammo */
 };
