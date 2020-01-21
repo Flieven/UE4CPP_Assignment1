@@ -44,11 +44,11 @@ protected:
 
 public:
 
-	UFUNCTION(BlueprintNativeEvent, Category = "Custom Events")
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Custom Events")
 		void PrimaryFire(AController* controller);
 	void PrimaryFire_Implementation(AController* controller) {};
 
-	UFUNCTION(BlueprintNativeEvent, Category = "Custom Events")
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Custom Events")
 		void SecondaryFire(AController* controller);
 	void SecondaryFire_Implementation(AController* controller) {};
 
