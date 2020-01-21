@@ -16,19 +16,23 @@ URecoilComponent::URecoilComponent()
 	// off to improve performance if you don't need them.
 	PrimaryComponentTick.bCanEverTick = true;
 
-	// ...
+	// ... s
 }
 
 
 void URecoilComponent::DoRecoil(AController* controller, TArray<FRotator> BarrelRecoils)
 {
 	TotalRecoil = FRotator::ZeroRotator;
+
 	if (!ControllerRef) { ControllerRef = controller; }
 
 	for (int i = 0; i < BarrelRecoils.Num(); i++)
 	{
-		TotalRecoil += BarrelRecoils[i];
+		TotalRecoil.Roll += FMath::FRandRange(0.0f, BarrelRecoils[i].Roll); 
+		TotalRecoil.Pitch += FMath::FRandRange(0.0f, BarrelRecoils[i].Pitch);
+		TotalRecoil.Yaw += FMath::FRandRange(0.0f, BarrelRecoils[i].Yaw);
 	}
+		//UE_LOG(LogTemp, Warning, TEXT("Random Rot: %f"), RandRot.Roll);
 
 	TotalRecoil += ControllerRef->GetControlRotation();
 	GetOwner()->GetWorldTimerManager().SetTimer(RecoilHandle, this, &URecoilComponent::StopInterpolation, InterpolationTime, false);

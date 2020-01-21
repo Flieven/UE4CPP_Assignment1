@@ -26,6 +26,7 @@ enum class ERepeat : uint8 {
 	Repeat	UMETA(DisplayName = "Repeat")
 };
 
+class UWidget;
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class UE4CCP_ASSIGNMENT1_API AWeapon : public AActor, public IInterinterface
@@ -41,6 +42,9 @@ protected:
 	virtual void BeginPlay() override;
 
 public:
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Interaction Widget")
+		UWidget* interactionWidget;
 
 	UPROPERTY(VisibleDefaultsOnly, Category = "Weapon Assets")
 	class USkeletalMeshComponent* WeaponMesh;
@@ -92,9 +96,7 @@ public:
 	UFUNCTION()
 	void Fire_Burst_Hidden(UPARAM(ref) TArray<UBarrel*>& Barrels, FVector EndPoint, FVector2D Spread, TArray<FHitResult>& Hits, bool& bHitResult);*/
 
-	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Interaction")
-	void OnInteract(AActor* Caller);
-	virtual void OnInteract_Implementation(AActor* Caller);
+	virtual void OnInteract_Implementation(AActor* Caller) override;
 
 private:
 	//int BurstCount = 0;

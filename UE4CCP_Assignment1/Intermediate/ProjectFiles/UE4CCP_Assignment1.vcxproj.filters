@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\UE4CCP_Assignment1.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{0EE2B342-B276-47B0-819C-C91A52D4D2A6}</UniqueIdentifier>
+      <UniqueIdentifier>{B602DC8D-5BB4-47E9-AD22-2AB6E9AB2485}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\UE4CCP_Assignment1.Target.cs">
       <Filter>Source</Filter>
@@ -13,7 +13,7 @@
     </None>
     <None Include="..\..\.gitignore" />
     <Filter Include="Config">
-      <UniqueIdentifier>{3FF627CD-D924-453B-953B-5A8297DF2A38}</UniqueIdentifier>
+      <UniqueIdentifier>{0160C444-4FAC-49AC-8579-663D6C62E8AA}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -31,8 +31,50 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\UE4CCP_Assignment1">
-      <UniqueIdentifier>{0ACE1C7A-80F4-4CDA-89E1-1D7544086C0A}</UniqueIdentifier>
+      <UniqueIdentifier>{F3A06849-F5DD-49A6-8F9C-E68720D891AF}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\UE4CCP_Assignment1\ATEST_OBJ.cpp">
+      <Filter>Source\UE4CCP_Assignment1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UE4CCP_Assignment1\ATEST_OBJ.h">
+      <Filter>Source\UE4CCP_Assignment1</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UE4CCP_Assignment1\Barrel.cpp">
+      <Filter>Source\UE4CCP_Assignment1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UE4CCP_Assignment1\Barrel.h">
+      <Filter>Source\UE4CCP_Assignment1</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UE4CCP_Assignment1\DamageComponent.cpp">
+      <Filter>Source\UE4CCP_Assignment1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UE4CCP_Assignment1\DamageComponent.h">
+      <Filter>Source\UE4CCP_Assignment1</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UE4CCP_Assignment1\InteractableBase.cpp">
+      <Filter>Source\UE4CCP_Assignment1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UE4CCP_Assignment1\InteractableBase.h">
+      <Filter>Source\UE4CCP_Assignment1</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UE4CCP_Assignment1\Interinterface.cpp">
+      <Filter>Source\UE4CCP_Assignment1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UE4CCP_Assignment1\Interinterface.h">
+      <Filter>Source\UE4CCP_Assignment1</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UE4CCP_Assignment1\RecoilComponent.cpp">
+      <Filter>Source\UE4CCP_Assignment1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UE4CCP_Assignment1\RecoilComponent.h">
+      <Filter>Source\UE4CCP_Assignment1</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UE4CCP_Assignment1\TestBase.cpp">
+      <Filter>Source\UE4CCP_Assignment1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UE4CCP_Assignment1\TestBase.h">
+      <Filter>Source\UE4CCP_Assignment1</Filter>
+    </ClInclude>
     <None Include="..\..\Source\UE4CCP_Assignment1\UE4CCP_Assignment1.Build.cs">
       <Filter>Source\UE4CCP_Assignment1</Filter>
     </None>
@@ -66,56 +108,26 @@
     <ClInclude Include="..\..\Source\UE4CCP_Assignment1\UE4CCP_Assignment1Projectile.h">
       <Filter>Source\UE4CCP_Assignment1</Filter>
     </ClInclude>
-    <Filter Include="Source\UE4CCP_Assignment1\ActorComponents">
-      <UniqueIdentifier>{F171BF9D-B606-40B8-9F42-09F4C6C9BB05}</UniqueIdentifier>
-    </Filter>
-    <ClCompile Include="..\..\Source\UE4CCP_Assignment1\ActorComponents\DamageComponent.cpp">
-      <Filter>Source\UE4CCP_Assignment1\ActorComponents</Filter>
+    <ClCompile Include="..\..\Source\UE4CCP_Assignment1\UInventoryComponent.cpp">
+      <Filter>Source\UE4CCP_Assignment1</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\UE4CCP_Assignment1\ActorComponents\DamageComponent.h">
-      <Filter>Source\UE4CCP_Assignment1\ActorComponents</Filter>
+    <ClInclude Include="..\..\Source\UE4CCP_Assignment1\UInventoryComponent.h">
+      <Filter>Source\UE4CCP_Assignment1</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\UE4CCP_Assignment1\ActorComponents\RecoilComponent.cpp">
-      <Filter>Source\UE4CCP_Assignment1\ActorComponents</Filter>
+    <ClCompile Include="..\..\Source\UE4CCP_Assignment1\Weapon.cpp">
+      <Filter>Source\UE4CCP_Assignment1</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\UE4CCP_Assignment1\ActorComponents\RecoilComponent.h">
-      <Filter>Source\UE4CCP_Assignment1\ActorComponents</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\UE4CCP_Assignment1\ActorComponents\UInventoryComponent.cpp">
-      <Filter>Source\UE4CCP_Assignment1\ActorComponents</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\UE4CCP_Assignment1\ActorComponents\UInventoryComponent.h">
-      <Filter>Source\UE4CCP_Assignment1\ActorComponents</Filter>
+    <ClInclude Include="..\..\Source\UE4CCP_Assignment1\Weapon.h">
+      <Filter>Source\UE4CCP_Assignment1</Filter>
     </ClInclude>
     <Filter Include="Source\UE4CCP_Assignment1\Actors">
-      <UniqueIdentifier>{48F4A4B9-8719-4204-A938-9D09909CD124}</UniqueIdentifier>
+      <UniqueIdentifier>{A0F3CF82-183C-4632-A7C4-6E11FEF6A14D}</UniqueIdentifier>
     </Filter>
-    <ClCompile Include="..\..\Source\UE4CCP_Assignment1\Actors\ATEST_OBJ.cpp">
-      <Filter>Source\UE4CCP_Assignment1\Actors</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\UE4CCP_Assignment1\Actors\ATEST_OBJ.h">
-      <Filter>Source\UE4CCP_Assignment1\Actors</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\UE4CCP_Assignment1\Actors\InteractableBase.cpp">
-      <Filter>Source\UE4CCP_Assignment1\Actors</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\UE4CCP_Assignment1\Actors\InteractableBase.h">
-      <Filter>Source\UE4CCP_Assignment1\Actors</Filter>
-    </ClInclude>
     <ClCompile Include="..\..\Source\UE4CCP_Assignment1\Actors\TargetDummy.cpp">
       <Filter>Source\UE4CCP_Assignment1\Actors</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\UE4CCP_Assignment1\Actors\TargetDummy.h">
       <Filter>Source\UE4CCP_Assignment1\Actors</Filter>
-    </ClInclude>
-    <Filter Include="Source\UE4CCP_Assignment1\Interfaces">
-      <UniqueIdentifier>{26A786A8-982A-48C5-B106-3D0568E61359}</UniqueIdentifier>
-    </Filter>
-    <ClCompile Include="..\..\Source\UE4CCP_Assignment1\Interfaces\Interinterface.cpp">
-      <Filter>Source\UE4CCP_Assignment1\Interfaces</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\UE4CCP_Assignment1\Interfaces\Interinterface.h">
-      <Filter>Source\UE4CCP_Assignment1\Interfaces</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

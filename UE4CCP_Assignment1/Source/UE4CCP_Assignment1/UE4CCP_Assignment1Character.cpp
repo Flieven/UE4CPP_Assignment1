@@ -102,7 +102,7 @@ void AUE4CCP_Assignment1Character::Interact()
 				UE_LOG(LogTemp, Display, TEXT("Hit detected!"));
 				if (Inventory && Inventory->bHasEmptySlot())
 				{
-					Inventory->Add(hit.GetActor());;
+					Inventory->Add(hit.GetActor());
 
 					Inventory->DebugInventory();
 
@@ -215,6 +215,7 @@ void AUE4CCP_Assignment1Character::LookUpAtRate(float Rate)
 	// calculate delta for this frame from the rate information
 	AddControllerPitchInput(Rate * BaseLookUpRate * GetWorld()->GetDeltaSeconds());
 }
+
 void AUE4CCP_Assignment1Character::UpdateCurrentSlot()
 {
 	if (CurrentInventorySlot < 0) { CurrentInventorySlot = Inventory->Size(); }
