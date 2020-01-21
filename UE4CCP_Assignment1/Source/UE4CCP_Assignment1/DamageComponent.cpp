@@ -1,7 +1,8 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
+#include <GameFramework/Actor.h>
 #include "DamageComponent.h"
-#include "GameFramework/Actor.h"
+
 
 // Sets default values for this component's properties
 UDamageComponent::UDamageComponent()
@@ -26,7 +27,7 @@ void UDamageComponent::BeginPlay()
 
 	if (Owner)
 	{
-		Owner->OnTakeAnyDamage.AddDynamic(this, &UDamageComponent::TakeDamage);
+		Owner->OnTakeAnyDamage.AddDynamic(this, &UDamageComponent ::TakeDamage);
 	}
 	
 }

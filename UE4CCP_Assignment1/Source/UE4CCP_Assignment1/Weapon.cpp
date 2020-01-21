@@ -7,6 +7,7 @@
 #include "CollisionQueryParams.h"
 #include "Math/UnrealMathUtility.h"
 #include <string>
+#include "UE4CCP_Assignment1Character.h"
 
 // Sets default values for this component's properties
 AWeapon::AWeapon()
@@ -37,7 +38,6 @@ void AWeapon::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 
 }
-
 
 void AWeapon::Fire_Implementation(UPARAM(ref) TArray<UBarrel*>& Barrels, FVector EndPoint, FVector2D Spread, TArray<FHitResult>& Hits, bool& bHitResult)
 {
