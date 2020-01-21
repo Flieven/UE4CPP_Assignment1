@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Components/SceneComponent.h"
+#include "AmmoBase.h"
 #include "Barrel.generated.h"
 
 
@@ -27,6 +28,10 @@ public:
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
+	int AmmoCapacity = 30;
+	int CurrentAmmo = 30;
 
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Barrel Data")
+	TArray<TSubclassOf<UAmmoBase>> AmmoTypes;
 		
 };

@@ -20,13 +20,6 @@ enum class EFiringModes : uint8
 	FM_Semi		UMETA(DisplayName = "Semi")
 };
 
-UENUM()
-enum class ERepeat : uint8 {
-	Start		UMETA(DisplayName = " "),
-	Repeat	UMETA(DisplayName = "Repeat")
-};
-
-
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class UE4CCP_ASSIGNMENT1_API AWeapon : public AActor, public IInterinterface
 {
@@ -57,23 +50,27 @@ public:
 	UPROPERTY(EditInstanceOnly, Category = "Weapon Assets")
 	class USoundCue* ReloadAudio;
 
-	UPROPERTY(EditInstanceOnly, Category = "Weapon Assets")
+	UPROPERTY(EditInstanceOnly, Category = "Weapon Data")
 	EFiringModes CurrentFiringMode;
 
-	UPROPERTY(EditInstanceOnly, Category = "Weapon Assets")
+	UPROPERTY(EditInstanceOnly, Category = "Weapon Data")
 	int BulletsPerShot;
 
-	UPROPERTY(EditInstanceOnly, Category = "Weapon Assets")
+	UPROPERTY(EditInstanceOnly, Category = "Weapon Data")
 	int MaximumAmmo;
 
-	UPROPERTY(EditInstanceOnly, Category = "Weapon Assets")
+	UPROPERTY(EditInstanceOnly, Category = "Weapon Data")
 	int MaximumClipSize;
+
+	UPROPERTY(EditInstanceOnly, Category = "Weapon Data")
+	int CurrentClipAmmo;
 	
-	UPROPERTY(EditInstanceOnly, Category = "Weapon Assets")
+	UPROPERTY(EditInstanceOnly, Category = "Weapon Data")
 	float ReloadTime;
 
+	
 	//Maximum Horizontal and Vertical Spread
-	UPROPERTY(EditInstanceOnly, Category = "Weapon Assets")
+	UPROPERTY(EditInstanceOnly, Category = "Weapon Data")
 	FVector2D BulletSpread;
 
 	// Called every frame
@@ -82,8 +79,13 @@ public:
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, meta = (HideSelfPin), Category = "Weapon Functions")
 	void Fire(UPARAM(ref) TArray<UBarrel*>& Barrels, FVector EndPoint, FVector2D Spread, TArray<FHitResult>& Hits, bool& bHitResult);
 	void Fire_Implementation(UPARAM(ref) TArray<UBarrel*>& Barrels, FVector EndPoint, FVector2D Spread, TArray<FHitResult>& Hits, bool& bHitResult);
-		
-	void Fire_Auto();
+	
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "Weapon Functions")
+	void Reload(UPARAM(ref) TArray<UBarrel*>& Barrels);
+	void Reload_Implementation(UPARAM(ref) TArray<UBarrel*>& Barrels);
+
+
+	//void Fire_Auto();
 	/*UFUNCTION(BlueprintCallable, BlueprintNativeEvent, meta = (HideSelfPin, ExpandEnumAsExecs = "Repeat"), Category = "Weapon Functions")
 	void Fire_Burst(ERepeat Repeat, UPARAM(ref) TArray<UBarrel*>& Barrels, FVector EndPoint, FVector2D Spread, int BulletCount, float TimeBetweenBullets, float TimeBetweenBursts, FKey FireKey, TArray<FHitResult>& Hits, bool& bHitResult);
 	void Fire_Burst_Implementation(ERepeat Repeat, UPARAM(ref) TArray<UBarrel*>& Barrels, FVector EndPoint, FVector2D Spread, int BulletCount, float TimeBetweenBullets, float TimeBetweenBursts, FKey FireKey, TArray<FHitResult>& Hits, bool& bHitResult);
