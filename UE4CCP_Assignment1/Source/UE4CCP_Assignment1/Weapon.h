@@ -8,6 +8,7 @@
 #include "Engine/EngineTypes.h"
 #include "Barrel.h"
 #include "Interinterface.h"
+#include "InputCoreTypes.h"
 #include "UE4CCP_Assignment1Character.h"
 #include "Weapon.generated.h"
 
@@ -42,6 +43,14 @@ protected:
 	virtual void BeginPlay() override;
 
 public:
+
+	UFUNCTION(BlueprintNativeEvent, Category = "Custom Events")
+		void PrimaryFire(AController* controller);
+	void PrimaryFire_Implementation(AController* controller) {};
+
+	UFUNCTION(BlueprintNativeEvent, Category = "Custom Events")
+		void SecondaryFire(AController* controller);
+	void SecondaryFire_Implementation(AController* controller) {};
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Interaction Widget")
 		UWidget* interactionWidget;

@@ -3,7 +3,7 @@
 #pragma once
 #include <UObject/Object.h>
 #include "CoreMinimal.h"
-
+#include "LineTraceAmmo.generated.h"
 
 /**
  Ammo Base and Derived classes

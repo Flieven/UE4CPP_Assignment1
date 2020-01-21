@@ -6,7 +6,7 @@
 #include "Components/SceneComponent.h"
 #include "Barrel.generated.h"
 
-
+class AController;
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class UE4CCP_ASSIGNMENT1_API UBarrel : public USceneComponent
@@ -27,6 +27,8 @@ public:
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
+	virtual void Fire(AController* controller);
 
+	FVector GetEndPoint(AController* controller, float travelDist);
 		
 };

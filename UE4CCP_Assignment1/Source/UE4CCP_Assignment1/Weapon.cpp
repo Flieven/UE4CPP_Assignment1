@@ -76,23 +76,3 @@ void AWeapon::OnInteract_Implementation(AActor* Caller)
 
 
 
-/*
-
-void UWeapon::Fire_Burst_Implementation(ERepeat Repeat, UPARAM(ref) TArray<UBarrel*>& Barrels, FVector EndPoint, FVector2D Spread, int BulletCount, float TimeBetweenBullets, float TimeBetweenBursts, FKey FireKey, TArray<FHitResult>& Hits, bool& bHitResult) {
-	switch(Repeat) {
-		case ERepeat::Start:
-			BurstCount = 0;
-
-			break;
-		case ERepeat::Repeat:
-			BurstCount += 1;
-			break;
-	}
-}
-
-void UWeapon::Fire_Burst_Hidden(UPARAM(ref)TArray<UBarrel*>& Barrels, FVector EndPoint, FVector2D Spread, TArray<FHitResult>& Hits, bool& bHitResult)
-{
-	Fire_Implementation(Barrels, EndPoint, Spread, Hits, bHitResult);
-}*/
-
-

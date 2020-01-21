@@ -228,8 +228,8 @@
 /I ..\Intermediate\Build\Win64\UE4Editor\Inc\ClothingSystemRuntimeInterface
 /I Runtime\ClothingSystemRuntimeInterface\Public
 /I Runtime\AudioMixerCore\Public
-/I C:\Users\Uhuru.Mccray\source\repos\UE4CPP_Assignment1\UE4CCP_Assignment1\UE4CCP_Assignment1\Intermediate\Build\Win64\UE4Editor\Inc\UE4CCP_Assignment1
-/I C:\Users\Uhuru.Mccray\source\repos\UE4CPP_Assignment1\UE4CCP_Assignment1\UE4CCP_Assignment1\Source
+/I C:\Users\Leon.Andersson\Documents\UE4CPP_Assignment1\UE4CCP_Assignment1\Intermediate\Build\Win64\UE4Editor\Inc\UE4CCP_Assignment1
+/I C:\Users\Leon.Andersson\Documents\UE4CPP_Assignment1\UE4CCP_Assignment1\Source
 /I ..\Intermediate\Build\Win64\UE4Editor\Inc\AugmentedReality
 /I Runtime\AugmentedReality\Public
 /I ThirdParty\PhysX3\PxShared\include
@@ -255,18 +255,18 @@
 /I ThirdParty\PhysX3\APEX_1.4\shared\general\RenderDebug\public
 /I ThirdParty\PhysX3\APEX_1.4\shared\general\PairFilter\include
 /I ThirdParty\PhysX3\APEX_1.4\shared\internal\include
-/I "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\INCLUDE"
-/I "C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um"
+/I "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\INCLUDE"
+/I "C:\Program Files (x86)\Windows Kits\NETFXSDK\4.7.2\include\um"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt"
-/FI"C:\Users\Uhuru.Mccray\source\repos\UE4CPP_Assignment1\UE4CCP_Assignment1\UE4CCP_Assignment1\Intermediate\Build\Win64\UE4CCP_Assignment1Editor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
-/Yu"C:\Users\Uhuru.Mccray\source\repos\UE4CPP_Assignment1\UE4CCP_Assignment1\UE4CCP_Assignment1\Intermediate\Build\Win64\UE4CCP_Assignment1Editor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
-/Fp"C:\Users\Uhuru.Mccray\source\repos\UE4CPP_Assignment1\UE4CCP_Assignment1\UE4CCP_Assignment1\Intermediate\Build\Win64\UE4CCP_Assignment1Editor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.pch"
-"C:\Users\Uhuru.Mccray\source\repos\UE4CPP_Assignment1\UE4CCP_Assignment1\UE4CCP_Assignment1\Source\UE4CCP_Assignment1\UE4CCP_Assignment1Character.cpp"
-/FI"C:\Users\Uhuru.Mccray\source\repos\UE4CPP_Assignment1\UE4CCP_Assignment1\UE4CCP_Assignment1\Intermediate\Build\Win64\UE4Editor\Development\UE4CCP_Assignment1\Definitions.UE4CCP_Assignment1.h"
-/Fo"C:\Users\Uhuru.Mccray\source\repos\UE4CPP_Assignment1\UE4CCP_Assignment1\UE4CCP_Assignment1\Intermediate\Build\Win64\UE4Editor\Development\UE4CCP_Assignment1\UE4CCP_Assignment1Character.cpp.obj"
+/FI"C:\Users\Leon.Andersson\Documents\UE4CPP_Assignment1\UE4CCP_Assignment1\Intermediate\Build\Win64\UE4CCP_Assignment1Editor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
+/Yu"C:\Users\Leon.Andersson\Documents\UE4CPP_Assignment1\UE4CCP_Assignment1\Intermediate\Build\Win64\UE4CCP_Assignment1Editor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
+/Fp"C:\Users\Leon.Andersson\Documents\UE4CPP_Assignment1\UE4CCP_Assignment1\Intermediate\Build\Win64\UE4CCP_Assignment1Editor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.pch"
+"C:\Users\Leon.Andersson\Documents\UE4CPP_Assignment1\UE4CCP_Assignment1\Source\UE4CCP_Assignment1\UE4CCP_Assignment1Character.cpp"
+/FI"C:\Users\Leon.Andersson\Documents\UE4CPP_Assignment1\UE4CCP_Assignment1\Intermediate\Build\Win64\UE4Editor\Development\UE4CCP_Assignment1\Definitions.UE4CCP_Assignment1.h"
+/Fo"C:\Users\Leon.Andersson\Documents\UE4CPP_Assignment1\UE4CCP_Assignment1\Intermediate\Build\Win64\UE4Editor\Development\UE4CCP_Assignment1\UE4CCP_Assignment1Character.cpp.obj"
 /TP
 /GR-
 /W4
