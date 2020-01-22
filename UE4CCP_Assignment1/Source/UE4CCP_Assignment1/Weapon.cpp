@@ -60,6 +60,13 @@ void AWeapon::Fire_Implementation(UPARAM(ref) TArray<UBarrel*>& Barrels, FVector
 	}
 }
 
+void AWeapon::Reload_Implementation(UPARAM(ref)TArray<UBarrel*>& Barrels)
+{
+	for (UBarrel* Barrel : Barrels) {
+		//if
+	}
+}
+
 void AWeapon::OnInteract_Implementation(AActor* Caller)
 {
 	AUE4CCP_Assignment1Character* owner = Cast<AUE4CCP_Assignment1Character>(Caller);

@@ -19,10 +19,9 @@ class UE4CCP_ASSIGNMENT1_API UAmmoBase : public UObject
 public:
 	UAmmoBase();
 	~UAmmoBase();
-
 };
 
-UCLASS(ClassGroup = (Custom), meta = (BlueprintSpawnableComponent))
+UCLASS(ClassGroup = (Custom), meta = (IsBlueprintBase = true))
 class UE4CCP_ASSIGNMENT1_API ULineTraceAmmo : public UAmmoBase
 {
 	GENERATED_BODY()
@@ -38,7 +37,7 @@ protected:
 	float LineDistance = 0;
 };
 
-UCLASS(ClassGroup	 = (Custom), meta = (BlueprintSpawnableComponent))
+UCLASS(ClassGroup	 = (Custom), meta = (IsBlueprintBase = true))
 class UE4CCP_ASSIGNMENT1_API UProjectileAmmo : public UAmmoBase
 {
 	GENERATED_BODY()

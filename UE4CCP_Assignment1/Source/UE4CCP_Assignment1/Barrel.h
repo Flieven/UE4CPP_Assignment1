@@ -4,9 +4,10 @@
 
 #include "CoreMinimal.h"
 #include "Components/SceneComponent.h"
+#include "AmmoBase.h"
 #include "Barrel.generated.h"
 
-class AController;
+
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class UE4CCP_ASSIGNMENT1_API UBarrel : public USceneComponent
@@ -27,8 +28,10 @@ public:
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
-	virtual void Fire(AController* controller);
+	int AmmoCapacity = 30;
+	int CurrentAmmo = 30;
 
-	void GetEndPoint(AController* controller, float travelDist);
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Barrel Data")
+	TArray<TSubclassOf<UAmmoBase>> AmmoTypes;
 		
 };

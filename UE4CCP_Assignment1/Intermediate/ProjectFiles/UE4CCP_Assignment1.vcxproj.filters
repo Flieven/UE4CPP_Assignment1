@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\UE4CCP_Assignment1.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{1453BA2E-6E96-43CC-90D4-FCF7C7589724}</UniqueIdentifier>
+      <UniqueIdentifier>{C6AF5CEE-0063-4147-99E5-68164628A63E}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\UE4CCP_Assignment1.Target.cs">
       <Filter>Source</Filter>
@@ -13,7 +13,7 @@
     </None>
     <None Include="..\..\.gitignore" />
     <Filter Include="Config">
-      <UniqueIdentifier>{0601FD83-9D0C-41E6-98A0-B2FA6DA632B9}</UniqueIdentifier>
+      <UniqueIdentifier>{F0E2A658-372E-4851-A0AA-0B7C4DD8D520}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -31,14 +31,8 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\UE4CCP_Assignment1">
-      <UniqueIdentifier>{7AA1969C-83F2-4A8A-A9C6-859C5D104AE8}</UniqueIdentifier>
+      <UniqueIdentifier>{1C34226C-93D8-46CD-A430-8CFAA44B9C1E}</UniqueIdentifier>
     </Filter>
-    <ClCompile Include="..\..\Source\UE4CCP_Assignment1\AmmoBase.cpp">
-      <Filter>Source\UE4CCP_Assignment1</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\UE4CCP_Assignment1\AmmoBase.h">
-      <Filter>Source\UE4CCP_Assignment1</Filter>
-    </ClInclude>
     <ClCompile Include="..\..\Source\UE4CCP_Assignment1\ATEST_OBJ.cpp">
       <Filter>Source\UE4CCP_Assignment1</Filter>
     </ClCompile>
@@ -127,7 +121,7 @@
       <Filter>Source\UE4CCP_Assignment1</Filter>
     </ClInclude>
     <Filter Include="Source\UE4CCP_Assignment1\Actors">
-      <UniqueIdentifier>{56D14968-8BF4-4C26-BDAC-43B805EFD72D}</UniqueIdentifier>
+      <UniqueIdentifier>{65C645A3-AD5D-4B41-8ED0-395FB45F035B}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\UE4CCP_Assignment1\Actors\TargetDummy.cpp">
       <Filter>Source\UE4CCP_Assignment1\Actors</Filter>
@@ -135,5 +129,15 @@
     <ClInclude Include="..\..\Source\UE4CCP_Assignment1\Actors\TargetDummy.h">
       <Filter>Source\UE4CCP_Assignment1\Actors</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Source\UE4CCP_Assignment1\AmmoBase.h">
+      <Filter>Source\UE4CCP_Assignment1</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Source\UE4CCP_Assignment1\AmmoBase.cpp">
+      <Filter>Source\UE4CCP_Assignment1</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

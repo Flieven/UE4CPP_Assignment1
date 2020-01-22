@@ -8,7 +8,6 @@
 #include "Engine/EngineTypes.h"
 #include "Barrel.h"
 #include "Interinterface.h"
-#include "InputCoreTypes.h"
 #include "UE4CCP_Assignment1Character.h"
 #include "Weapon.generated.h"
 
@@ -20,14 +19,6 @@ enum class EFiringModes : uint8
 	FM_Auto		UMETA(DisplayName = "Auto"),
 	FM_Semi		UMETA(DisplayName = "Semi")
 };
-
-UENUM()
-enum class ERepeat : uint8 {
-	Start		UMETA(DisplayName = " "),
-	Repeat	UMETA(DisplayName = "Repeat")
-};
-
-class UWidget;
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class UE4CCP_ASSIGNMENT1_API AWeapon : public AActor, public IInterinterface
@@ -44,17 +35,6 @@ protected:
 
 public:
 
-	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Custom Events")
-		void PrimaryFire(AController* controller);
-	void PrimaryFire_Implementation(AController* controller) {};
-
-	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Custom Events")
-		void SecondaryFire(AController* controller);
-	void SecondaryFire_Implementation(AController* controller) {};
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Interaction Widget")
-		UWidget* interactionWidget;
-
 	UPROPERTY(VisibleDefaultsOnly, Category = "Weapon Assets")
 	class USkeletalMeshComponent* WeaponMesh;
 
@@ -70,23 +50,27 @@ public:
 	UPROPERTY(EditInstanceOnly, Category = "Weapon Assets")
 	class USoundCue* ReloadAudio;
 
-	UPROPERTY(EditInstanceOnly, Category = "Weapon Assets")
+	UPROPERTY(EditInstanceOnly, Category = "Weapon Data")
 	EFiringModes CurrentFiringMode;
 
-	UPROPERTY(EditInstanceOnly, Category = "Weapon Assets")
+	UPROPERTY(EditInstanceOnly, Category = "Weapon Data")
 	int BulletsPerShot;
 
-	UPROPERTY(EditInstanceOnly, Category = "Weapon Assets")
+	UPROPERTY(EditInstanceOnly, Category = "Weapon Data")
 	int MaximumAmmo;
 
-	UPROPERTY(EditInstanceOnly, Category = "Weapon Assets")
+	UPROPERTY(EditInstanceOnly, Category = "Weapon Data")
 	int MaximumClipSize;
+
+	UPROPERTY(EditInstanceOnly, Category = "Weapon Data")
+	int CurrentClipAmmo;
 	
-	UPROPERTY(EditInstanceOnly, Category = "Weapon Assets")
+	UPROPERTY(EditInstanceOnly, Category = "Weapon Data")
 	float ReloadTime;
 
+	
 	//Maximum Horizontal and Vertical Spread
-	UPROPERTY(EditInstanceOnly, Category = "Weapon Assets")
+	UPROPERTY(EditInstanceOnly, Category = "Weapon Data")
 	FVector2D BulletSpread;
 
 	// Called every frame
@@ -95,8 +79,13 @@ public:
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, meta = (HideSelfPin), Category = "Weapon Functions")
 	void Fire(UPARAM(ref) TArray<UBarrel*>& Barrels, FVector EndPoint, FVector2D Spread, TArray<FHitResult>& Hits, bool& bHitResult);
 	void Fire_Implementation(UPARAM(ref) TArray<UBarrel*>& Barrels, FVector EndPoint, FVector2D Spread, TArray<FHitResult>& Hits, bool& bHitResult);
-		
-	void Fire_Auto();
+	
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "Weapon Functions")
+	void Reload(UPARAM(ref) TArray<UBarrel*>& Barrels);
+	void Reload_Implementation(UPARAM(ref) TArray<UBarrel*>& Barrels);
+
+
+	//void Fire_Auto();
 	/*UFUNCTION(BlueprintCallable, BlueprintNativeEvent, meta = (HideSelfPin, ExpandEnumAsExecs = "Repeat"), Category = "Weapon Functions")
 	void Fire_Burst(ERepeat Repeat, UPARAM(ref) TArray<UBarrel*>& Barrels, FVector EndPoint, FVector2D Spread, int BulletCount, float TimeBetweenBullets, float TimeBetweenBursts, FKey FireKey, TArray<FHitResult>& Hits, bool& bHitResult);
 	void Fire_Burst_Implementation(ERepeat Repeat, UPARAM(ref) TArray<UBarrel*>& Barrels, FVector EndPoint, FVector2D Spread, int BulletCount, float TimeBetweenBullets, float TimeBetweenBursts, FKey FireKey, TArray<FHitResult>& Hits, bool& bHitResult);
@@ -104,7 +93,9 @@ public:
 	UFUNCTION()
 	void Fire_Burst_Hidden(UPARAM(ref) TArray<UBarrel*>& Barrels, FVector EndPoint, FVector2D Spread, TArray<FHitResult>& Hits, bool& bHitResult);*/
 
-	virtual void OnInteract_Implementation(AActor* Caller) override;
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Interaction")
+	void OnInteract(AActor* Caller);
+	virtual void OnInteract_Implementation(AActor* Caller);
 
 private:
 	//int BurstCount = 0;
