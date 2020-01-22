@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "UE4CCP_Assignment1",
+			"Path": "C:\\Users\\Leon.Andersson\\Documents\\UE4CPP_Assignment1\\UE4CCP_Assignment1\\Source\\UE4CCP_Assignment1.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "UE4CCP_Assignment1Editor",
+			"Path": "C:\\Users\\Leon.Andersson\\Documents\\UE4CPP_Assignment1\\UE4CCP_Assignment1\\Source\\UE4CCP_Assignment1Editor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}
