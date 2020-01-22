@@ -4,8 +4,6 @@
 #include "Weapon.h"
 #include "DrawDebugHelpers.h"
 #include "Camera/CameraComponent.h"
-#include "CollisionQueryParams.h"
-#include "Math/UnrealMathUtility.h"
 #include <string>
 #include "UE4CCP_Assignment1Character.h"
 
@@ -39,24 +37,11 @@ void AWeapon::Tick(float DeltaTime)
 
 }
 
-void AWeapon::Fire_Implementation(UPARAM(ref) TArray<UBarrel*>& Barrels, FVector EndPoint, FVector2D Spread, TArray<FHitResult>& Hits, bool& bHitResult)
+void AWeapon::Fire_Implementation(UPARAM(ref) TArray<UBarrel*>& Barrels, AController* controller, TArray<FHitResult>& Hits, bool& bHitResult)
 {
-	FCollisionQueryParams CollisionParams;
-
-	for (UBarrel* Barrel : Barrels) {
-		FVector SourcePoint = Barrel->GetComponentTransform().GetLocation();
-		
-		FVector TargetPoint = EndPoint + Barrel->GetRightVector() * Spread.X * FMath::RandRange(-1.f, 1.f) + Barrel->GetUpVector() * Spread.Y * FMath::RandRange(-1.f, 1.f);
-
-		DrawDebugLine(GetWorld(), SourcePoint, TargetPoint, FColor::Green, true);
-		FHitResult Hit;
-		if (GetWorld()->LineTraceSingleByChannel(Hit, SourcePoint, TargetPoint, ECC_Visibility, CollisionParams)) {
-			Hits.Add(Hit);
-			bHitResult = true;
-		}
-		else {
-			bHitResult = false;
-		}
+	for (UBarrel* Barrel : Barrels)
+	{
+		Barrel->Fire(controller, Hits, bHitResult);
 	}
 }
 

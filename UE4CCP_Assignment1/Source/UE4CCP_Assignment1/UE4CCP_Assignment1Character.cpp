@@ -143,11 +143,13 @@ void AUE4CCP_Assignment1Character::YeetEquippedWeapon()
 {
 	EquippedObject->DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
 
-	if (EquippedObject->GetFName().ToString().Find(TEXT("BP_Weapon"), ESearchCase::CaseSensitive) != -1) {
+	if (Cast<AWeapon>(EquippedObject)) 
+	{
 		Cast<AWeapon>(EquippedObject)->WeaponMesh->SetAllBodiesSimulatePhysics(true);
 		Cast<AWeapon>(EquippedObject)->WeaponMesh->AddImpulse(FirstPersonCameraComponent->GetForwardVector() * YeetStrength, NAME_None, true);
 	}
-	else if (EquippedObject->GetFName().ToString().Find(TEXT("TEST_OBJ"), ESearchCase::CaseSensitive) != -1) {
+	else if (Cast<AATEST_OBJ>(EquippedObject)) 
+	{
 		Cast<AATEST_OBJ>(EquippedObject)->Mesh->SetAllBodiesSimulatePhysics(true);
 		Cast<AATEST_OBJ>(EquippedObject)->Mesh->AddImpulse(FirstPersonCameraComponent->GetForwardVector() * YeetStrength, NAME_None, true);
 	}

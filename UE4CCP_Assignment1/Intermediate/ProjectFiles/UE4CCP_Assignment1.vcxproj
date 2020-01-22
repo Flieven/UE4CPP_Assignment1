@@ -286,7 +286,11 @@
     <ClInclude Include="..\..\Source\UE4CCP_Assignment1\InteractableBase.h" />
     <ClCompile Include="..\..\Source\UE4CCP_Assignment1\Interinterface.cpp" />
     <ClInclude Include="..\..\Source\UE4CCP_Assignment1\Interinterface.h" />
+    <ClCompile Include="..\..\Source\UE4CCP_Assignment1\LinetraceBarrel.cpp" />
+    <ClCompile Include="..\..\Source\UE4CCP_Assignment1\ProjectileBarrel.cpp" />
     <ClCompile Include="..\..\Source\UE4CCP_Assignment1\RecoilComponent.cpp" />
+    <ClInclude Include="..\..\Source\UE4CCP_Assignment1\LinetraceBarrel.h" />
+    <ClInclude Include="..\..\Source\UE4CCP_Assignment1\ProjectileBarrel.h" />
     <ClInclude Include="..\..\Source\UE4CCP_Assignment1\RecoilComponent.h" />
     <ClCompile Include="..\..\Source\UE4CCP_Assignment1\TestBase.cpp" />
     <ClInclude Include="..\..\Source\UE4CCP_Assignment1\TestBase.h" />

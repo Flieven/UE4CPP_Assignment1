@@ -1,10 +1,6 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "Barrel.h"
-#include "GameFramework/Controller.h"
-#include "GameFramework/PlayerController.h"
-#include "Camera/CameraComponent.h"
-#include "UE4CCP_Assignment1Character.h"
 
 
 // Sets default values for this component's properties
@@ -35,20 +31,8 @@ void UBarrel::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponen
 	// ...
 }
 
-void UBarrel::Fire(AController* controller)
+void UBarrel::Fire(UPARAM(ref) AController* controller, TArray<FHitResult>& Hits, bool& bHitResult)
 {
 }
 
-void UBarrel::GetEndPoint(AController* controller, float travelDist)
-{
-	if (Cast<APlayerController>(controller))
-	{
-		APlayerController* PlayerController = Cast<APlayerController>(controller);
-
-		if (PlayerController->GetPawn()->HasActiveCameraComponent())
-		{
-			Cast<AUE4CCP_Assignment1Character>(PlayerController->GetPawn())->GetFirstPersonCameraComponent();
-		}
-	}
-}
 

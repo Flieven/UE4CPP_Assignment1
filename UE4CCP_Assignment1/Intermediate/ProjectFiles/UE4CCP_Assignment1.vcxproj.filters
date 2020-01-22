@@ -134,9 +134,21 @@
     <ClInclude Include="..\..\Source\UE4CCP_Assignment1\AmmoBase.h">
       <Filter>Source\UE4CCP_Assignment1</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Source\UE4CCP_Assignment1\LinetraceBarrel.h">
+      <Filter>Source\UE4CCP_Assignment1</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\UE4CCP_Assignment1\ProjectileBarrel.h">
+      <Filter>Source\UE4CCP_Assignment1</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Source\UE4CCP_Assignment1\AmmoBase.cpp">
+      <Filter>Source\UE4CCP_Assignment1</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\UE4CCP_Assignment1\LinetraceBarrel.cpp">
+      <Filter>Source\UE4CCP_Assignment1</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\UE4CCP_Assignment1\ProjectileBarrel.cpp">
       <Filter>Source\UE4CCP_Assignment1</Filter>
     </ClCompile>
   </ItemGroup>

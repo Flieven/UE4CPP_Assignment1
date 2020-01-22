@@ -77,29 +77,22 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, meta = (HideSelfPin), Category = "Weapon Functions")
-	void Fire(UPARAM(ref) TArray<UBarrel*>& Barrels, FVector EndPoint, FVector2D Spread, TArray<FHitResult>& Hits, bool& bHitResult);
-	void Fire_Implementation(UPARAM(ref) TArray<UBarrel*>& Barrels, FVector EndPoint, FVector2D Spread, TArray<FHitResult>& Hits, bool& bHitResult);
+	void Fire(UPARAM(ref) TArray<UBarrel*>& Barrels, AController* controller, TArray<FHitResult>& Hits, bool& bHitResult);
+	void Fire_Implementation(UPARAM(ref) TArray<UBarrel*>& Barrels, AController* controller, TArray<FHitResult>& Hits, bool& bHitResult);
 	
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "Weapon Functions")
 	void Reload(UPARAM(ref) TArray<UBarrel*>& Barrels);
 	void Reload_Implementation(UPARAM(ref) TArray<UBarrel*>& Barrels);
 
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Custom Events")
+		void PrimaryFire(AController* controller);
+	void PrimaryFire_Implementation(AController* controller) {};
 
-	//void Fire_Auto();
-	/*UFUNCTION(BlueprintCallable, BlueprintNativeEvent, meta = (HideSelfPin, ExpandEnumAsExecs = "Repeat"), Category = "Weapon Functions")
-	void Fire_Burst(ERepeat Repeat, UPARAM(ref) TArray<UBarrel*>& Barrels, FVector EndPoint, FVector2D Spread, int BulletCount, float TimeBetweenBullets, float TimeBetweenBursts, FKey FireKey, TArray<FHitResult>& Hits, bool& bHitResult);
-	void Fire_Burst_Implementation(ERepeat Repeat, UPARAM(ref) TArray<UBarrel*>& Barrels, FVector EndPoint, FVector2D Spread, int BulletCount, float TimeBetweenBullets, float TimeBetweenBursts, FKey FireKey, TArray<FHitResult>& Hits, bool& bHitResult);
-	
-	UFUNCTION()
-	void Fire_Burst_Hidden(UPARAM(ref) TArray<UBarrel*>& Barrels, FVector EndPoint, FVector2D Spread, TArray<FHitResult>& Hits, bool& bHitResult);*/
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Custom Events")
+		void SecondaryFire(AController* controller);
+	void SecondaryFire_Implementation(AController* controller) {};
 
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Interaction")
 	void OnInteract(AActor* Caller);
 	virtual void OnInteract_Implementation(AActor* Caller);
-
-private:
-	//int BurstCount = 0;
-	////REMEMBER to clear timer on destroy/deactivate
-	//FTimerHandle RepeatHandle;
-	
 };
