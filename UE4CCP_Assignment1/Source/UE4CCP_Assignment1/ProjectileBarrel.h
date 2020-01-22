@@ -8,7 +8,7 @@
 #include "ProjectileBarrel.generated.h"
 
 USTRUCT(BlueprintType)
-struct FAmmoStruct
+struct FProjectileAmmoStruct
 {
 	GENERATED_USTRUCT_BODY()
 
@@ -22,7 +22,6 @@ public:
 };
 
 UCLASS(ClassGroup = (Custom), meta = (BlueprintSpawnableComponent))
-UCLASS()
 class UE4CCP_ASSIGNMENT1_API UProjectileBarrel : public UBarrel
 {
 	GENERATED_BODY()
@@ -31,6 +30,6 @@ public:
 	void Fire(UPARAM(ref) AController* controller, TArray<FHitResult>& Hits, bool& bHitResult) override;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo Data")
-		TArray<FAmmoStruct> AmmoTypes;
+		TArray<FProjectileAmmoStruct> AmmoTypes;
 
 };

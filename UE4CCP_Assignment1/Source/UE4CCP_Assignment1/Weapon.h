@@ -85,12 +85,12 @@ public:
 	void Reload_Implementation(UPARAM(ref) TArray<UBarrel*>& Barrels);
 
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Custom Events")
-		void PrimaryFire(AController* controller);
-	void PrimaryFire_Implementation(AController* controller) {};
+		void PrimaryFire(AController* controller, bool active);
+	void PrimaryFire_Implementation(AController* controller, bool active) {};
 
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Custom Events")
-		void SecondaryFire(AController* controller);
-	void SecondaryFire_Implementation(AController* controller) {};
+		void SecondaryFire(AController* controller, bool active);
+	void SecondaryFire_Implementation(AController* controller, bool active) {};
 
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Interaction")
 	void OnInteract(AActor* Caller);
