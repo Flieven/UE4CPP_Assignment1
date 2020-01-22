@@ -6,6 +6,8 @@
 #include "Components/SceneComponent.h"
 #include "Barrel.generated.h"
 
+
+
 UCLASS()
 class UE4CCP_ASSIGNMENT1_API UBarrel : public USceneComponent
 {
