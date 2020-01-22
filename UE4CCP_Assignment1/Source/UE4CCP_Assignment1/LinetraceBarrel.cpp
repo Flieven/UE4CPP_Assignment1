@@ -9,6 +9,7 @@
 
 #include "GameFramework/Controller.h"
 #include "GameFramework/PlayerController.h"
+#include "AmmoBase.h"
 
 #include "Camera/CameraComponent.h"
 
@@ -39,11 +40,18 @@ FVector ULinetraceBarrel::GetEndPoint(AController* controller, float travelDist)
 
 void ULinetraceBarrel::Fire(UPARAM(ref) AController* controller, TArray<FHitResult>& Hits, bool& bHitResult)
 {
+	if (EquippedAmmo.AmmoType != NULL) {
+		UE_LOG(LogTemp, Warning, TEXT("No Ammo Equipped, Play Empty Clip Sound?"));
+		return;
+	}
+
+	float Distance = Cast<ULineTraceAmmo>(EquippedAmmo.AmmoType)->LineDistance;
+
 	FCollisionQueryParams CollisionParams;
 
 	FVector SourcePoint = GetComponentTransform().GetLocation();
 
-	FVector TargetPoint = GetEndPoint(controller, 500.0f);
+	FVector TargetPoint = GetEndPoint(controller, Distance);
 
 	DrawDebugLine(GetWorld(), SourcePoint, TargetPoint, FColor::Green, true);
 	FHitResult Hit;

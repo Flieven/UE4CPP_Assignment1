@@ -30,11 +30,13 @@ public:
 	ULineTraceAmmo();
 	~ULineTraceAmmo();
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo Details")
+		float DamageValue = 0;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo Details")
+		float LineDistance = 0;
+
 protected:
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo Details")
-	float DamageValue = 0;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo Details")
-	float LineDistance = 0;
+	
 };
 
 UCLASS(ClassGroup	 = (Custom), meta = (IsBlueprintBase = true))
@@ -46,9 +48,10 @@ public:
 	UProjectileAmmo();
 	~UProjectileAmmo();
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo Details")
+		class AActor* ProjectileObject; /**support for creating and using objects for projectile ammo */
+
 protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo Details")
 	float DamageValue = 0;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo Details")
-	class UObject* ProjectileObject; /**support for creating and using objects for projectile ammo */
 };

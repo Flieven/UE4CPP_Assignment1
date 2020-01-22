@@ -8,13 +8,13 @@
 #include "ProjectileBarrel.generated.h"
 
 USTRUCT(BlueprintType)
-struct FAmmoStruct
+struct FProjectileAmmoStruct
 {
 	GENERATED_USTRUCT_BODY()
 
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo Data")
-		TSubclassOf<UProjectileAmmo> AmmoTypes;
+		TSubclassOf<UProjectileAmmo> AmmoType;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo Data")
 		int AmmoCapacity = 30;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo Data")
@@ -22,15 +22,20 @@ public:
 };
 
 UCLASS(ClassGroup = (Custom), meta = (BlueprintSpawnableComponent))
-UCLASS()
 class UE4CCP_ASSIGNMENT1_API UProjectileBarrel : public UBarrel
 {
 	GENERATED_BODY()
 	
 public:
-	void Fire(UPARAM(ref) AController* controller, TArray<FHitResult>& Hits, bool& bHitResult) override;
+	void Fire(UPARAM(ref) AController* Controller, TArray<FHitResult>& Hits, bool& bHitResult) override;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo Data")
-		TArray<FAmmoStruct> AmmoTypes;
+		TArray<FProjectileAmmoStruct> AmmoTypes;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo Data")
+		float ZeroingDistance;
+
+	/*UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo Data")
+		FProjectileAmmoStruct EquippedAmmo;*/
 
 };

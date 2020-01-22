@@ -8,13 +8,13 @@
 #include "LinetraceBarrel.generated.h"
 
 USTRUCT(BlueprintType)
-struct FAmmoStruct
+struct FLinetraceAmmoStruct
 {
 	GENERATED_USTRUCT_BODY()
 
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo Data")
-		TSubclassOf<ULineTraceAmmo> AmmoTypes;
+		TSubclassOf<ULineTraceAmmo> AmmoType;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo Data")
 		int AmmoCapacity = 30;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo Data")
@@ -33,6 +33,8 @@ public:
 	void Fire(UPARAM(ref) AController* controller, TArray<FHitResult>& Hits, bool& bHitResult) override;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo Data")
-		TArray<FAmmoStruct> AmmoTypes;
+		TArray<FLinetraceAmmoStruct> AmmoTypes;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo Data")
+		FLinetraceAmmoStruct EquippedAmmo;
 };
