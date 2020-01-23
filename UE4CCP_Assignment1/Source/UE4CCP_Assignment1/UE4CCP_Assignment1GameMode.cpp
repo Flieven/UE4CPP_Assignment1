@@ -11,29 +11,52 @@ AUE4CCP_Assignment1GameMode::AUE4CCP_Assignment1GameMode()
 	// set default pawn class to our Blueprinted character
 	static ConstructorHelpers::FClassFinder<APawn> PlayerPawnClassFinder(TEXT("/Game/FirstPersonCPP/Blueprints/FirstPersonCharacter"));
 	DefaultPawnClass = PlayerPawnClassFinder.Class;
+	
+
+	LinetraceAmmoType->DamageValue = 5.f;
+	LinetraceAmmoType->LineDistance = 1000.f;
+
+	UE_LOG(LogTemp, Warning, TEXT("damage: %f"), LinetraceAmmoType->DamageValue);
+
 
 	// use our custom HUD class
 	HUDClass = AUE4CCP_Assignment1HUD::StaticClass();
 }
 
-void AUE4CCP_Assignment1GameMode::SetAmmoInformation(TArray<UAmmoBase*> AmmoTypes)
-{
-	SavedAmmoTypes = AmmoTypes;
-}
+//void AUE4CCP_Assignment1GameMode::SetAmmoInformation(TArray<UAmmoBase*> AmmoTypes)
+//{
+//	SavedAmmoTypes = AmmoTypes;
+//}
 
-UAmmoBase* AUE4CCP_Assignment1GameMode::GetAmmoInformation(UAmmoBase* AmmoType)
-{
-	if (SavedAmmoTypes.Num() != 0)
-	{
-		for (auto item : SavedAmmoTypes)
-		{
-			if (item == AmmoType)
-			{
-				return item;
-			}
-		}
-	}
+//TArray<UAmmoBase*>& AUE4CCP_Assignment1GameMode::GetSavedAmmoTypes()
+//{
+//	return SavedAmmoTypes;
+//}
 
-	UE_LOG(LogTemp, Warning, TEXT("Error 404: Array of ammo not found."))
-	return nullptr;
-}
+//void AUE4CCP_Assignment1GameMode::SetAmmoInformation(UAmmoBase* AmmoType)
+//{
+//	for (auto SavedType : SavedAmmoTypes) {
+//		if (SavedType == AmmoType) {
+//			return;
+//		}
+//	}
+//	SavedAmmoTypes.Add((AmmoType));
+//}
+
+
+//UAmmoBase* AUE4CCP_Assignment1GameMode::GetAmmoInformation(UAmmoBase* AmmoType)
+//{
+//	if (SavedAmmoTypes.Num() != 0)
+//	{
+//		for (auto item : SavedAmmoTypes)
+//		{
+//			if (item == AmmoType)
+//			{
+//				return item;
+//			}
+//		}
+//	}
+//
+//	UE_LOG(LogTemp, Warning, TEXT("Error 404: Array of ammo not found."))
+//	return nullptr;
+//}

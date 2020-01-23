@@ -40,7 +40,16 @@ void UDamageComponent::TakeDamage(AActor* DamagedActor, float Damage, const clas
 	}
 
 	Health = FMath::Clamp(Health - Damage, 0.0f, DefaultHealth);
+}
 
+void UDamageComponent::TakeDamage(float Damage)
+{
+	if (Damage <= 0)
+	{
+		return;
+	}
+
+	Health = FMath::Clamp(Health - Damage, 0.0f, DefaultHealth);
 }
 
 

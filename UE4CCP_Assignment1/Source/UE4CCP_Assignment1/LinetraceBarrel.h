@@ -14,26 +14,33 @@ struct FLinetraceAmmoStruct
 
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo Data")
-		TSubclassOf<ULineTraceAmmo> AmmoType;
+		ULineTraceAmmo* AmmoType;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo Data")
 		int AmmoCapacity = 30;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo Data")
 		int CurrentAmmo = 30;
 };
 
-UCLASS(ClassGroup = (Custom), meta = (BlueprintSpawnableComponent))
+UCLASS(ClassGroup = (Custom), Blueprintable, BlueprintType, meta = (BlueprintSpawnableComponent))
 class UE4CCP_ASSIGNMENT1_API ULinetraceBarrel : public UBarrel
 {
 	GENERATED_BODY()
+
 	
 public:
+
+	ULinetraceBarrel();
+	~ULinetraceBarrel();
+
+	void BeginPlay() override;
+
 	UFUNCTION()
 	FVector GetEndPoint(AController* controller, float travelDist);
 
-	void Fire(UPARAM(ref) AController* controller, TArray<FHitResult>& Hits, bool& bHitResult) override;
+	void Fire(UPARAM(ref) AController* controller, TArray<UBarrel*>& SuccesfulBarrels) override;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo Data")
-		TArray<FLinetraceAmmoStruct> AmmoTypes;
+		TArray<ULineTraceAmmo*> AmmoTypes;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo Data")
 		FLinetraceAmmoStruct EquippedAmmo;

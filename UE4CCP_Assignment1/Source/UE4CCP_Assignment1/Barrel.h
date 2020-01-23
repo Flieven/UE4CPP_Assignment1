@@ -8,7 +8,7 @@
 
 
 
-UCLASS()
+UCLASS(Blueprintable, BlueprintType)
 class UE4CCP_ASSIGNMENT1_API UBarrel : public USceneComponent
 {
 	GENERATED_BODY()
@@ -18,7 +18,10 @@ public:
 	UBarrel();
 
 	UFUNCTION()
-		virtual void Fire(UPARAM(ref) AController* controller, TArray<FHitResult>& Hits, bool& bHitResult);
+		virtual void Fire(UPARAM(ref) AController* controller, TArray<UBarrel*>& SuccesfulBarrels);
+
+	UPROPERTY(BlueprintReadWrite, Category = "Barrel Data")
+		FRotator BarrelRecoil = FRotator(150.f, 0.f, 0.f);
 
 protected:
 	// Called when the game starts

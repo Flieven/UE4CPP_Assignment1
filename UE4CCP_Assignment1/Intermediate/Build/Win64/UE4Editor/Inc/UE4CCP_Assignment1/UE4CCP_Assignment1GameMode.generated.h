@@ -8,55 +8,14 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
-class UAmmoBase;
 #ifdef UE4CCP_ASSIGNMENT1_UE4CCP_Assignment1GameMode_generated_h
 #error "UE4CCP_Assignment1GameMode.generated.h already included, missing '#pragma once' in UE4CCP_Assignment1GameMode.h"
 #endif
 #define UE4CCP_ASSIGNMENT1_UE4CCP_Assignment1GameMode_generated_h
 
 #define UE4CCP_Assignment1_Source_UE4CCP_Assignment1_UE4CCP_Assignment1GameMode_h_13_SPARSE_DATA
-#define UE4CCP_Assignment1_Source_UE4CCP_Assignment1_UE4CCP_Assignment1GameMode_h_13_RPC_WRAPPERS \
- \
-	DECLARE_FUNCTION(execGetAmmoInformation) \
-	{ \
-		P_GET_OBJECT(UAmmoBase,Z_Param_AmmoType); \
-		P_FINISH; \
-		P_NATIVE_BEGIN; \
-		*(UAmmoBase**)Z_Param__Result=P_THIS->GetAmmoInformation(Z_Param_AmmoType); \
-		P_NATIVE_END; \
-	} \
- \
-	DECLARE_FUNCTION(execSetAmmoInformation) \
-	{ \
-		P_GET_TARRAY(UAmmoBase*,Z_Param_AmmoTypes); \
-		P_FINISH; \
-		P_NATIVE_BEGIN; \
-		P_THIS->SetAmmoInformation(Z_Param_AmmoTypes); \
-		P_NATIVE_END; \
-	}
-
-
-#define UE4CCP_Assignment1_Source_UE4CCP_Assignment1_UE4CCP_Assignment1GameMode_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
- \
-	DECLARE_FUNCTION(execGetAmmoInformation) \
-	{ \
-		P_GET_OBJECT(UAmmoBase,Z_Param_AmmoType); \
-		P_FINISH; \
-		P_NATIVE_BEGIN; \
-		*(UAmmoBase**)Z_Param__Result=P_THIS->GetAmmoInformation(Z_Param_AmmoType); \
-		P_NATIVE_END; \
-	} \
- \
-	DECLARE_FUNCTION(execSetAmmoInformation) \
-	{ \
-		P_GET_TARRAY(UAmmoBase*,Z_Param_AmmoTypes); \
-		P_FINISH; \
-		P_NATIVE_BEGIN; \
-		P_THIS->SetAmmoInformation(Z_Param_AmmoTypes); \
-		P_NATIVE_END; \
-	}
-
-
+#define UE4CCP_Assignment1_Source_UE4CCP_Assignment1_UE4CCP_Assignment1GameMode_h_13_RPC_WRAPPERS
+#define UE4CCP_Assignment1_Source_UE4CCP_Assignment1_UE4CCP_Assignment1GameMode_h_13_RPC_WRAPPERS_NO_PURE_DECLS
 #define UE4CCP_Assignment1_Source_UE4CCP_Assignment1_UE4CCP_Assignment1GameMode_h_13_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAUE4CCP_Assignment1GameMode(); \

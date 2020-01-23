@@ -17,89 +17,11 @@ void EmptyLinkFunctionForGeneratedCodeUE4CCP_Assignment1GameMode() {}
 	UE4CCP_ASSIGNMENT1_API UClass* Z_Construct_UClass_AUE4CCP_Assignment1GameMode();
 	ENGINE_API UClass* Z_Construct_UClass_AGameModeBase();
 	UPackage* Z_Construct_UPackage__Script_UE4CCP_Assignment1();
-	UE4CCP_ASSIGNMENT1_API UFunction* Z_Construct_UFunction_AUE4CCP_Assignment1GameMode_GetAmmoInformation();
-	UE4CCP_ASSIGNMENT1_API UClass* Z_Construct_UClass_UAmmoBase_NoRegister();
-	UE4CCP_ASSIGNMENT1_API UFunction* Z_Construct_UFunction_AUE4CCP_Assignment1GameMode_SetAmmoInformation();
+	UE4CCP_ASSIGNMENT1_API UClass* Z_Construct_UClass_UProjectileAmmo_NoRegister();
+	UE4CCP_ASSIGNMENT1_API UClass* Z_Construct_UClass_ULineTraceAmmo_NoRegister();
 // End Cross Module References
 	void AUE4CCP_Assignment1GameMode::StaticRegisterNativesAUE4CCP_Assignment1GameMode()
 	{
-		UClass* Class = AUE4CCP_Assignment1GameMode::StaticClass();
-		static const FNameNativePtrPair Funcs[] = {
-			{ "GetAmmoInformation", &AUE4CCP_Assignment1GameMode::execGetAmmoInformation },
-			{ "SetAmmoInformation", &AUE4CCP_Assignment1GameMode::execSetAmmoInformation },
-		};
-		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
-	}
-	struct Z_Construct_UFunction_AUE4CCP_Assignment1GameMode_GetAmmoInformation_Statics
-	{
-		struct UE4CCP_Assignment1GameMode_eventGetAmmoInformation_Parms
-		{
-			UAmmoBase* AmmoType;
-			UAmmoBase* ReturnValue;
-		};
-		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_ReturnValue;
-		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_AmmoType;
-		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
-#endif
-		static const UE4CodeGen_Private::FFunctionParams FuncParams;
-	};
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_AUE4CCP_Assignment1GameMode_GetAmmoInformation_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UE4CCP_Assignment1GameMode_eventGetAmmoInformation_Parms, ReturnValue), Z_Construct_UClass_UAmmoBase_NoRegister, METADATA_PARAMS(nullptr, 0) };
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_AUE4CCP_Assignment1GameMode_GetAmmoInformation_Statics::NewProp_AmmoType = { "AmmoType", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UE4CCP_Assignment1GameMode_eventGetAmmoInformation_Parms, AmmoType), Z_Construct_UClass_UAmmoBase_NoRegister, METADATA_PARAMS(nullptr, 0) };
-	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AUE4CCP_Assignment1GameMode_GetAmmoInformation_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AUE4CCP_Assignment1GameMode_GetAmmoInformation_Statics::NewProp_ReturnValue,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AUE4CCP_Assignment1GameMode_GetAmmoInformation_Statics::NewProp_AmmoType,
-	};
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AUE4CCP_Assignment1GameMode_GetAmmoInformation_Statics::Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "UE4CCP_Assignment1GameMode.h" },
-	};
-#endif
-	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AUE4CCP_Assignment1GameMode_GetAmmoInformation_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AUE4CCP_Assignment1GameMode, nullptr, "GetAmmoInformation", nullptr, nullptr, sizeof(UE4CCP_Assignment1GameMode_eventGetAmmoInformation_Parms), Z_Construct_UFunction_AUE4CCP_Assignment1GameMode_GetAmmoInformation_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AUE4CCP_Assignment1GameMode_GetAmmoInformation_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AUE4CCP_Assignment1GameMode_GetAmmoInformation_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AUE4CCP_Assignment1GameMode_GetAmmoInformation_Statics::Function_MetaDataParams)) };
-	UFunction* Z_Construct_UFunction_AUE4CCP_Assignment1GameMode_GetAmmoInformation()
-	{
-		static UFunction* ReturnFunction = nullptr;
-		if (!ReturnFunction)
-		{
-			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AUE4CCP_Assignment1GameMode_GetAmmoInformation_Statics::FuncParams);
-		}
-		return ReturnFunction;
-	}
-	struct Z_Construct_UFunction_AUE4CCP_Assignment1GameMode_SetAmmoInformation_Statics
-	{
-		struct UE4CCP_Assignment1GameMode_eventSetAmmoInformation_Parms
-		{
-			TArray<UAmmoBase*> AmmoTypes;
-		};
-		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_AmmoTypes;
-		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_AmmoTypes_Inner;
-		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
-#endif
-		static const UE4CodeGen_Private::FFunctionParams FuncParams;
-	};
-	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_AUE4CCP_Assignment1GameMode_SetAmmoInformation_Statics::NewProp_AmmoTypes = { "AmmoTypes", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UE4CCP_Assignment1GameMode_eventSetAmmoInformation_Parms, AmmoTypes), METADATA_PARAMS(nullptr, 0) };
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_AUE4CCP_Assignment1GameMode_SetAmmoInformation_Statics::NewProp_AmmoTypes_Inner = { "AmmoTypes", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UClass_UAmmoBase_NoRegister, METADATA_PARAMS(nullptr, 0) };
-	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AUE4CCP_Assignment1GameMode_SetAmmoInformation_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AUE4CCP_Assignment1GameMode_SetAmmoInformation_Statics::NewProp_AmmoTypes,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AUE4CCP_Assignment1GameMode_SetAmmoInformation_Statics::NewProp_AmmoTypes_Inner,
-	};
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AUE4CCP_Assignment1GameMode_SetAmmoInformation_Statics::Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "UE4CCP_Assignment1GameMode.h" },
-	};
-#endif
-	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AUE4CCP_Assignment1GameMode_SetAmmoInformation_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AUE4CCP_Assignment1GameMode, nullptr, "SetAmmoInformation", nullptr, nullptr, sizeof(UE4CCP_Assignment1GameMode_eventSetAmmoInformation_Parms), Z_Construct_UFunction_AUE4CCP_Assignment1GameMode_SetAmmoInformation_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AUE4CCP_Assignment1GameMode_SetAmmoInformation_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AUE4CCP_Assignment1GameMode_SetAmmoInformation_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AUE4CCP_Assignment1GameMode_SetAmmoInformation_Statics::Function_MetaDataParams)) };
-	UFunction* Z_Construct_UFunction_AUE4CCP_Assignment1GameMode_SetAmmoInformation()
-	{
-		static UFunction* ReturnFunction = nullptr;
-		if (!ReturnFunction)
-		{
-			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AUE4CCP_Assignment1GameMode_SetAmmoInformation_Statics::FuncParams);
-		}
-		return ReturnFunction;
 	}
 	UClass* Z_Construct_UClass_AUE4CCP_Assignment1GameMode_NoRegister()
 	{
@@ -108,20 +30,24 @@ void EmptyLinkFunctionForGeneratedCodeUE4CCP_Assignment1GameMode() {}
 	struct Z_Construct_UClass_AUE4CCP_Assignment1GameMode_Statics
 	{
 		static UObject* (*const DependentSingletons[])();
-		static const FClassFunctionLinkInfo FuncInfo[];
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_ProjectileAmmoType_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_ProjectileAmmoType;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_LinetraceAmmoType_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_LinetraceAmmoType;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
 	};
 	UObject* (*const Z_Construct_UClass_AUE4CCP_Assignment1GameMode_Statics::DependentSingletons[])() = {
 		(UObject* (*)())Z_Construct_UClass_AGameModeBase,
 		(UObject* (*)())Z_Construct_UPackage__Script_UE4CCP_Assignment1,
-	};
-	const FClassFunctionLinkInfo Z_Construct_UClass_AUE4CCP_Assignment1GameMode_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_AUE4CCP_Assignment1GameMode_GetAmmoInformation, "GetAmmoInformation" }, // 2107205647
-		{ &Z_Construct_UFunction_AUE4CCP_Assignment1GameMode_SetAmmoInformation, "SetAmmoInformation" }, // 3587842261
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AUE4CCP_Assignment1GameMode_Statics::Class_MetaDataParams[] = {
@@ -131,6 +57,26 @@ void EmptyLinkFunctionForGeneratedCodeUE4CCP_Assignment1GameMode() {}
 		{ "ShowCategories", "Input|MouseInput Input|TouchInput" },
 	};
 #endif
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AUE4CCP_Assignment1GameMode_Statics::NewProp_ProjectileAmmoType_MetaData[] = {
+		{ "Category", "GameMode Properties" },
+		{ "ModuleRelativePath", "UE4CCP_Assignment1GameMode.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AUE4CCP_Assignment1GameMode_Statics::NewProp_ProjectileAmmoType = { "ProjectileAmmoType", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AUE4CCP_Assignment1GameMode, ProjectileAmmoType), Z_Construct_UClass_UProjectileAmmo_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AUE4CCP_Assignment1GameMode_Statics::NewProp_ProjectileAmmoType_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AUE4CCP_Assignment1GameMode_Statics::NewProp_ProjectileAmmoType_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AUE4CCP_Assignment1GameMode_Statics::NewProp_LinetraceAmmoType_MetaData[] = {
+		{ "Category", "GameMode Properties" },
+		{ "Comment", "/*UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = \"GameMode Properties\")\n\x09\x09TArray<UAmmoBase*> SavedAmmoTypes;*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\n" },
+		{ "ModuleRelativePath", "UE4CCP_Assignment1GameMode.h" },
+		{ "ToolTip", "UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = \"GameMode Properties\")\n               TArray<UAmmoBase*> SavedAmmoTypes;///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AUE4CCP_Assignment1GameMode_Statics::NewProp_LinetraceAmmoType = { "LinetraceAmmoType", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AUE4CCP_Assignment1GameMode, LinetraceAmmoType), Z_Construct_UClass_ULineTraceAmmo_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AUE4CCP_Assignment1GameMode_Statics::NewProp_LinetraceAmmoType_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AUE4CCP_Assignment1GameMode_Statics::NewProp_LinetraceAmmoType_MetaData)) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AUE4CCP_Assignment1GameMode_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AUE4CCP_Assignment1GameMode_Statics::NewProp_ProjectileAmmoType,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AUE4CCP_Assignment1GameMode_Statics::NewProp_LinetraceAmmoType,
+	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AUE4CCP_Assignment1GameMode_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AUE4CCP_Assignment1GameMode>::IsAbstract,
 	};
@@ -139,12 +85,12 @@ void EmptyLinkFunctionForGeneratedCodeUE4CCP_Assignment1GameMode() {}
 		"Game",
 		&StaticCppClassTypeInfo,
 		DependentSingletons,
-		FuncInfo,
 		nullptr,
+		Z_Construct_UClass_AUE4CCP_Assignment1GameMode_Statics::PropPointers,
 		nullptr,
 		UE_ARRAY_COUNT(DependentSingletons),
-		UE_ARRAY_COUNT(FuncInfo),
 		0,
+		UE_ARRAY_COUNT(Z_Construct_UClass_AUE4CCP_Assignment1GameMode_Statics::PropPointers),
 		0,
 		0x008802ACu,
 		METADATA_PARAMS(Z_Construct_UClass_AUE4CCP_Assignment1GameMode_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_AUE4CCP_Assignment1GameMode_Statics::Class_MetaDataParams))
@@ -158,7 +104,7 @@ void EmptyLinkFunctionForGeneratedCodeUE4CCP_Assignment1GameMode() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AUE4CCP_Assignment1GameMode, 643269809);
+	IMPLEMENT_CLASS(AUE4CCP_Assignment1GameMode, 1336409789);
 	template<> UE4CCP_ASSIGNMENT1_API UClass* StaticClass<AUE4CCP_Assignment1GameMode>()
 	{
 		return AUE4CCP_Assignment1GameMode::StaticClass();

@@ -59,7 +59,7 @@ void URecoilComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActo
 
 void URecoilComponent::InterpolateRotation(float dTime)
 {
-	UE_LOG(LogTemp, Warning, TEXT("[DEBUG] Running Interpolation: %f"), GetOwner()->GetWorldTimerManager().GetTimerRemaining(RecoilHandle));
+	//UE_LOG(LogTemp, Warning, TEXT("[DEBUG] Running Interpolation: %f"), GetOwner()->GetWorldTimerManager().GetTimerRemaining(RecoilHandle));
 	if(!ControllerRef->GetControlRotation().Equals(TotalRecoil, 1.0f))
 	{
 		ControllerRef->SetControlRotation(FMath::RInterpTo(ControllerRef->GetControlRotation(), TotalRecoil, dTime, InterpolationSpeed));
@@ -69,7 +69,7 @@ void URecoilComponent::InterpolateRotation(float dTime)
 
 void URecoilComponent::StopInterpolation()
 {
-	UE_LOG(LogTemp, Warning, TEXT("[DEBUG] Stopping interpolation!"));
+	//UE_LOG(LogTemp, Warning, TEXT("[DEBUG] Stopping interpolation!"));
 	bActiveInterpolation = false;
 	GetOwner()->GetWorldTimerManager().ClearTimer(RecoilHandle);
 }

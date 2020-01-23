@@ -37,11 +37,11 @@ void AWeapon::Tick(float DeltaTime)
 
 }
 
-void AWeapon::Fire_Implementation(UPARAM(ref) TArray<UBarrel*>& Barrels, AController* controller, TArray<FHitResult>& Hits, bool& bHitResult)
+void AWeapon::Fire_Implementation(UPARAM(ref) TArray<UBarrel*>& Barrels, AController* controller, TArray<UBarrel*>& SuccesfulBarrels)
 {
 	for (UBarrel* Barrel : Barrels)
 	{
-		Barrel->Fire(controller, Hits, bHitResult);
+		Barrel->Fire(controller, SuccesfulBarrels);
 	}
 }
 

@@ -39,7 +39,7 @@ protected:
 
 };
 
-UCLASS(ClassGroup = (Custom), meta = (IsBlueprintBase = true))
+UCLASS(ClassGroup = (Custom), Blueprintable/*, meta = (IsBlueprintBase = true)*/)
 class UE4CCP_ASSIGNMENT1_API UProjectileAmmo : public UAmmoBase
 {
 	GENERATED_BODY()

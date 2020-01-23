@@ -21,13 +21,13 @@ public:
 		int CurrentAmmo = 30;
 };
 
-UCLASS(ClassGroup = (Custom), meta = (BlueprintSpawnableComponent))
+UCLASS(ClassGroup = (Custom), Blueprintable, BlueprintType, meta = (BlueprintSpawnableComponent))
 class UE4CCP_ASSIGNMENT1_API UProjectileBarrel : public UBarrel
 {
 	GENERATED_BODY()
 	
 public:
-	void Fire(UPARAM(ref) AController* Controller, TArray<FHitResult>& Hits, bool& bHitResult) override;
+	void Fire(UPARAM(ref) AController* Controller, TArray<UBarrel*>& SuccesfulBarrels) override;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo Data")
 		TArray<FProjectileAmmoStruct> AmmoTypes;
