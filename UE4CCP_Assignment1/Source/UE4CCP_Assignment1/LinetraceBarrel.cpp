@@ -45,14 +45,13 @@ void ULinetraceBarrel::Fire(UPARAM(ref) AController* controller, TArray<FHitResu
 		return;
 	}
 
-	float Distance = Cast<ULineTraceAmmo>(EquippedAmmo.AmmoType)->LineDistance;
+	//float Distance = Cast<ULineTraceAmmo>(EquippedAmmo.AmmoType)->LineDistance;
 
 	FCollisionQueryParams CollisionParams;
 
 	FVector SourcePoint = GetComponentTransform().GetLocation();
 
-	FVector TargetPoint = GetEndPoint(controller, Distance);
-
+	FVector TargetPoint = GetEndPoint(controller, 500.0f);
 	DrawDebugLine(GetWorld(), SourcePoint, TargetPoint, FColor::Green, true);
 	FHitResult Hit;
 
