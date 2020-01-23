@@ -4,8 +4,8 @@
 #include <CoreMinimal.h>
 #include <UObject/Object.h>
 #include <UObject/ObjectMacros.h>
+#include "UE4CCP_Assignment1Projectile.h"
 #include "AmmoBase.generated.h"
-
 
 
 /**
@@ -36,10 +36,10 @@ public:
 		float LineDistance = 0;
 
 protected:
-	
+
 };
 
-UCLASS(ClassGroup	 = (Custom), meta = (IsBlueprintBase = true))
+UCLASS(ClassGroup = (Custom), meta = (IsBlueprintBase = true))
 class UE4CCP_ASSIGNMENT1_API UProjectileAmmo : public UAmmoBase
 {
 	GENERATED_BODY()
@@ -49,7 +49,7 @@ public:
 	~UProjectileAmmo();
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo Details")
-		class AActor* ProjectileObject; /**support for creating and using objects for projectile ammo */
+	TSubclassOf<AUE4CCP_Assignment1Projectile> ProjectileObject; /**support for creating and using objects for projectile ammo */
 
 protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo Details")
