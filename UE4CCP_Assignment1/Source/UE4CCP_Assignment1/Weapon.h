@@ -77,8 +77,8 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, meta = (HideSelfPin), Category = "Weapon Functions")
-	void Fire(UPARAM(ref) TArray<UBarrel*>& Barrels, AController* controller, TArray<FHitResult>& Hits, bool& bHitResult);
-	void Fire_Implementation(UPARAM(ref) TArray<UBarrel*>& Barrels, AController* controller, TArray<FHitResult>& Hits, bool& bHitResult);
+	void Fire(UPARAM(ref) TArray<UBarrel*>& Barrels, AController* controller, TArray<UBarrel*>& SuccesfulBarrels);
+	void Fire_Implementation(UPARAM(ref) TArray<UBarrel*>& Barrels, AController* controller, TArray<UBarrel*>& SuccesfulBarrels);
 	
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "Weapon Functions")
 	void Reload(UPARAM(ref) TArray<UBarrel*>& Barrels);

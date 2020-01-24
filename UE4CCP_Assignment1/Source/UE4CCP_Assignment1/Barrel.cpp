@@ -31,7 +31,7 @@ void UBarrel::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponen
 	// ...
 }
 
-void UBarrel::Fire(UPARAM(ref) AController* controller, TArray<FHitResult>& Hits, bool& bHitResult)
+void UBarrel::Fire(UPARAM(ref) AController* controller, TArray<UBarrel*>& SuccesfulBarrels)
 {
 }
 

@@ -16,8 +16,9 @@ public:
 	// Sets default values for this component's properties
 	UDamageComponent();
 
-	UFUNCTION()
 		void TakeDamage(AActor* DamagedActor, float Damage, const class UDamageType* DamageType, class AController* InstigatedBy, AActor* DamageCauser);
+	UFUNCTION()
+		void TakeDamage(float Damage);
 
 protected:
 	// Called when the game starts

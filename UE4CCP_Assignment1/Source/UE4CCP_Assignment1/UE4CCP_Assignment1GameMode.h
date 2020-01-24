@@ -12,15 +12,39 @@ class AUE4CCP_Assignment1GameMode : public AGameModeBase
 {
 	GENERATED_BODY()
 
-		TArray<UAmmoBase*> SavedAmmoTypes;
+		
 
 public:
 	AUE4CCP_Assignment1GameMode();
 
-	UFUNCTION(BlueprintCallable)
-		void SetAmmoInformation(TArray<UAmmoBase*> AmmoTypes);
-	UFUNCTION()
-		UAmmoBase* GetAmmoInformation(UAmmoBase* AmmoType);
+	/*UFUNCTION(BlueprintCallable, Category = "GameMode Functions")
+		TArray<UAmmoBase*>& GetSavedAmmoTypes();
+	UFUNCTION(BlueprintCallable, Category = "GameMode Functions")
+		void SetAmmoInformation(UAmmoBase* AmmoType);
+	UFUNCTION(BlueprintCallable, Category = "GameMode Functions")
+		UAmmoBase* GetAmmoInformation(UAmmoBase* AmmoType);*/
+
+	/*UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "GameMode Properties")
+		TArray<UAmmoBase*> SavedAmmoTypes;*/
+
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+		UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "GameMode Properties")
+		ULineTraceAmmo* LinetraceAmmoType = NewObject<ULineTraceAmmo>();
+
+		UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "GameMode Properties")
+		UProjectileAmmo* ProjectileAmmoType = NewObject<UProjectileAmmo>();
+
+		/*UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "GameMode Properties")
+			ULineTraceAmmo LinetraceAmmoType = new ULineTraceAmmo();
+
+		UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "GameMode Properties")
+			UProjectileAmmo ProjectileAmmoType = UProjectileAmmo();*/
+
+
+
+private:
+	//UProjectileAmmo* TestType = NewObject<UProjectileAmmo>();
 };
 
 

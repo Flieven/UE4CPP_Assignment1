@@ -5,7 +5,7 @@
 #include "UE4CCP_Assignment1Projectile.h"
 #include "ProjectileBase.h"
 
-void UProjectileBarrel::Fire(AController* Controller, TArray<FHitResult>& Hits, bool& bHitResult)
+void UProjectileBarrel::Fire(AController* Controller, TArray<UBarrel*>& SuccesfulBarrels)
 {
 	//TODO: Make projectile spawn at component location.
 	for (int i = 0; i <= AmmoTypes.Num(); i++) {
@@ -17,6 +17,7 @@ void UProjectileBarrel::Fire(AController* Controller, TArray<FHitResult>& Hits, 
 		{
 			GetWorld()->SpawnActor<AUE4CCP_Assignment1Projectile>(Cast<UProjectileAmmo>(AmmoTypes[i].AmmoType)->ProjectileObject, GetComponentTransform().GetLocation(), GetComponentRotation());
 			break;
+			
 		}
 	}
 }
