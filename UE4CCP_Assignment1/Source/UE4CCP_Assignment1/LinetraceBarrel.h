@@ -5,6 +5,8 @@
 #include "CoreMinimal.h"
 #include "Barrel.h"
 #include "AmmoBase.h"
+#include "LinetraceAmmo.h"
+#include "UE4CCP_Assignment1GameMode.h"
 #include "LinetraceBarrel.generated.h"
 
 USTRUCT(BlueprintType)
@@ -14,11 +16,11 @@ struct FLinetraceAmmoStruct
 
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo Data")
-		ULineTraceAmmo* AmmoType;
+	ULinetraceAmmo* AmmoType;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo Data")
-		int AmmoCapacity = 30;
+	int AmmoCapacity = 30;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo Data")
-		int CurrentAmmo = 30;
+	int CurrentAmmo = 30;
 };
 
 UCLASS(ClassGroup = (Custom), Blueprintable, BlueprintType, meta = (BlueprintSpawnableComponent))
@@ -40,8 +42,8 @@ public:
 	UBarrel* Fire(UPARAM(ref) AController* controller) override;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo Data")
-		TArray<ULineTraceAmmo*> AmmoTypes;
+	TArray<ULinetraceAmmo*> AmmoTypes;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo Data")
-		FLinetraceAmmoStruct EquippedAmmo;
+	FLinetraceAmmoStruct EquippedAmmo;
 };

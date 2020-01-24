@@ -154,4 +154,14 @@
       <Filter>Source\UE4CCP_Assignment1\Actors</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Source\UE4CCP_Assignment1\LinetraceAmmo.h">
+      <Filter>Source\UE4CCP_Assignment1</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Source\UE4CCP_Assignment1\LinetraceAmmo.cpp">
+      <Filter>Source\UE4CCP_Assignment1</Filter>
+    </ClCompile>
+  </ItemGroup>
 </Project>

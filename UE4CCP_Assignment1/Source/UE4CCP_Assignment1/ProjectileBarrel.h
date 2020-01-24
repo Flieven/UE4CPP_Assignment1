@@ -7,7 +7,7 @@
 #include "AmmoBase.h"
 #include "ProjectileBarrel.generated.h"
 
-USTRUCT(BlueprintType)
+USTRUCT(Blueprintable, BlueprintType)
 struct FProjectileAmmoStruct
 {
 	GENERATED_USTRUCT_BODY()
@@ -21,7 +21,7 @@ public:
 		int CurrentAmmo = 30;
 };
 
-UCLASS(ClassGroup = (Custom), Blueprintable, BlueprintType, meta = (BlueprintSpawnableComponent))
+UCLASS(Blueprintable, BlueprintType)
 class UE4CCP_ASSIGNMENT1_API UProjectileBarrel : public UBarrel
 {
 	GENERATED_BODY()
