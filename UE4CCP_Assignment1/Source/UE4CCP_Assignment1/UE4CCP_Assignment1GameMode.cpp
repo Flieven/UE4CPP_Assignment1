@@ -13,10 +13,10 @@ AUE4CCP_Assignment1GameMode::AUE4CCP_Assignment1GameMode()
 	DefaultPawnClass = PlayerPawnClassFinder.Class;
 	
 
-	LinetraceAmmoType->DamageValue = 5.f;
-	LinetraceAmmoType->LineDistance = 1000.f;
+	/*LinetraceAmmoType->DamageValue = 5.f;
+	LinetraceAmmoType->LineDistance = 1000.f;*/
 
-	UE_LOG(LogTemp, Warning, TEXT("damage: %f"), LinetraceAmmoType->DamageValue);
+	//UE_LOG(LogTemp, Warning, TEXT("damage: %f"), LinetraceAmmoType->DamageValue);
 
 
 	// use our custom HUD class

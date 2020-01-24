@@ -17,8 +17,6 @@ void EmptyLinkFunctionForGeneratedCodeUE4CCP_Assignment1GameMode() {}
 	UE4CCP_ASSIGNMENT1_API UClass* Z_Construct_UClass_AUE4CCP_Assignment1GameMode();
 	ENGINE_API UClass* Z_Construct_UClass_AGameModeBase();
 	UPackage* Z_Construct_UPackage__Script_UE4CCP_Assignment1();
-	UE4CCP_ASSIGNMENT1_API UClass* Z_Construct_UClass_UProjectileAmmo_NoRegister();
-	UE4CCP_ASSIGNMENT1_API UClass* Z_Construct_UClass_ULineTraceAmmo_NoRegister();
 // End Cross Module References
 	void AUE4CCP_Assignment1GameMode::StaticRegisterNativesAUE4CCP_Assignment1GameMode()
 	{
@@ -33,15 +31,6 @@ void EmptyLinkFunctionForGeneratedCodeUE4CCP_Assignment1GameMode() {}
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_ProjectileAmmoType_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_ProjectileAmmoType;
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_LinetraceAmmoType_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_LinetraceAmmoType;
-		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
 	};
@@ -57,26 +46,6 @@ void EmptyLinkFunctionForGeneratedCodeUE4CCP_Assignment1GameMode() {}
 		{ "ShowCategories", "Input|MouseInput Input|TouchInput" },
 	};
 #endif
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AUE4CCP_Assignment1GameMode_Statics::NewProp_ProjectileAmmoType_MetaData[] = {
-		{ "Category", "GameMode Properties" },
-		{ "ModuleRelativePath", "UE4CCP_Assignment1GameMode.h" },
-	};
-#endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AUE4CCP_Assignment1GameMode_Statics::NewProp_ProjectileAmmoType = { "ProjectileAmmoType", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AUE4CCP_Assignment1GameMode, ProjectileAmmoType), Z_Construct_UClass_UProjectileAmmo_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AUE4CCP_Assignment1GameMode_Statics::NewProp_ProjectileAmmoType_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AUE4CCP_Assignment1GameMode_Statics::NewProp_ProjectileAmmoType_MetaData)) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AUE4CCP_Assignment1GameMode_Statics::NewProp_LinetraceAmmoType_MetaData[] = {
-		{ "Category", "GameMode Properties" },
-		{ "Comment", "/*UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = \"GameMode Properties\")\n\x09\x09TArray<UAmmoBase*> SavedAmmoTypes;*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\n" },
-		{ "ModuleRelativePath", "UE4CCP_Assignment1GameMode.h" },
-		{ "ToolTip", "UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = \"GameMode Properties\")\n               TArray<UAmmoBase*> SavedAmmoTypes;///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////" },
-	};
-#endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AUE4CCP_Assignment1GameMode_Statics::NewProp_LinetraceAmmoType = { "LinetraceAmmoType", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AUE4CCP_Assignment1GameMode, LinetraceAmmoType), Z_Construct_UClass_ULineTraceAmmo_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AUE4CCP_Assignment1GameMode_Statics::NewProp_LinetraceAmmoType_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AUE4CCP_Assignment1GameMode_Statics::NewProp_LinetraceAmmoType_MetaData)) };
-	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AUE4CCP_Assignment1GameMode_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AUE4CCP_Assignment1GameMode_Statics::NewProp_ProjectileAmmoType,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AUE4CCP_Assignment1GameMode_Statics::NewProp_LinetraceAmmoType,
-	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AUE4CCP_Assignment1GameMode_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AUE4CCP_Assignment1GameMode>::IsAbstract,
 	};
@@ -86,11 +55,11 @@ void EmptyLinkFunctionForGeneratedCodeUE4CCP_Assignment1GameMode() {}
 		&StaticCppClassTypeInfo,
 		DependentSingletons,
 		nullptr,
-		Z_Construct_UClass_AUE4CCP_Assignment1GameMode_Statics::PropPointers,
+		nullptr,
 		nullptr,
 		UE_ARRAY_COUNT(DependentSingletons),
 		0,
-		UE_ARRAY_COUNT(Z_Construct_UClass_AUE4CCP_Assignment1GameMode_Statics::PropPointers),
+		0,
 		0,
 		0x008802ACu,
 		METADATA_PARAMS(Z_Construct_UClass_AUE4CCP_Assignment1GameMode_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_AUE4CCP_Assignment1GameMode_Statics::Class_MetaDataParams))
@@ -104,7 +73,7 @@ void EmptyLinkFunctionForGeneratedCodeUE4CCP_Assignment1GameMode() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AUE4CCP_Assignment1GameMode, 1336409789);
+	IMPLEMENT_CLASS(AUE4CCP_Assignment1GameMode, 2101629571);
 	template<> UE4CCP_ASSIGNMENT1_API UClass* StaticClass<AUE4CCP_Assignment1GameMode>()
 	{
 		return AUE4CCP_Assignment1GameMode::StaticClass();
