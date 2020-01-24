@@ -7,7 +7,7 @@
 #include "LinetraceAmmo.generated.h"
 
 /**
- * 
+ * Derived class of UAmmoBase
  */
 UCLASS(BlueprintType, Blueprintable)
 class UE4CCP_ASSIGNMENT1_API ULinetraceAmmo : public UAmmoBase
@@ -16,10 +16,10 @@ class UE4CCP_ASSIGNMENT1_API ULinetraceAmmo : public UAmmoBase
 	
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo Details")
-	float DamageValue = 0.f;
+	float DamageValue = 0.f; /** The amount of damage a line will do to a hittable target */
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo Details")
-	float LineDistance = 1000.f;
+	float LineDistance = 1000.f; /** The distance a line will travel in the world */
 
 };
 

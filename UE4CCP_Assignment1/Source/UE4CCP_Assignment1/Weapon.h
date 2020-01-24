@@ -11,7 +11,9 @@
 #include "UE4CCP_Assignment1Character.h"
 #include "Weapon.generated.h"
 
-
+/**
+ * [UNUSED] Enums setup to do different firing modes
+ */
 UENUM(BlueprintType)
 enum class EFiringModes : uint8
 {
@@ -20,12 +22,16 @@ enum class EFiringModes : uint8
 	FM_Semi		UMETA(DisplayName = "Semi")
 };
 
+/**
+ * Base weapon class
+ * Derived from actor and interaction interface
+ */
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class UE4CCP_ASSIGNMENT1_API AWeapon : public AActor, public IInterinterface
 {
 	GENERATED_BODY()
 
-	TArray<FRotator> RecoilArray;
+	TArray<FRotator> RecoilArray; /** Array of all fired barrels recoil values (at the time of firing) */
 
 public:	
 	// Sets default values for this component's properties
@@ -38,62 +44,70 @@ protected:
 public:
 
 	UPROPERTY(VisibleDefaultsOnly, Category = "Weapon Assets")
-	class USkeletalMeshComponent* WeaponMesh;
-
-	UPROPERTY(EditInstanceOnly, Category = "Weapon Assets")
-	class UMaterial* WeaponMat;
+	class USkeletalMeshComponent* WeaponMesh; /** Mesh of the weapon */
 	
 	UPROPERTY(EditInstanceOnly, Category = "Weapon Assets")
-	class UParticleSystem* FiringParticles;
+	class UParticleSystem* FiringParticles; /** [UNUSED] particles triggered when firing weapon */
 		
 	UPROPERTY(EditInstanceOnly, Category = "Weapon Assets")
-	class USoundCue* FiringAudio;
+	class USoundCue* FiringAudio; /** [UNUSED] audio cue when weapon is fired */
 
 	UPROPERTY(EditInstanceOnly, Category = "Weapon Assets")
-	class USoundCue* ReloadAudio;
+	class USoundCue* ReloadAudio; /** [UNUSED] audio cue when weapon is reloaded */
 
 	UPROPERTY(EditInstanceOnly, Category = "Weapon Data")
-	EFiringModes CurrentFiringMode;
+	EFiringModes CurrentFiringMode; /** [UNUSED] firing mode we're currently on  */
 
 	UPROPERTY(EditInstanceOnly, Category = "Weapon Data")
-	int BulletsPerShot;
-
-	UPROPERTY(EditInstanceOnly, Category = "Weapon Data")
-	int MaximumAmmo;
-
-	UPROPERTY(EditInstanceOnly, Category = "Weapon Data")
-	int MaximumClipSize;
-
-	UPROPERTY(EditInstanceOnly, Category = "Weapon Data")
-	int CurrentClipAmmo;
+	int MaximumAmmo; /** [UNUSED] Maximum amount of ammo that can be stored in the weapon */
 	
 	UPROPERTY(EditInstanceOnly, Category = "Weapon Data")
-	float ReloadTime;
-
-	
-	//Maximum Horizontal and Vertical Spread
-	UPROPERTY(EditInstanceOnly, Category = "Weapon Data")
-	FVector2D BulletSpread;
+	float ReloadTime; /** [UNUSED] Time it takes to reload weapon */
 
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+	/**
+	 * Fire the weapon
+	 * Fire_Implementation actually implements the firing function
+	 * Takes an array of barrels to fire
+	 * Take a reference to the controller that is firing the weapon
+	 * Returns an array of rotators used for recoil calculations in a recoil component (if any)
+	 */
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, meta = (HideSelfPin), Category = "Weapon Functions")
 	TArray<FRotator> Fire(UPARAM(ref) TArray<UBarrel*>& Barrels, AController* controller);
 	TArray<FRotator> Fire_Implementation(UPARAM(ref) TArray<UBarrel*>& Barrels, AController* controller);
 	
+	/**
+	 * [UNUSED]
+	 * Reload the weapon
+	 * Reload_Implementation actually implements the reload function
+	 * Takes an array of barrels to call reload on
+	 */
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "Weapon Functions")
 	void Reload(UPARAM(ref) TArray<UBarrel*>& Barrels);
 	void Reload_Implementation(UPARAM(ref) TArray<UBarrel*>& Barrels);
 
+	/**
+	 * Primary event used to access blueprint from other blueprints
+	 * That's the intended use anyway
+	 */
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Custom Events")
 		void PrimaryFire(AController* controller, bool active);
 	void PrimaryFire_Implementation(AController* controller, bool active) {};
 
+	/**
+	 * Secondary event used to access blueprint from other blueprints
+	 * Just in case you needed two of them
+	 */
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Custom Events")
 		void SecondaryFire(AController* controller, bool active);
 	void SecondaryFire_Implementation(AController* controller, bool active) {};
 
+	/**
+	 * Implementation of interface interaction function
+	 * Used for when something interacts with the object
+	 */
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Interaction")
 	void OnInteract(AActor* Caller);
 	virtual void OnInteract_Implementation(AActor* Caller);

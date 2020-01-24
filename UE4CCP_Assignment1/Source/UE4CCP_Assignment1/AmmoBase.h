@@ -10,7 +10,7 @@
 
 
 /**
- Ammo Base and Derived classes
+ Ammo Base class
  */
 UCLASS(Abstract)
 class UE4CCP_ASSIGNMENT1_API UAmmoBase : public UDataAsset

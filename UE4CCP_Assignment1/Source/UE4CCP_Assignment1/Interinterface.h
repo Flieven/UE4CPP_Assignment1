@@ -15,7 +15,7 @@ class UInterinterface : public UInterface
 };
 
 /**
- * 
+ * Interaction interface
  */
 class UE4CCP_ASSIGNMENT1_API IInterinterface
 {
@@ -24,13 +24,26 @@ class UE4CCP_ASSIGNMENT1_API IInterinterface
 
 	// Add interface functions to this class. This is the class that will be inherited to implement this interface.
 public:
+	/**
+	 * Interaction function
+	 * Overwritten by implementations in other classes
+	 */
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Interaction")
 		void OnInteract(AActor* Caller);
 	virtual void OnInteract_Implementation(AActor* Caller) {};
 
+	/**
+	 * [UNUSED]
+	 * Focus function
+	 * Allows implementation of functions if intractable object is looked at
+	 */
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Interaction")
 		void StartFocus();
-
+	/**
+	* [UNUSED]
+	 * Focus function
+	* Allows stops implementation of functions if intractable object is no longer looked at
+	*/
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Interaction")
 		void EndFocus();
 

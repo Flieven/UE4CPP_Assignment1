@@ -7,7 +7,7 @@
 #include "ProjectileAmmo.generated.h"
 
 /**
- * 
+ * Derived class of UAmmoBase
  */
 UCLASS(BlueprintType, Blueprintable)
 class UE4CCP_ASSIGNMENT1_API UProjectileAmmo : public UAmmoBase
@@ -20,5 +20,5 @@ public:
 
 protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo Details")
-		float DamageValue = 0;
+		float DamageValue = 0; /** [UNUSED] This does nothing but was intended to be used for damaging stuff */
 };

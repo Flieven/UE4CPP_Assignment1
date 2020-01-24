@@ -7,6 +7,9 @@
 #include "ProjectileAmmo.h"
 #include "ProjectileBarrel.generated.h"
 
+/**
+ * Structure that handles data regarding ammo for this barrel type
+ */
 USTRUCT(Blueprintable, BlueprintType)
 struct FProjectileAmmoStruct
 {
@@ -14,28 +17,35 @@ struct FProjectileAmmoStruct
 
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo Data")
-		UProjectileAmmo* AmmoType;
+		UProjectileAmmo* AmmoType; /** The type of ammo that's being used */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo Data")
-		int AmmoCapacity = 30;
+		int AmmoCapacity = 30; /** The amount of ammo we can carry in a single "magazine" */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo Data")
-		int CurrentAmmo = 30;
+		int CurrentAmmo = 30; /** The amount of ammo currently in our "magazine" */
 };
 
+/**
+ * Derived class of UBarrel
+ */
 UCLASS(Blueprintable, BlueprintType)
 class UE4CCP_ASSIGNMENT1_API UProjectileBarrel : public UBarrel
 {
 	GENERATED_BODY()
 	
 public:
-	UBarrel* Fire(UPARAM(ref) AController* Controller) override;
+	/**
+	 * Overrides Fire function in base barrel class
+	 * Passing a controller to it does nothing as the controller is mostly used in the linetrace barrel anyway
+	 */
+	UBarrel* Fire(UPARAM(ref) AController* Controller) override; 
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo Data")
-		TArray<FProjectileAmmoStruct> AmmoTypes;
+		TArray<FProjectileAmmoStruct> AmmoTypes; /** An array of all ammo types usable by this weapon */
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo Data")
-		float ZeroingDistance;
+		float ZeroingDistance; /** [UNUSED] Zeroing distance of a projectile */
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo Data")
-		FProjectileAmmoStruct EquippedAmmo;
+		FProjectileAmmoStruct EquippedAmmo; /** The ammo currently "equipped" on this barrel */
 
 };

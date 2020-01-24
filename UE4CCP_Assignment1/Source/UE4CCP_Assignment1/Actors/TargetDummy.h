@@ -7,6 +7,9 @@
 #include "Engine/TargetPoint.h"
 #include "TargetDummy.generated.h"
 
+/**
+ * Simple target dummy actor used for testing
+ */
 UCLASS()
 class UE4CCP_ASSIGNMENT1_API ATargetDummy : public AActor
 {
@@ -14,9 +17,12 @@ class UE4CCP_ASSIGNMENT1_API ATargetDummy : public AActor
 	
 private:
 
-	FVector StartPos = FVector::ZeroVector;
-	FVector TargetPos = FVector::ZeroVector;
+	FVector StartPos = FVector::ZeroVector; /** Current position of target dummy on begin play */
+	FVector TargetPos = FVector::ZeroVector; /** Target position used for movement interpolation (if used) */
 
+	/**
+	 * Moves the target dummy from its current location to a the currently set target location over dTime (delta Time)
+	 */
 	void MoveToTarget(float dTime);
 
 protected:
@@ -30,8 +36,8 @@ public:
 	virtual void Tick(float DeltaTime) override;	
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Dummy Movement")
-	ATargetPoint* EndPos = nullptr;
+	ATargetPoint* EndPos = nullptr; /** Target point used to give the other end position of a target dummy movement interpolation */
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Dummy Movement")
-		float MovementSpeed = 1.0f;
+		float MovementSpeed = 1.0f; /** Spped at which the target dummy should move between target locations */
 };
