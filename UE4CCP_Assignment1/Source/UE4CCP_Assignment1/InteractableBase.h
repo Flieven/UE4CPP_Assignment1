@@ -27,10 +27,10 @@ public:
 
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Interaction")
 		void OnInteract(AActor* Caller);
-	virtual void OnInteract_Implementation(AActor* Caller);
+	virtual void OnInteract_Implementation(AActor* Caller) override;
 
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Interaction")
-		void StartFocus();
+		void StartFocus() ;
 	virtual void StartFocus_Implementation();
 
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Interaction")

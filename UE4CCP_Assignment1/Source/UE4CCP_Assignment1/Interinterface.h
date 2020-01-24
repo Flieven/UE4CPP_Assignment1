@@ -26,7 +26,7 @@ class UE4CCP_ASSIGNMENT1_API IInterinterface
 public:
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Interaction")
 		void OnInteract(AActor* Caller);
-	virtual void OnInteract_Implementation(AActor* Caller) {};
+	virtual void OnInteract_Implementation(AActor* Caller){};
 
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Interaction")
 		void StartFocus();

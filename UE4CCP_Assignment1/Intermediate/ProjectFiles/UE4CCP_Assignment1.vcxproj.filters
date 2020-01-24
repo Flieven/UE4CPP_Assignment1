@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\UE4CCP_Assignment1.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{7FCC34E4-0DB9-4E5C-8E20-74B9215AE2A3}</UniqueIdentifier>
+      <UniqueIdentifier>{3C1179EE-1CA6-48D5-A766-AAD0CC37193A}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\UE4CCP_Assignment1.Target.cs">
       <Filter>Source</Filter>
@@ -13,7 +13,7 @@
     </None>
     <None Include="..\..\.gitignore" />
     <Filter Include="Config">
-      <UniqueIdentifier>{2AD31EBE-BB86-4BC5-8291-D552F09E5A89}</UniqueIdentifier>
+      <UniqueIdentifier>{AB03BA8E-FFAE-4CB0-9B4A-F031FA1E03E1}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -31,7 +31,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\UE4CCP_Assignment1">
-      <UniqueIdentifier>{811E5990-96DB-4A3B-B51B-D0D03E5C8E28}</UniqueIdentifier>
+      <UniqueIdentifier>{81ED7E36-2856-4EC9-A27A-BB03229C94DF}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\UE4CCP_Assignment1\AmmoBase.cpp">
       <Filter>Source\UE4CCP_Assignment1</Filter>
@@ -145,7 +145,7 @@
       <Filter>Source\UE4CCP_Assignment1</Filter>
     </ClInclude>
     <Filter Include="Source\UE4CCP_Assignment1\Actors">
-      <UniqueIdentifier>{AF744AFD-5F43-4C57-A113-1D9A1C03F0D3}</UniqueIdentifier>
+      <UniqueIdentifier>{882A7436-DFF8-43B2-AFD8-0B8A8AA42C43}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\UE4CCP_Assignment1\Actors\TargetDummy.cpp">
       <Filter>Source\UE4CCP_Assignment1\Actors</Filter>
@@ -153,5 +153,15 @@
     <ClInclude Include="..\..\Source\UE4CCP_Assignment1\Actors\TargetDummy.h">
       <Filter>Source\UE4CCP_Assignment1\Actors</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Source\UE4CCP_Assignment1\WeaponScope.h">
+      <Filter>Source\UE4CCP_Assignment1</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Source\UE4CCP_Assignment1\WeaponScope.cpp">
+      <Filter>Source\UE4CCP_Assignment1</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
