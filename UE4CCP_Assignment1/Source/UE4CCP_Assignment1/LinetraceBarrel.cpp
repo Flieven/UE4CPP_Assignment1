@@ -10,6 +10,7 @@
 #include "GameFramework/Controller.h"
 #include "GameFramework/PlayerController.h"
 #include "AmmoBase.h"
+#include "LinetraceAmmo.h"
 #include "DamageComponent.h"
 
 #include "UE4CCP_Assignment1GameMode.h"
@@ -49,10 +50,15 @@ FVector ULinetraceBarrel::GetEndPoint(AController* controller, float travelDist)
 			FVector Start;
 			FVector End;
 			FRotator Rot;
+			FVector BulletSpread;
 
 			PlayerController->GetPlayerViewPoint(Start, Rot);
 
-			End = Start + (Rot.Vector() * travelDist);
+			BulletSpread.X = FMath::RandRange(FMath::Abs(Spread.X) * -1, Spread.X);
+			BulletSpread.Y = FMath::RandRange(FMath::Abs(Spread.Y) * -1, Spread.Y);
+			BulletSpread.Z = FMath::RandRange(FMath::Abs(Spread.Z) * -1, Spread.Z);
+
+			End = (Start + BulletSpread) + (Rot.Vector() * travelDist);
 			return End;
 		}
 	}
@@ -61,58 +67,59 @@ FVector ULinetraceBarrel::GetEndPoint(AController* controller, float travelDist)
 	return FVector::ZeroVector;
 }
 
-void ULinetraceBarrel::Fire(UPARAM(ref) AController* controller, TArray<UBarrel*>& SuccesfulBarrels)
+UBarrel* ULinetraceBarrel::Fire(UPARAM(ref) AController* controller)
 {
-	//if (!EquippedAmmo.AmmoType) {
-	//	UE_LOG(LogTemp, Warning, TEXT("Pointer: %d"), EquippedAmmo.AmmoType);
-	//	UE_LOG(LogTemp, Warning, TEXT("Arraylength: %d"), AmmoTypes.Num());
-	//	float tempdmg = EquippedAmmo.AmmoType->DamageValue;
-	//	UE_LOG(LogTemp, Warning, TEXT("Damage?: %f"), tempdmg);
-	//	/*UE_LOG(LogTemp, Warning, TEXT("Looking for ammo"));
-	//	for (FLinetraceAmmoStruct Type : AmmoTypes) {
-	//		UE_LOG(LogTemp, Warning, TEXT("Ammo iteration"));
-	//		if (Type.CurrentAmmo > 0) {
-	//			EquippedAmmo = Type;
-	//			UE_LOG(LogTemp, Warning, TEXT("Found ammo"));
-	//			break;
-	//		}
-	//	}
-	//	UE_LOG(LogTemp, Warning, TEXT("Done looking for ammo"));*/
-	//	UE_LOG(LogTemp, Warning, TEXT("No Ammo Equipped, Play Empty Clip Sound?"));
-	//	return;
-	//}
+	if (!EquippedAmmo.AmmoType) {
+		UE_LOG(LogTemp, Warning, TEXT("Pointer: %d"), EquippedAmmo.AmmoType);
+		UE_LOG(LogTemp, Warning, TEXT("Arraylength: %d"), AmmoTypes.Num());
+		float tempdmg = EquippedAmmo.AmmoType->DamageValue;
+		UE_LOG(LogTemp, Warning, TEXT("Damage?: %f"), tempdmg);
+		/*UE_LOG(LogTemp, Warning, TEXT("Looking for ammo"));
+		for (FLinetraceAmmoStruct Type : AmmoTypes) {
+			UE_LOG(LogTemp, Warning, TEXT("Ammo iteration"));
+			if (Type.CurrentAmmo > 0) {
+				EquippedAmmo = Type;
+				UE_LOG(LogTemp, Warning, TEXT("Found ammo"));
+				break;
+			}
+		}
+		UE_LOG(LogTemp, Warning, TEXT("Done looking for ammo"));*/
+		UE_LOG(LogTemp, Warning, TEXT("No Ammo Equipped, Play Empty Clip Sound?"));
+		return nullptr;
+	}
 
-	//if (EquippedAmmo.CurrentAmmo <= 0) {
-	//	UE_LOG(LogTemp, Warning, TEXT("Empty Mag, Play Empty Clip Sound?"));
-	//	return;
-	//}
+	if (EquippedAmmo.CurrentAmmo <= 0) {
+		UE_LOG(LogTemp, Warning, TEXT("Empty Mag, Play Empty Clip Sound?"));
+		return nullptr;
+	}
 
-	//SuccesfulBarrels.Add(this);
-	//EquippedAmmo.CurrentAmmo--;
+	EquippedAmmo.CurrentAmmo--;
 
-	////float Distance = Cast<ULineTraceAmmo>(EquippedAmmo.AmmoType)->LineDistance;
+	//float Distance = Cast<ULineTraceAmmo>(EquippedAmmo.AmmoType)->LineDistance;
 
-	//FCollisionQueryParams CollisionParams;
+	for (int i = 0; i < BulletsPerShot; i++)
+	{
+		FCollisionQueryParams CollisionParams;
 
-	//FVector SourcePoint = GetComponentTransform().GetLocation();
+		FVector SourcePoint = GetComponentTransform().GetLocation();
 
-	//FVector TargetPoint = GetEndPoint(controller, 500.f);
-
-	//DrawDebugLine(GetWorld(), SourcePoint, TargetPoint, FColor::Green, true);
-	//FHitResult Hit;
-	//UE_LOG(LogTemp, Warning, TEXT("HELLO"));
-	//if (GetWorld()->LineTraceSingleByChannel(Hit, SourcePoint, TargetPoint, ECC_Visibility, CollisionParams)) {
-	//	UE_LOG(LogTemp, Warning, TEXT("WHAT ABOUT HERE"));
-	//	UE_LOG(LogTemp, Warning, TEXT("hit: %s"), *Hit.GetActor()->GetFName().ToString());
-	//	if (Hit.GetActor() && Hit.GetActor()->FindComponentByClass<UDamageComponent>()) {
-	//		UE_LOG(LogTemp, Warning, TEXT("ACTOR? MONKAS"));
-	//		if (Cast<ULineTraceAmmo>(EquippedAmmo.AmmoType)) {
-	//			UE_LOG(LogTemp, Warning, TEXT("TOOK DAMAGE KEKW"));
-	//			//ULineTraceAmmo* TempAmmo = Cast<ULineTraceAmmo>(EquippedAmmo.AmmoType);
-	//			//Cast<UDamageComponent>(Hit.GetActor())->TakeDamage(Cast<ULineTraceAmmo>(EquippedAmmo.AmmoType)->DamageValue);
-	//			//Hit.GetActor()->FindComponentByClass<UDamageComponent>()->TakeDamage(Hit.GetActor(), 5.0f, nullptr, GetController(), this);
-	//			Hit.GetActor()->FindComponentByClass<UDamageComponent>()->TakeDamage(Cast<ULineTraceAmmo>(EquippedAmmo.AmmoType)->DamageValue);
-	//		}
-	//	}
-	//}
+		FVector TargetPoint = GetEndPoint(controller, EquippedAmmo.AmmoType->LineDistance);
+	
+		DrawDebugLine(GetWorld(), SourcePoint, TargetPoint, FColor::Green, true);
+		FHitResult Hit;
+		GetWorld()->LineTraceSingleByChannel(Hit, SourcePoint, TargetPoint, ECC_Visibility, CollisionParams);
+		if (Hit.GetActor() && Hit.GetActor()->FindComponentByClass<UDamageComponent>()) {
+			UE_LOG(LogTemp, Warning, TEXT("hit: %s"), *Hit.GetActor()->GetFName().ToString());
+			UE_LOG(LogTemp, Warning, TEXT("ACTOR? MONKAS"));
+			if (Cast<ULinetraceAmmo>(EquippedAmmo.AmmoType)) {
+				UE_LOG(LogTemp, Warning, TEXT("TOOK DAMAGE KEKW"));
+				//ULineTraceAmmo* TempAmmo = Cast<ULineTraceAmmo>(EquippedAmmo.AmmoType);
+				//Cast<UDamageComponent>(Hit.GetActor())->TakeDamage(Cast<ULineTraceAmmo>(EquippedAmmo.AmmoType)->DamageValue);
+				//Hit.GetActor()->FindComponentByClass<UDamageComponent>()->TakeDamage(Hit.GetActor(), 5.0f, nullptr, GetController(), this);
+				Hit.GetActor()->FindComponentByClass<UDamageComponent>()->TakeDamage(Cast<ULinetraceAmmo>(EquippedAmmo.AmmoType)->DamageValue);
+			}		
+		}
+	}
+			
+	return this;
 }

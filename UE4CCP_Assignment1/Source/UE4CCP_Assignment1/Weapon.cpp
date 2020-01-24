@@ -44,8 +44,11 @@ TArray<FRotator> AWeapon::Fire_Implementation(UPARAM(ref) TArray<UBarrel*>& Barr
 
 	for (UBarrel* Barrel : Barrels)
 	{
-		Barrel->Fire(controller);
-		RecoilArray.Add(Barrel->Fire(controller)->BarrelRecoil);
+		UBarrel* CurrentBarrel = Barrel->Fire(controller);
+		if (CurrentBarrel)
+		{
+			RecoilArray.Add(CurrentBarrel->BarrelRecoil);
+		}
 	}
 
 	return RecoilArray;

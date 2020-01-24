@@ -20,7 +20,7 @@ public:
 	UFUNCTION()
 		virtual UBarrel* Fire(UPARAM(ref) AController* controller);
 
-	UPROPERTY(BlueprintReadWrite, Category = "Barrel Data")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Barrel Data")
 		FRotator BarrelRecoil = FRotator::ZeroRotator;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Barrel Data")
