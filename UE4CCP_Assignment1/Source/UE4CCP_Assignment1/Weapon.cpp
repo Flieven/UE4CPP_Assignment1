@@ -5,6 +5,7 @@
 #include "DrawDebugHelpers.h"
 #include "Camera/CameraComponent.h"
 #include <string>
+#include "Containers/Array.h"
 #include "UE4CCP_Assignment1Character.h"
 
 // Sets default values for this component's properties
@@ -37,12 +38,17 @@ void AWeapon::Tick(float DeltaTime)
 
 }
 
-void AWeapon::Fire_Implementation(UPARAM(ref) TArray<UBarrel*>& Barrels, AController* controller, TArray<UBarrel*>& SuccesfulBarrels)
+TArray<FRotator> AWeapon::Fire_Implementation(UPARAM(ref) TArray<UBarrel*>& Barrels, AController* controller)
 {
+	RecoilArray.Empty();
+
 	for (UBarrel* Barrel : Barrels)
 	{
-		Barrel->Fire(controller, SuccesfulBarrels);
+		Barrel->Fire(controller);
+		RecoilArray.Add(Barrel->Fire(controller)->BarrelRecoil);
 	}
+
+	return RecoilArray;
 }
 
 void AWeapon::Reload_Implementation(UPARAM(ref)TArray<UBarrel*>& Barrels)

@@ -18,10 +18,16 @@ public:
 	UBarrel();
 
 	UFUNCTION()
-		virtual void Fire(UPARAM(ref) AController* controller, TArray<UBarrel*>& SuccesfulBarrels);
+		virtual UBarrel* Fire(UPARAM(ref) AController* controller);
 
 	UPROPERTY(BlueprintReadWrite, Category = "Barrel Data")
-		FRotator BarrelRecoil = FRotator(150.f, 0.f, 0.f);
+		FRotator BarrelRecoil = FRotator::ZeroRotator;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Barrel Data")
+		FVector Spread = FVector::ZeroVector;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Barrel Data")
+		int BulletsPerShot = 1;
 
 protected:
 	// Called when the game starts

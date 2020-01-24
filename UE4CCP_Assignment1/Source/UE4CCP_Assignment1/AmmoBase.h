@@ -17,8 +17,7 @@ class UE4CCP_ASSIGNMENT1_API UAmmoBase : public UObject
 	GENERATED_BODY()
 
 public:
-	UAmmoBase();
-	~UAmmoBase();
+	 UAmmoBase();
 };
 
 UCLASS(ClassGroup = (Custom), meta = (IsBlueprintBase = true))
@@ -28,7 +27,6 @@ class UE4CCP_ASSIGNMENT1_API ULineTraceAmmo : public UAmmoBase
 
 public:
 	ULineTraceAmmo();
-	~ULineTraceAmmo();
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo Details")
 		float DamageValue = 0;
@@ -46,7 +44,6 @@ class UE4CCP_ASSIGNMENT1_API UProjectileAmmo : public UAmmoBase
 
 public:
 	UProjectileAmmo();
-	~UProjectileAmmo();
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo Details")
 	TSubclassOf<AUE4CCP_Assignment1Projectile> ProjectileObject; /**support for creating and using objects for projectile ammo */

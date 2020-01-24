@@ -3,33 +3,8 @@
 
 #include "AmmoBase.h"
 
+UAmmoBase::UAmmoBase() {}
 
-UAmmoBase::UAmmoBase()
-{
+ULineTraceAmmo::ULineTraceAmmo() {}
 
-}
-
-UAmmoBase::~UAmmoBase()
-{
-
-}
-
-ULineTraceAmmo::ULineTraceAmmo()
-{
-
-}
-
-ULineTraceAmmo::~ULineTraceAmmo()
-{
-
-}
-
-UProjectileAmmo::UProjectileAmmo()
-{
-
-}
-
-UProjectileAmmo::~UProjectileAmmo()
-{
-
-}
+UProjectileAmmo::UProjectileAmmo() {}

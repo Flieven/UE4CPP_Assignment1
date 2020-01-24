@@ -5,19 +5,20 @@
 #include "UE4CCP_Assignment1Projectile.h"
 #include "ProjectileBase.h"
 
-void UProjectileBarrel::Fire(AController* Controller, TArray<UBarrel*>& SuccesfulBarrels)
+UBarrel* UProjectileBarrel::Fire(AController* Controller)
 {
 	//TODO: Make projectile spawn at component location.
 	for (int i = 0; i <= AmmoTypes.Num(); i++) {
 		if (i == AmmoTypes.Num()) {
 			UE_LOG(LogTemp, Warning, TEXT("No Usable Ammo, Play Empty Clip Sound?"));
-			return;
+			return nullptr;
 		}
-		if (AmmoTypes[i].CurrentAmmo > 0) 
+		else if (AmmoTypes[i].CurrentAmmo > 0) 
 		{
 			GetWorld()->SpawnActor<AUE4CCP_Assignment1Projectile>(Cast<UProjectileAmmo>(AmmoTypes[i].AmmoType)->ProjectileObject, GetComponentTransform().GetLocation(), GetComponentRotation());
-			break;
-			
+			return this;
 		}
 	}
+
+	return nullptr;
 }

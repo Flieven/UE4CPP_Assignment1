@@ -37,7 +37,7 @@ public:
 	UFUNCTION()
 	FVector GetEndPoint(AController* controller, float travelDist);
 
-	void Fire(UPARAM(ref) AController* controller, TArray<UBarrel*>& SuccesfulBarrels) override;
+	UBarrel* Fire(UPARAM(ref) AController* controller) override;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo Data")
 		TArray<ULineTraceAmmo*> AmmoTypes;

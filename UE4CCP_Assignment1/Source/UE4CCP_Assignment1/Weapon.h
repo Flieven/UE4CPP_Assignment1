@@ -25,6 +25,8 @@ class UE4CCP_ASSIGNMENT1_API AWeapon : public AActor, public IInterinterface
 {
 	GENERATED_BODY()
 
+	TArray<FRotator> RecoilArray;
+
 public:	
 	// Sets default values for this component's properties
 	AWeapon();
@@ -77,8 +79,8 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, meta = (HideSelfPin), Category = "Weapon Functions")
-	void Fire(UPARAM(ref) TArray<UBarrel*>& Barrels, AController* controller, TArray<UBarrel*>& SuccesfulBarrels);
-	void Fire_Implementation(UPARAM(ref) TArray<UBarrel*>& Barrels, AController* controller, TArray<UBarrel*>& SuccesfulBarrels);
+	TArray<FRotator> Fire(UPARAM(ref) TArray<UBarrel*>& Barrels, AController* controller);
+	TArray<FRotator> Fire_Implementation(UPARAM(ref) TArray<UBarrel*>& Barrels, AController* controller);
 	
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "Weapon Functions")
 	void Reload(UPARAM(ref) TArray<UBarrel*>& Barrels);

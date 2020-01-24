@@ -49,10 +49,15 @@ FVector ULinetraceBarrel::GetEndPoint(AController* controller, float travelDist)
 			FVector Start;
 			FVector End;
 			FRotator Rot;
+			FVector LineSpread;
 
 			PlayerController->GetPlayerViewPoint(Start, Rot);
 
-			End = Start + (Rot.Vector() * travelDist);
+			LineSpread.X = FMath::RandRange(FMath::Abs(Spread.X) * -1, Spread.X);
+			LineSpread.Y = FMath::RandRange(FMath::Abs(Spread.Y) * -1, Spread.Y);
+			LineSpread.Z = FMath::RandRange(FMath::Abs(Spread.Z) * -1, Spread.Z);
+
+			End = Start + ((Rot.Vector() + LineSpread) * travelDist);
 			return End;
 		}
 	}
@@ -61,7 +66,7 @@ FVector ULinetraceBarrel::GetEndPoint(AController* controller, float travelDist)
 	return FVector::ZeroVector;
 }
 
-void ULinetraceBarrel::Fire(UPARAM(ref) AController* controller, TArray<UBarrel*>& SuccesfulBarrels)
+UBarrel* ULinetraceBarrel::Fire(UPARAM(ref) AController* controller)
 {
 	if (!EquippedAmmo.AmmoType) {
 		UE_LOG(LogTemp, Warning, TEXT("Pointer: %d"), EquippedAmmo.AmmoType);
@@ -79,40 +84,45 @@ void ULinetraceBarrel::Fire(UPARAM(ref) AController* controller, TArray<UBarrel*
 		}
 		UE_LOG(LogTemp, Warning, TEXT("Done looking for ammo"));*/
 		UE_LOG(LogTemp, Warning, TEXT("No Ammo Equipped, Play Empty Clip Sound?"));
-		return;
+		return nullptr;
 	}
 
 	if (EquippedAmmo.CurrentAmmo <= 0) {
 		UE_LOG(LogTemp, Warning, TEXT("Empty Mag, Play Empty Clip Sound?"));
-		return;
+		return nullptr;
 	}
-
-	SuccesfulBarrels.Add(this);
 	EquippedAmmo.CurrentAmmo--;
 
 	//float Distance = Cast<ULineTraceAmmo>(EquippedAmmo.AmmoType)->LineDistance;
 
-	FCollisionQueryParams CollisionParams;
+	for (int i = 0; i < BulletsPerShot; i++)
+	{
+		FCollisionQueryParams CollisionParams;
 
-	FVector SourcePoint = GetComponentTransform().GetLocation();
+		FVector SourcePoint = GetComponentTransform().GetLocation();
 
-	FVector TargetPoint = GetEndPoint(controller, 500.f);
+		FVector TargetPoint = GetEndPoint(controller, 500.f);
 
-	DrawDebugLine(GetWorld(), SourcePoint, TargetPoint, FColor::Green, true);
-	FHitResult Hit;
-	UE_LOG(LogTemp, Warning, TEXT("HELLO"));
-	if (GetWorld()->LineTraceSingleByChannel(Hit, SourcePoint, TargetPoint, ECC_Visibility, CollisionParams)) {
-		UE_LOG(LogTemp, Warning, TEXT("WHAT ABOUT HERE"));
-		UE_LOG(LogTemp, Warning, TEXT("hit: %s"), *Hit.GetActor()->GetFName().ToString());
-		if (Hit.GetActor() && Hit.GetActor()->FindComponentByClass<UDamageComponent>()) {
-			UE_LOG(LogTemp, Warning, TEXT("ACTOR? MONKAS"));
-			if (Cast<ULineTraceAmmo>(EquippedAmmo.AmmoType)) {
-				UE_LOG(LogTemp, Warning, TEXT("TOOK DAMAGE KEKW"));
-				//ULineTraceAmmo* TempAmmo = Cast<ULineTraceAmmo>(EquippedAmmo.AmmoType);
-				//Cast<UDamageComponent>(Hit.GetActor())->TakeDamage(Cast<ULineTraceAmmo>(EquippedAmmo.AmmoType)->DamageValue);
-				//Hit.GetActor()->FindComponentByClass<UDamageComponent>()->TakeDamage(Hit.GetActor(), 5.0f, nullptr, GetController(), this);
-				Hit.GetActor()->FindComponentByClass<UDamageComponent>()->TakeDamage(Cast<ULineTraceAmmo>(EquippedAmmo.AmmoType)->DamageValue);
+		DrawDebugLine(GetWorld(), SourcePoint, TargetPoint, FColor::Green, true);
+		FHitResult Hit;
+		UE_LOG(LogTemp, Warning, TEXT("HELLO"));
+		if (GetWorld()->LineTraceSingleByChannel(Hit, SourcePoint, TargetPoint, ECC_Visibility, CollisionParams)) {
+			UE_LOG(LogTemp, Warning, TEXT("WHAT ABOUT HERE"));
+			UE_LOG(LogTemp, Warning, TEXT("hit: %s"), *Hit.GetActor()->GetFName().ToString());
+			if (Hit.GetActor() && Hit.GetActor()->FindComponentByClass<UDamageComponent>()) {
+				UE_LOG(LogTemp, Warning, TEXT("ACTOR? MONKAS"));
+				if (Cast<ULineTraceAmmo>(EquippedAmmo.AmmoType)) {
+					UE_LOG(LogTemp, Warning, TEXT("TOOK DAMAGE KEKW"));
+					//ULineTraceAmmo* TempAmmo = Cast<ULineTraceAmmo>(EquippedAmmo.AmmoType);
+					//Cast<UDamageComponent>(Hit.GetActor())->TakeDamage(Cast<ULineTraceAmmo>(EquippedAmmo.AmmoType)->DamageValue);
+					//Hit.GetActor()->FindComponentByClass<UDamageComponent>()->TakeDamage(Hit.GetActor(), 5.0f, nullptr, GetController(), this);
+					Hit.GetActor()->FindComponentByClass<UDamageComponent>()->TakeDamage(Cast<ULineTraceAmmo>(EquippedAmmo.AmmoType)->DamageValue);
+				}
 			}
+			return this;
 		}
 	}
+
+
+	return nullptr;
 }

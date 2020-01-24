@@ -27,7 +27,7 @@ class UE4CCP_ASSIGNMENT1_API UProjectileBarrel : public UBarrel
 	GENERATED_BODY()
 	
 public:
-	void Fire(UPARAM(ref) AController* Controller, TArray<UBarrel*>& SuccesfulBarrels) override;
+	UBarrel* Fire(UPARAM(ref) AController* Controller) override;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo Data")
 		TArray<FProjectileAmmoStruct> AmmoTypes;

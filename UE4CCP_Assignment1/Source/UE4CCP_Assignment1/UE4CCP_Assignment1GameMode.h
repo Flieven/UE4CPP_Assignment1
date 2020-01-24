@@ -26,14 +26,13 @@ public:
 
 	/*UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "GameMode Properties")
 		TArray<UAmmoBase*> SavedAmmoTypes;*/
-
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-		UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "GameMode Properties")
-		ULineTraceAmmo* LinetraceAmmoType = NewObject<ULineTraceAmmo>();
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "GameMode Properties")
+		ULineTraceAmmo* LinetraceAmmoType;
 
 		UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "GameMode Properties")
-		UProjectileAmmo* ProjectileAmmoType = NewObject<UProjectileAmmo>();
+			UProjectileAmmo* ProjectileAmmoType;
 
 		/*UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "GameMode Properties")
 			ULineTraceAmmo LinetraceAmmoType = new ULineTraceAmmo();
