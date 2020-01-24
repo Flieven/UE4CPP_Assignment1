@@ -4,7 +4,6 @@
 
 #include "CoreMinimal.h"
 #include "Barrel.h"
-#include "AmmoBase.h"
 #include "LinetraceAmmo.h"
 #include "UE4CCP_Assignment1GameMode.h"
 #include "LinetraceBarrel.generated.h"

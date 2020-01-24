@@ -287,10 +287,12 @@
     <ClCompile Include="..\..\Source\UE4CCP_Assignment1\Interinterface.cpp" />
     <ClInclude Include="..\..\Source\UE4CCP_Assignment1\Interinterface.h" />
     <ClCompile Include="..\..\Source\UE4CCP_Assignment1\LinetraceAmmo.cpp" />
-    <ClCompile Include="..\..\Source\UE4CCP_Assignment1\LinetraceBarrel.cpp" />
     <ClInclude Include="..\..\Source\UE4CCP_Assignment1\LinetraceAmmo.h" />
+    <ClCompile Include="..\..\Source\UE4CCP_Assignment1\LinetraceBarrel.cpp" />
     <ClInclude Include="..\..\Source\UE4CCP_Assignment1\LinetraceBarrel.h" />
+    <ClCompile Include="..\..\Source\UE4CCP_Assignment1\ProjectileAmmo.cpp" />
     <ClCompile Include="..\..\Source\UE4CCP_Assignment1\ProjectileBarrel.cpp" />
+    <ClInclude Include="..\..\Source\UE4CCP_Assignment1\ProjectileAmmo.h" />
     <ClInclude Include="..\..\Source\UE4CCP_Assignment1\ProjectileBarrel.h" />
     <ClCompile Include="..\..\Source\UE4CCP_Assignment1\ProjectileBase.cpp" />
     <ClInclude Include="..\..\Source\UE4CCP_Assignment1\ProjectileBase.h" />

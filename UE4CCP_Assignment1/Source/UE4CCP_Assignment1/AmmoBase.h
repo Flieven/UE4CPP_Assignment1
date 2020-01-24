@@ -21,22 +21,3 @@ public:
 	UAmmoBase();
 	~UAmmoBase();
 };
-
-
-
-UCLASS(BlueprintType, Blueprintable)
-class UE4CCP_ASSIGNMENT1_API UProjectileAmmo : public UAmmoBase
-{
-	GENERATED_BODY()
-
-public:
-	UProjectileAmmo();
-	~UProjectileAmmo();
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo Details")
-	TSubclassOf<AUE4CCP_Assignment1Projectile> ProjectileObject; /**support for creating and using objects for projectile ammo */
-
-protected:
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo Details")
-	float DamageValue = 0;
-};

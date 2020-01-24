@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Barrel.h"
-#include "AmmoBase.h"
+#include "ProjectileAmmo.h"
 #include "ProjectileBarrel.generated.h"
 
 USTRUCT(Blueprintable, BlueprintType)
@@ -14,7 +14,7 @@ struct FProjectileAmmoStruct
 
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo Data")
-		TSubclassOf<UProjectileAmmo> AmmoType;
+		UProjectileAmmo* AmmoType;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo Data")
 		int AmmoCapacity = 30;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo Data")
@@ -35,7 +35,7 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo Data")
 		float ZeroingDistance;
 
-	/*UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo Data")
-		FProjectileAmmoStruct EquippedAmmo;*/
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo Data")
+		FProjectileAmmoStruct EquippedAmmo;
 
 };

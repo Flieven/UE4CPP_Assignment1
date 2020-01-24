@@ -13,13 +13,3 @@ UAmmoBase::~UAmmoBase()
 {
 
 }
-
-UProjectileAmmo::UProjectileAmmo()
-{
-
-}
-
-UProjectileAmmo::~UProjectileAmmo()
-{
-
-}

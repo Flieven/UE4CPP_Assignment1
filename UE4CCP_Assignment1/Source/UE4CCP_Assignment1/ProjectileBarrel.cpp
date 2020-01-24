@@ -15,7 +15,11 @@ UBarrel* UProjectileBarrel::Fire(AController* Controller)
 		}
 		else if (AmmoTypes[i].CurrentAmmo > 0) 
 		{
-			GetWorld()->SpawnActor<AUE4CCP_Assignment1Projectile>(Cast<UProjectileAmmo>(AmmoTypes[i].AmmoType)->ProjectileObject, GetComponentTransform().GetLocation(), GetComponentRotation());
+			for (int j = 0; j < BulletsPerShot; j++)
+			{
+				GetWorld()->SpawnActor<AUE4CCP_Assignment1Projectile>(Cast<UProjectileAmmo>(AmmoTypes[i].AmmoType)->ProjectileObject, GetComponentTransform().GetLocation(), GetComponentRotation());
+			}
+			
 			return this;
 		}
 	}
