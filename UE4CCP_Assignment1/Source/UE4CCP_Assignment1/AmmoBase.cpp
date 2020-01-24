@@ -14,15 +14,15 @@ UAmmoBase::~UAmmoBase()
 
 }
 
-ULineTraceAmmo::ULineTraceAmmo()
-{
-
-}
-
-ULineTraceAmmo::~ULineTraceAmmo()
-{
-
-}
+//ULineTraceAmmo::ULineTraceAmmo()
+//{
+//
+//}
+//
+//ULineTraceAmmo::~ULineTraceAmmo()
+//{
+//
+//}
 
 UProjectileAmmo::UProjectileAmmo()
 {
