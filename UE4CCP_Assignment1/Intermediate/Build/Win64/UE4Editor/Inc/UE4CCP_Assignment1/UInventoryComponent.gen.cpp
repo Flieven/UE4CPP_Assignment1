@@ -49,8 +49,10 @@ void EmptyLinkFunctionForGeneratedCodeUInventoryComponent() {}
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UUInventoryComponent_Statics::Class_MetaDataParams[] = {
 		{ "BlueprintSpawnableComponent", "" },
 		{ "ClassGroupNames", "Custom" },
+		{ "Comment", "/**\n * Inventory component\n * Allows the attached actor to save a number of objects when interacting with them\n * Currently only used by the player character\n */" },
 		{ "IncludePath", "UInventoryComponent.h" },
 		{ "ModuleRelativePath", "UInventoryComponent.h" },
+		{ "ToolTip", "Inventory component\nAllows the attached actor to save a number of objects when interacting with them\nCurrently only used by the player character" },
 	};
 #endif
 #if WITH_METADATA
@@ -92,7 +94,7 @@ void EmptyLinkFunctionForGeneratedCodeUInventoryComponent() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UUInventoryComponent, 2092768617);
+	IMPLEMENT_CLASS(UUInventoryComponent, 2574002976);
 	template<> UE4CCP_ASSIGNMENT1_API UClass* StaticClass<UUInventoryComponent>()
 	{
 		return UUInventoryComponent::StaticClass();

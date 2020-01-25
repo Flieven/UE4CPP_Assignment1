@@ -54,11 +54,10 @@ TArray<FRotator> AWeapon::Fire_Implementation(UPARAM(ref) TArray<UBarrel*>& Barr
 	return RecoilArray;
 }
 
-void AWeapon::Reload_Implementation(UPARAM(ref)TArray<UBarrel*>& Barrels)
+
+void AWeapon::Reload_Implementation(UBarrel* Barrel)
 {
-	for (UBarrel* Barrel : Barrels) {
-		//if
-	}
+	//Check inventory for usable ammunition
 }
 
 void AWeapon::OnInteract_Implementation(AActor* Caller)

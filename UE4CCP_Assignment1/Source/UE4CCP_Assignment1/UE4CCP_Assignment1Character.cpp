@@ -14,6 +14,7 @@
 #include "GameFramework/InputSettings.h"
 
 #include "Kismet/GameplayStatics.h"
+#include "Kismet/KismetSystemLibrary.h"
 
 #include "HeadMountedDisplayFunctionLibrary.h"
 
@@ -55,6 +56,8 @@ AUE4CCP_Assignment1Character::AUE4CCP_Assignment1Character()
 	Mesh1P->SetRelativeLocation(FVector(-0.5f, -4.4f, -155.7f));
 
 	Inventory = CreateDefaultSubobject<UUInventoryComponent>(TEXT("CharacterInventory"));
+
+	
 }
 
 void AUE4CCP_Assignment1Character::BeginPlay()
@@ -62,8 +65,33 @@ void AUE4CCP_Assignment1Character::BeginPlay()
 	// Call the base class  
 	Super::BeginPlay();
 
+	GetCapsuleComponent()->OnComponentBeginOverlap.AddDynamic(this, &AUE4CCP_Assignment1Character::BeginOverlap);
+	//GetCapsuleComponent()->
 	// Show or hide the two versions of the gun based on whether or not we're using motion controllers.
 	Mesh1P->SetHiddenInGame(false, true);
+}
+
+//void AUE4CCP_Assignment1Character::OnOwnerBeginOverlap(AActor* owner, AActor* otherActor)
+//{
+//}
+
+void AUE4CCP_Assignment1Character::BeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+	UE_LOG(LogTemp, Display, TEXT("BeginOverlap Called"));
+	if (Inventory && Inventory->bHasEmptySlot())
+	{
+		UE_LOG(LogTemp, Display, TEXT("Adding"));
+		Inventory->Add(OtherActor);
+
+		Inventory->DebugInventory();
+
+		if (OtherActor->GetClass()->ImplementsInterface(UInterinterface::StaticClass()))
+			IInterinterface::Execute_OnOverlap(OtherActor, this);
+		else
+			UE_LOG(LogTemp, Display, TEXT("Couldn't cast"));
+	}
+	else { UE_LOG(LogTemp, Display, TEXT("ERROR 404: Inventory Not Found")); }
+	UE_LOG(LogTemp, Display, TEXT("Added?"));
 }
 
 #pragma region Interactions

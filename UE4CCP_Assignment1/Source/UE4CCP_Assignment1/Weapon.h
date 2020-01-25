@@ -85,8 +85,9 @@ public:
 	 * Takes an array of barrels to call reload on
 	 */
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "Weapon Functions")
-	void Reload(UPARAM(ref) TArray<UBarrel*>& Barrels);
-	void Reload_Implementation(UPARAM(ref) TArray<UBarrel*>& Barrels);
+	void Reload(UBarrel* Barrel);
+	void Reload_Implementation(UBarrel* Barrel);
+
 
 	/**
 	 * Primary event used to access blueprint from other blueprints

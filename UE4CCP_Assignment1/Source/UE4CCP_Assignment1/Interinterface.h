@@ -47,4 +47,7 @@ public:
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Interaction")
 		void EndFocus();
 
+
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "Interaction")
+		void OnOverlap(AActor* Caller);
 };

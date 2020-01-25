@@ -36,6 +36,9 @@ public:
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Interaction")
 		void EndFocus();
 	virtual void  EndFocus_Implementation();
+
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "Interaction")
+		void OnOverlap(AActor* Caller);
 protected:
 	UPROPERTY(EditAnywhere, Category = "Texture Properties")
 		UTexture2D* AmmoTexture;

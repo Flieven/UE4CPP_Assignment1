@@ -32,7 +32,7 @@ public:
 	AUE4CCP_Assignment1Character();
 
 	/** Pawn mesh: 1st person view (arms; seen only by self) */
-	UPROPERTY(VisibleDefaultsOnly, Category = Mesh)
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Mesh)
 		class USkeletalMeshComponent* Mesh1P;
 
 	/** Base turn rate, in deg/sec. Other scaling may affect final turn rate. */
@@ -70,6 +70,14 @@ public:
 
 protected:
 	virtual void BeginPlay();
+
+	UFUNCTION()
+	void BeginOverlap(UPrimitiveComponent* OverlappedComponent,
+		AActor* OtherActor,
+		UPrimitiveComponent* OtherComp,
+		int32 OtherBodyIndex,
+		bool bFromSweep,
+		const FHitResult& SweepResult);
 	
 	/** Fires a projectile. */
 	void OnFire();

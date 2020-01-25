@@ -1,24 +1,24 @@
-C:\Users\Leon.Andersson\Documents\UE4CPP_Assignment1\UE4CCP_Assignment1\Intermediate\Build\Win64\UE4Editor\Development\UE4CCP_Assignment1\Definitions.UE4CCP_Assignment1.h
-C:\Users\Leon.Andersson\Documents\UE4CPP_Assignment1\UE4CCP_Assignment1\Source\UE4CCP_Assignment1\UE4CCP_Assignment1GameMode.h
+C:\Users\theod\Documents\Unreal Projects\UE4CPP_Assignment1\UE4CCP_Assignment1\Intermediate\Build\Win64\UE4Editor\Development\UE4CCP_Assignment1\Definitions.UE4CCP_Assignment1.h
+C:\Users\theod\Documents\Unreal Projects\UE4CPP_Assignment1\UE4CCP_Assignment1\Source\UE4CCP_Assignment1\UE4CCP_Assignment1GameMode.h
 C:\Program Files\Epic Games\UE_4.24\Engine\Source\Runtime\Engine\Classes\GameFramework/GameModeBase.h
 C:\Program Files\Epic Games\UE_4.24\Engine\Source\Runtime\Engine\Classes\Engine/ServerStatReplicator.h
 C:\Program Files\Epic Games\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\ServerStatReplicator.generated.h
 C:\Program Files\Epic Games\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\GameModeBase.generated.h
-C:\Users\Leon.Andersson\Documents\UE4CPP_Assignment1\UE4CCP_Assignment1\Source\UE4CCP_Assignment1\AmmoBase.h
-C:\Users\Leon.Andersson\Documents\UE4CPP_Assignment1\UE4CCP_Assignment1\Source\UE4CCP_Assignment1\UE4CCP_Assignment1Projectile.h
-C:\Users\Leon.Andersson\Documents\UE4CPP_Assignment1\UE4CCP_Assignment1\Intermediate\Build\Win64\UE4Editor\Inc\UE4CCP_Assignment1\UE4CCP_Assignment1Projectile.generated.h
-C:\Users\Leon.Andersson\Documents\UE4CPP_Assignment1\UE4CCP_Assignment1\Intermediate\Build\Win64\UE4Editor\Inc\UE4CCP_Assignment1\AmmoBase.generated.h
-C:\Users\Leon.Andersson\Documents\UE4CPP_Assignment1\UE4CCP_Assignment1\Intermediate\Build\Win64\UE4Editor\Inc\UE4CCP_Assignment1\UE4CCP_Assignment1GameMode.generated.h
-C:\Users\Leon.Andersson\Documents\UE4CPP_Assignment1\UE4CCP_Assignment1\Source\UE4CCP_Assignment1\UE4CCP_Assignment1HUD.h
+C:\Users\theod\Documents\Unreal Projects\UE4CPP_Assignment1\UE4CCP_Assignment1\Source\UE4CCP_Assignment1\AmmoBase.h
+C:\Users\theod\Documents\Unreal Projects\UE4CPP_Assignment1\UE4CCP_Assignment1\Source\UE4CCP_Assignment1\UE4CCP_Assignment1Projectile.h
+C:\Users\theod\Documents\Unreal Projects\UE4CPP_Assignment1\UE4CCP_Assignment1\Intermediate\Build\Win64\UE4Editor\Inc\UE4CCP_Assignment1\UE4CCP_Assignment1Projectile.generated.h
+C:\Users\theod\Documents\Unreal Projects\UE4CPP_Assignment1\UE4CCP_Assignment1\Intermediate\Build\Win64\UE4Editor\Inc\UE4CCP_Assignment1\AmmoBase.generated.h
+C:\Users\theod\Documents\Unreal Projects\UE4CPP_Assignment1\UE4CCP_Assignment1\Intermediate\Build\Win64\UE4Editor\Inc\UE4CCP_Assignment1\UE4CCP_Assignment1GameMode.generated.h
+C:\Users\theod\Documents\Unreal Projects\UE4CPP_Assignment1\UE4CCP_Assignment1\Source\UE4CCP_Assignment1\UE4CCP_Assignment1HUD.h
 C:\Program Files\Epic Games\UE_4.24\Engine\Source\Runtime\Engine\Classes\GameFramework/HUD.h
 C:\Program Files\Epic Games\UE_4.24\Engine\Source\Runtime\Engine\Classes\GameFramework/HUDHitBox.h
 C:\Program Files\Epic Games\UE_4.24\Engine\Source\Runtime\Engine\Classes\GameFramework/DebugTextInfo.h
 C:\Program Files\Epic Games\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\DebugTextInfo.generated.h
 C:\Program Files\Epic Games\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\HUD.generated.h
-C:\Users\Leon.Andersson\Documents\UE4CPP_Assignment1\UE4CCP_Assignment1\Intermediate\Build\Win64\UE4Editor\Inc\UE4CCP_Assignment1\UE4CCP_Assignment1HUD.generated.h
-C:\Users\Leon.Andersson\Documents\UE4CPP_Assignment1\UE4CCP_Assignment1\Source\UE4CCP_Assignment1\UE4CCP_Assignment1Character.h
+C:\Users\theod\Documents\Unreal Projects\UE4CPP_Assignment1\UE4CCP_Assignment1\Intermediate\Build\Win64\UE4Editor\Inc\UE4CCP_Assignment1\UE4CCP_Assignment1HUD.generated.h
+C:\Users\theod\Documents\Unreal Projects\UE4CPP_Assignment1\UE4CCP_Assignment1\Source\UE4CCP_Assignment1\UE4CCP_Assignment1Character.h
 C:\Program Files\Epic Games\UE_4.24\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h
 C:\Program Files\Epic Games\UE_4.24\Engine\Source\Runtime\Engine\Classes\GameFramework/RootMotionSource.h
 C:\Program Files\Epic Games\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\RootMotionSource.generated.h
 C:\Program Files\Epic Games\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\Character.generated.h
-C:\Users\Leon.Andersson\Documents\UE4CPP_Assignment1\UE4CCP_Assignment1\Intermediate\Build\Win64\UE4Editor\Inc\UE4CCP_Assignment1\UE4CCP_Assignment1Character.generated.h
+C:\Users\theod\Documents\Unreal Projects\UE4CPP_Assignment1\UE4CCP_Assignment1\Intermediate\Build\Win64\UE4Editor\Inc\UE4CCP_Assignment1\UE4CCP_Assignment1Character.generated.h
