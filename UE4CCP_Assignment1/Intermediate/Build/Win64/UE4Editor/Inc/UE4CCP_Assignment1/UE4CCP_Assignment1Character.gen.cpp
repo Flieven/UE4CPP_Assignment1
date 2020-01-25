@@ -23,10 +23,10 @@ void EmptyLinkFunctionForGeneratedCodeUE4CCP_Assignment1Character() {}
 	ENGINE_API UScriptStruct* Z_Construct_UScriptStruct_FHitResult();
 	ENGINE_API UClass* Z_Construct_UClass_UPrimitiveComponent_NoRegister();
 	UE4CCP_ASSIGNMENT1_API UFunction* Z_Construct_UFunction_AUE4CCP_Assignment1Character_UpdateEquippedWeapon();
+	UE4CCP_ASSIGNMENT1_API UClass* Z_Construct_UClass_UUInventoryComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UAnimMontage_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_USoundBase_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_USkeletalMeshComponent_NoRegister();
-	UE4CCP_ASSIGNMENT1_API UClass* Z_Construct_UClass_UUInventoryComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UCameraComponent_NoRegister();
 // End Cross Module References
 	void AUE4CCP_Assignment1Character::StaticRegisterNativesAUE4CCP_Assignment1Character()
@@ -199,6 +199,10 @@ void EmptyLinkFunctionForGeneratedCodeUE4CCP_Assignment1Character() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
 #if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Inventory_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_Inventory;
+#if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_YeetStrength_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_YeetStrength;
@@ -231,10 +235,6 @@ void EmptyLinkFunctionForGeneratedCodeUE4CCP_Assignment1Character() {}
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_Mesh1P;
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Inventory_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_Inventory;
-#if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_CurrentInventorySlot_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FUnsizedIntPropertyParams NewProp_CurrentInventorySlot;
@@ -262,6 +262,13 @@ void EmptyLinkFunctionForGeneratedCodeUE4CCP_Assignment1Character() {}
 		{ "ModuleRelativePath", "UE4CCP_Assignment1Character.h" },
 	};
 #endif
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_Inventory_MetaData[] = {
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "UE4CCP_Assignment1Character.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_Inventory = { "Inventory", nullptr, (EPropertyFlags)0x0010000000080008, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AUE4CCP_Assignment1Character, Inventory), Z_Construct_UClass_UUInventoryComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_Inventory_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_Inventory_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_YeetStrength_MetaData[] = {
 		{ "Category", "Gameplay" },
@@ -330,13 +337,6 @@ void EmptyLinkFunctionForGeneratedCodeUE4CCP_Assignment1Character() {}
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_Mesh1P = { "Mesh1P", nullptr, (EPropertyFlags)0x00100000000a001d, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AUE4CCP_Assignment1Character, Mesh1P), Z_Construct_UClass_USkeletalMeshComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_Mesh1P_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_Mesh1P_MetaData)) };
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_Inventory_MetaData[] = {
-		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "UE4CCP_Assignment1Character.h" },
-	};
-#endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_Inventory = { "Inventory", nullptr, (EPropertyFlags)0x0040000000080008, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AUE4CCP_Assignment1Character, Inventory), Z_Construct_UClass_UUInventoryComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_Inventory_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_Inventory_MetaData)) };
-#if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_CurrentInventorySlot_MetaData[] = {
 		{ "ModuleRelativePath", "UE4CCP_Assignment1Character.h" },
 	};
@@ -354,6 +354,7 @@ void EmptyLinkFunctionForGeneratedCodeUE4CCP_Assignment1Character() {}
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_FirstPersonCameraComponent = { "FirstPersonCameraComponent", nullptr, (EPropertyFlags)0x00400000000a001d, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AUE4CCP_Assignment1Character, FirstPersonCameraComponent), Z_Construct_UClass_UCameraComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_FirstPersonCameraComponent_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_FirstPersonCameraComponent_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_Inventory,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_YeetStrength,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_InteractionDist,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_EquippedObject,
@@ -362,7 +363,6 @@ void EmptyLinkFunctionForGeneratedCodeUE4CCP_Assignment1Character() {}
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_BaseLookUpRate,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_BaseTurnRate,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_Mesh1P,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_Inventory,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_CurrentInventorySlot,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::NewProp_FirstPersonCameraComponent,
 	};
@@ -393,7 +393,7 @@ void EmptyLinkFunctionForGeneratedCodeUE4CCP_Assignment1Character() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AUE4CCP_Assignment1Character, 2620643206);
+	IMPLEMENT_CLASS(AUE4CCP_Assignment1Character, 3434868981);
 	template<> UE4CCP_ASSIGNMENT1_API UClass* StaticClass<AUE4CCP_Assignment1Character>()
 	{
 		return AUE4CCP_Assignment1Character::StaticClass();

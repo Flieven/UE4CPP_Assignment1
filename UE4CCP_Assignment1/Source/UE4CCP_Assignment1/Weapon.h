@@ -85,8 +85,12 @@ public:
 	 * Takes an array of barrels to call reload on
 	 */
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "Weapon Functions")
-	void Reload(UBarrel* Barrel);
-	void Reload_Implementation(UBarrel* Barrel);
+		void Reload(AActor* Caller, UBarrel* Barrel);
+	void Reload_Implementation(AActor* Caller, UBarrel* Barrel);
+
+	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent, Category = "Weapon Functions")
+	void ReloadExtrenally(AActor* Caller);
+	void ReloadExternally_Implementation(AActor* Caller);
 
 
 	/**
