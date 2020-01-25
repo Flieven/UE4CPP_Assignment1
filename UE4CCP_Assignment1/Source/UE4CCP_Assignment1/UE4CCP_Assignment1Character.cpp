@@ -129,6 +129,8 @@ void AUE4CCP_Assignment1Character::Interact()
 			{
 				UE_LOG(LogTemp, Display, TEXT("Hit detected!"));
 				AddToInventory(hit.GetActor());
+
+				Cast<IInterinterface>(hit.GetActor())->OnInteract_Implementation(this);
 			}
 			else if (hit.GetActor()->FindComponentByClass<UDamageComponent>()) 
 			{ 
@@ -186,8 +188,6 @@ void AUE4CCP_Assignment1Character::AddToInventory(AActor* Object)
 		Inventory->Add(Object);
 
 		Inventory->DebugInventory();
-
-		Cast<IInterinterface>(Object)->OnInteract_Implementation(this);
 	}
 	else { UE_LOG(LogTemp, Display, TEXT("ERROR 404: Inventory Not Found")); }
 }
