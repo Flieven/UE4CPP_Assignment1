@@ -63,27 +63,34 @@ void AWeapon::Reload_Implementation(AActor* Caller, UBarrel* Barrel)
 	if (Cast<AUE4CCP_Assignment1Character>(Caller)) {
 		AUE4CCP_Assignment1Character* owner = Cast<AUE4CCP_Assignment1Character>(Caller);
 
-		//if (Cast<ULinetraceBarrel>(Barrel)) {
-		//	for (AActor* a : owner->Inventory->Inventory) {
-		//		if (a->GetClass()->ImplementsInterface(UAmmoInterface::StaticClass())) {
-		//			UAmmoBase* AmmoType = IAmmoInterface::Execute_GetAmmoType(a);
-		//			if (Cast<ULinetraceAmmo>(AmmoType)) {
-		//				FLinetraceAmmoStruct* LTAS = &Cast<ULinetraceBarrel>(Barrel)->EquippedAmmo;
+		if (Cast<ULinetraceBarrel>(Barrel)) {
+			for (AActor* a : owner->Inventory->Inventory) {
+				if (a) {
+					if (a->GetClass()->ImplementsInterface(UAmmoInterface::StaticClass())) {
+						UE_LOG(LogTemp, Warning, TEXT("1"));
+						UAmmoBase* AmmoType = IAmmoInterface::Execute_GetAmmoType(a);
+						if (Cast<ULinetraceAmmo>(AmmoType)) {
+							UE_LOG(LogTemp, Warning, TEXT("2"));
+							FLinetraceAmmoStruct* LTAS = &Cast<ULinetraceBarrel>(Barrel)->EquippedAmmo;
 
-		//				if ((LTAS->AmmoCapacity - LTAS->CurrentAmmo) <= IAmmoInterface::Execute_GetCurrentAmmo(a)) {
-		//					LTAS->CurrentAmmo += IAmmoInterface::Execute_GetCurrentAmmo(a);
-		//				}
-		//				else {
-		//					IAmmoInterface::Execute_SetCurrentAmmo(a, IAmmoInterface::Execute_GetCurrentAmmo(a) - LTAS->AmmoCapacity - LTAS->CurrentAmmo);
-		//					LTAS->CurrentAmmo = LTAS->AmmoCapacity;
-		//				}
-
-		//				//LTAS = (LTAS->AmmoCapacity - LTAS->CurrentAmmo) <= IAmmoInterface::Execute_GetCurrentAmmo(a) ? LTAS->CurrentAmmo + IAmmoInterface::Execute_GetCurrentAmmo(a)
-		//			}
-		//		}
-		//	}
-		//}
-		////owner->Inventory
+							if ((LTAS->AmmoCapacity - LTAS->CurrentAmmo) <= IAmmoInterface::Execute_GetCurrentAmmo(a)) {
+								LTAS->CurrentAmmo += IAmmoInterface::Execute_GetCurrentAmmo(a);
+							}
+							else {
+								IAmmoInterface::Execute_SetCurrentAmmo(a, IAmmoInterface::Execute_GetCurrentAmmo(a) - LTAS->AmmoCapacity - LTAS->CurrentAmmo);
+								LTAS->CurrentAmmo = LTAS->AmmoCapacity;
+							}
+							UE_LOG(LogTemp, Warning, TEXT("RELOADED"));
+							break;
+							//LTAS = (LTAS->AmmoCapacity - LTAS->CurrentAmmo) <= IAmmoInterface::Execute_GetCurrentAmmo(a) ? LTAS->CurrentAmmo + IAmmoInterface::Execute_GetCurrentAmmo(a)
+						}
+					}
+				}
+				else {
+					UE_LOG(LogTemp, Warning, TEXT("NULLPTR"));
+				}
+			}
+		}
 	}
 }
 
