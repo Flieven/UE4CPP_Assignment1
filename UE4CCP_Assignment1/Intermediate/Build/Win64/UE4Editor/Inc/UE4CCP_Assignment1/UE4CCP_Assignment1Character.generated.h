@@ -8,8 +8,8 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
-class UPrimitiveComponent;
 class AActor;
+class UPrimitiveComponent;
 struct FHitResult;
 #ifdef UE4CCP_ASSIGNMENT1_UE4CCP_Assignment1Character_generated_h
 #error "UE4CCP_Assignment1Character.generated.h already included, missing '#pragma once' in UE4CCP_Assignment1Character.h"
@@ -18,6 +18,15 @@ struct FHitResult;
 
 #define UE4CCP_Assignment1_Source_UE4CCP_Assignment1_UE4CCP_Assignment1Character_h_15_SPARSE_DATA
 #define UE4CCP_Assignment1_Source_UE4CCP_Assignment1_UE4CCP_Assignment1Character_h_15_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execAddToInventory) \
+	{ \
+		P_GET_OBJECT(AActor,Z_Param_Object); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->AddToInventory(Z_Param_Object); \
+		P_NATIVE_END; \
+	} \
  \
 	DECLARE_FUNCTION(execBeginOverlap) \
 	{ \
@@ -44,6 +53,15 @@ struct FHitResult;
 
 
 #define UE4CCP_Assignment1_Source_UE4CCP_Assignment1_UE4CCP_Assignment1Character_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execAddToInventory) \
+	{ \
+		P_GET_OBJECT(AActor,Z_Param_Object); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->AddToInventory(Z_Param_Object); \
+		P_NATIVE_END; \
+	} \
  \
 	DECLARE_FUNCTION(execBeginOverlap) \
 	{ \

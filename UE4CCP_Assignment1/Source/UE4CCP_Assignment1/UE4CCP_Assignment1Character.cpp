@@ -128,15 +128,7 @@ void AUE4CCP_Assignment1Character::Interact()
 			if (hit.GetActor()->Tags.Contains("PickUp") && Cast<IInterinterface>(hit.Actor))
 			{
 				UE_LOG(LogTemp, Display, TEXT("Hit detected!"));
-				if (Inventory && Inventory->bHasEmptySlot())
-				{
-					Inventory->Add(hit.GetActor());
-
-					Inventory->DebugInventory();
-
-					Cast<IInterinterface>(hit.GetActor())->OnInteract_Implementation(this);
-				}
-				else { UE_LOG(LogTemp, Display, TEXT("ERROR 404: Inventory Not Found")); }
+				AddToInventory(hit.GetActor());
 			}
 			else if (hit.GetActor()->FindComponentByClass<UDamageComponent>()) 
 			{ 
@@ -186,6 +178,19 @@ void AUE4CCP_Assignment1Character::YeetEquippedWeapon()
 }
 
 #pragma endregion
+
+void AUE4CCP_Assignment1Character::AddToInventory(AActor* Object)
+{
+	if (Inventory && Inventory->bHasEmptySlot())
+	{
+		Inventory->Add(Object);
+
+		Inventory->DebugInventory();
+
+		Cast<IInterinterface>(Object)->OnInteract_Implementation(this);
+	}
+	else { UE_LOG(LogTemp, Display, TEXT("ERROR 404: Inventory Not Found")); }
+}
 
 void AUE4CCP_Assignment1Character::SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent)
 {

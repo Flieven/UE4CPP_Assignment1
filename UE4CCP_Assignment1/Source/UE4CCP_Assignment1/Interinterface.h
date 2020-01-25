@@ -50,4 +50,5 @@ public:
 
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "Interaction")
 		void OnOverlap(AActor* Caller);
+	virtual void OnOverlap_Implementation(AActor* Caller) {};
 };

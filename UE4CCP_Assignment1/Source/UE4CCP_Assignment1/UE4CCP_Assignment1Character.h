@@ -78,14 +78,11 @@ protected:
 		int32 OtherBodyIndex,
 		bool bFromSweep,
 		const FHitResult& SweepResult);
-	
-	/** Fires a projectile. */
-	void OnFire();
 
 	/** Handles moving forward/backward */
 	void MoveForward(float Val);
 
-	/** Handles stafing movement, left and right */
+	/** Handles strafing movement, left and right */
 	void MoveRight(float Val);
 
 	/**
@@ -100,13 +97,32 @@ protected:
 	 */
 	void LookUpAtRate(float Rate);
 
+	/**
+	 * Update the equipped object reference to current slot
+	 */
 	void UpdateCurrentSlot();
+	/**
+	 * Update to next slot number for inventory
+	 */
 	void UpdateSlotNumber(float value);
 
+	/**
+	 * Drop the currently equipped object
+	 */
 	void DropItem();
 
+	/**
+	 * Line trace from character forward and activate if hitting something
+	 * Current hit ables: anything with an interaction interface that is tagged "PickUp"
+	 */
 	void Interact();
 	
+	/**
+	 * Attempts to update and add given object to the inventory
+	 */
+	UFUNCTION(BlueprintCallable, Category = "Inventory Management")
+	void AddToInventory(AActor* Object);
+
 	// APawn interface
 	virtual void SetupPlayerInputComponent(UInputComponent* InputComponent) override;
 	// End of APawn interface

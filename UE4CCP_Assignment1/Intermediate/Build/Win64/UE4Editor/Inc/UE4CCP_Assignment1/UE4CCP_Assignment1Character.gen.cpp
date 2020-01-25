@@ -17,10 +17,11 @@ void EmptyLinkFunctionForGeneratedCodeUE4CCP_Assignment1Character() {}
 	UE4CCP_ASSIGNMENT1_API UClass* Z_Construct_UClass_AUE4CCP_Assignment1Character();
 	ENGINE_API UClass* Z_Construct_UClass_ACharacter();
 	UPackage* Z_Construct_UPackage__Script_UE4CCP_Assignment1();
+	UE4CCP_ASSIGNMENT1_API UFunction* Z_Construct_UFunction_AUE4CCP_Assignment1Character_AddToInventory();
+	ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
 	UE4CCP_ASSIGNMENT1_API UFunction* Z_Construct_UFunction_AUE4CCP_Assignment1Character_BeginOverlap();
 	ENGINE_API UScriptStruct* Z_Construct_UScriptStruct_FHitResult();
 	ENGINE_API UClass* Z_Construct_UClass_UPrimitiveComponent_NoRegister();
-	ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
 	UE4CCP_ASSIGNMENT1_API UFunction* Z_Construct_UFunction_AUE4CCP_Assignment1Character_UpdateEquippedWeapon();
 	ENGINE_API UClass* Z_Construct_UClass_UAnimMontage_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_USoundBase_NoRegister();
@@ -32,10 +33,46 @@ void EmptyLinkFunctionForGeneratedCodeUE4CCP_Assignment1Character() {}
 	{
 		UClass* Class = AUE4CCP_Assignment1Character::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
+			{ "AddToInventory", &AUE4CCP_Assignment1Character::execAddToInventory },
 			{ "BeginOverlap", &AUE4CCP_Assignment1Character::execBeginOverlap },
 			{ "UpdateEquippedWeapon", &AUE4CCP_Assignment1Character::execUpdateEquippedWeapon },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
+	}
+	struct Z_Construct_UFunction_AUE4CCP_Assignment1Character_AddToInventory_Statics
+	{
+		struct UE4CCP_Assignment1Character_eventAddToInventory_Parms
+		{
+			AActor* Object;
+		};
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_Object;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_AUE4CCP_Assignment1Character_AddToInventory_Statics::NewProp_Object = { "Object", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UE4CCP_Assignment1Character_eventAddToInventory_Parms, Object), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AUE4CCP_Assignment1Character_AddToInventory_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AUE4CCP_Assignment1Character_AddToInventory_Statics::NewProp_Object,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AUE4CCP_Assignment1Character_AddToInventory_Statics::Function_MetaDataParams[] = {
+		{ "Category", "Inventory Management" },
+		{ "Comment", "/**\n\x09 * Attempts to update and add given object to the inventory\n\x09 */" },
+		{ "ModuleRelativePath", "UE4CCP_Assignment1Character.h" },
+		{ "ToolTip", "Attempts to update and add given object to the inventory" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AUE4CCP_Assignment1Character_AddToInventory_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AUE4CCP_Assignment1Character, nullptr, "AddToInventory", nullptr, nullptr, sizeof(UE4CCP_Assignment1Character_eventAddToInventory_Parms), Z_Construct_UFunction_AUE4CCP_Assignment1Character_AddToInventory_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AUE4CCP_Assignment1Character_AddToInventory_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04080401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AUE4CCP_Assignment1Character_AddToInventory_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AUE4CCP_Assignment1Character_AddToInventory_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AUE4CCP_Assignment1Character_AddToInventory()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AUE4CCP_Assignment1Character_AddToInventory_Statics::FuncParams);
+		}
+		return ReturnFunction;
 	}
 	struct Z_Construct_UFunction_AUE4CCP_Assignment1Character_BeginOverlap_Statics
 	{
@@ -214,6 +251,7 @@ void EmptyLinkFunctionForGeneratedCodeUE4CCP_Assignment1Character() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_UE4CCP_Assignment1,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_AUE4CCP_Assignment1Character_Statics::FuncInfo[] = {
+		{ &Z_Construct_UFunction_AUE4CCP_Assignment1Character_AddToInventory, "AddToInventory" }, // 2724460235
 		{ &Z_Construct_UFunction_AUE4CCP_Assignment1Character_BeginOverlap, "BeginOverlap" }, // 3751631939
 		{ &Z_Construct_UFunction_AUE4CCP_Assignment1Character_UpdateEquippedWeapon, "UpdateEquippedWeapon" }, // 4017960602
 	};
@@ -355,7 +393,7 @@ void EmptyLinkFunctionForGeneratedCodeUE4CCP_Assignment1Character() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AUE4CCP_Assignment1Character, 3989523735);
+	IMPLEMENT_CLASS(AUE4CCP_Assignment1Character, 2620643206);
 	template<> UE4CCP_ASSIGNMENT1_API UClass* StaticClass<AUE4CCP_Assignment1Character>()
 	{
 		return AUE4CCP_Assignment1Character::StaticClass();
