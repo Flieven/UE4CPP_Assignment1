@@ -1,8 +1,8 @@
 {
 	"SourceFiles": [
-		"C:\\Users\\theodor.brandt\\Documents\\Unreal Projects\\UE4CCP_Assignment1\\UE4CCP_Assignment1\\Source\\UE4CCP_Assignment1\\UE4CCP_Assignment1.Build.cs",
-		"C:\\Users\\theodor.brandt\\Documents\\Unreal Projects\\UE4CCP_Assignment1\\UE4CCP_Assignment1\\Source\\UE4CCP_Assignment1.Target.cs",
-		"C:\\Users\\theodor.brandt\\Documents\\Unreal Projects\\UE4CCP_Assignment1\\UE4CCP_Assignment1\\Source\\UE4CCP_Assignment1Editor.Target.cs"
+		"C:\\Users\\theod\\Documents\\Unreal Projects\\UE4CPP_Assignment1\\UE4CCP_Assignment1\\Source\\UE4CCP_Assignment1\\UE4CCP_Assignment1.Build.cs",
+		"C:\\Users\\theod\\Documents\\Unreal Projects\\UE4CPP_Assignment1\\UE4CCP_Assignment1\\Source\\UE4CCP_Assignment1.Target.cs",
+		"C:\\Users\\theod\\Documents\\Unreal Projects\\UE4CPP_Assignment1\\UE4CCP_Assignment1\\Source\\UE4CCP_Assignment1Editor.Target.cs"
 	],
 	"EngineVersion": "4.24.1"
 }
