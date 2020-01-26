@@ -71,27 +71,23 @@ void AUE4CCP_Assignment1Character::BeginPlay()
 	Mesh1P->SetHiddenInGame(false, true);
 }
 
-//void AUE4CCP_Assignment1Character::OnOwnerBeginOverlap(AActor* owner, AActor* otherActor)
-//{
-//}
-
+/* If overlapping actor contains the "PickUp" actor tag, pick it up */
 void AUE4CCP_Assignment1Character::BeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
-	UE_LOG(LogTemp, Display, TEXT("BeginOverlap Called"));
-	if (Inventory && Inventory->bHasEmptySlot())
-	{
-		UE_LOG(LogTemp, Display, TEXT("Adding"));
-		Inventory->Add(OtherActor);
+	if (OtherActor->Tags.Contains("PickUp")) {
+		if (Inventory && Inventory->bHasEmptySlot())
+		{
+			Inventory->Add(OtherActor);
 
-		Inventory->DebugInventory();
+			Inventory->DebugInventory();
 
-		if (OtherActor->GetClass()->ImplementsInterface(UInterinterface::StaticClass()))
-			IInterinterface::Execute_OnOverlap(OtherActor, this);
-		else
-			UE_LOG(LogTemp, Display, TEXT("Couldn't cast"));
+			if (OtherActor->GetClass()->ImplementsInterface(UInterinterface::StaticClass()))
+				IInterinterface::Execute_OnOverlap(OtherActor, this);
+			else
+				UE_LOG(LogTemp, Display, TEXT("Couldn't cast"));
+		}
+		else { UE_LOG(LogTemp, Display, TEXT("ERROR 404: Inventory Not Found")); }
 	}
-	else { UE_LOG(LogTemp, Display, TEXT("ERROR 404: Inventory Not Found")); }
-	UE_LOG(LogTemp, Display, TEXT("Added?"));
 }
 
 #pragma region Interactions

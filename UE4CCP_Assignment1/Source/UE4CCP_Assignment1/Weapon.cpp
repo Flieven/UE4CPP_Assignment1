@@ -57,7 +57,7 @@ TArray<FRotator> AWeapon::Fire_Implementation(UPARAM(ref) TArray<UBarrel*>& Barr
 	return RecoilArray;
 }
 
-
+// Searches inventory for suitable Ammo by looking for actors that implements UAmmoInterface and reloads given Barrel on weapon
 void AWeapon::Reload_Implementation(AActor* Caller, UBarrel* Barrel)
 {
 	if (Cast<AUE4CCP_Assignment1Character>(Caller)) {
@@ -83,10 +83,7 @@ void AWeapon::Reload_Implementation(AActor* Caller, UBarrel* Barrel)
 								LTAS->CurrentAmmo = LTAS->AmmoCapacity;
 								UE_LOG(LogTemp, Display, TEXT("2"));
 							}
-							UE_LOG(LogTemp, Display, TEXT("Ammo: %d"), IAmmoInterface::Execute_GetCurrentAmmo(a))
-							UE_LOG(LogTemp, Warning, TEXT("RELOADED"));
 							break;
-							//LTAS = (LTAS->AmmoCapacity - LTAS->CurrentAmmo) <= IAmmoInterface::Execute_GetCurrentAmmo(a) ? LTAS->CurrentAmmo + IAmmoInterface::Execute_GetCurrentAmmo(a)
 						}
 					}
 				}
@@ -98,6 +95,7 @@ void AWeapon::Reload_Implementation(AActor* Caller, UBarrel* Barrel)
 	}
 }
 
+// Locks weapon to characters grip point socket, Hides it if something is already equipped
 void AWeapon::OnInteract_Implementation(AActor* Caller)
 {
 	if (Cast<AUE4CCP_Assignment1Character>(Caller)) {
