@@ -22,10 +22,7 @@
 
 ULinetraceBarrel::ULinetraceBarrel()
 {
-	//Cast<ULineTraceAmmo>(EquippedAmmo.AmmoType).
-		//Cast<ULineTraceAmmo>(EquippedAmmo.AmmoType);
-	//EquippedAmmo.AmmoType = Cast< GetWorld()->GetAuthGameMode()
-	//EquippedAmmo.AmmoType = Cast<ULineTraceAmmo>(Cast<AUE4CCP_Assignment1GameMode>(GetWorld()->GetAuthGameMode())->LinetraceAmmoType);
+	
 }
 
 ULinetraceBarrel::~ULinetraceBarrel()
@@ -34,8 +31,7 @@ ULinetraceBarrel::~ULinetraceBarrel()
 
 void ULinetraceBarrel::BeginPlay()
 {
-	//EquippedAmmo.AmmoType = Cast<ULineTraceAmmo>(Cast<AUE4CCP_Assignment1GameMode>(GetWorld()->GetAuthGameMode())->LinetraceAmmoType);
-
+	
 	Super::BeginPlay();
 }
 
@@ -70,20 +66,7 @@ FVector ULinetraceBarrel::GetEndPoint(AController* controller, float travelDist)
 UBarrel* ULinetraceBarrel::Fire(UPARAM(ref) AController* controller)
 {
 	if (!EquippedAmmo.AmmoType) {
-		UE_LOG(LogTemp, Warning, TEXT("Pointer: %d"), EquippedAmmo.AmmoType);
-		UE_LOG(LogTemp, Warning, TEXT("Arraylength: %d"), AmmoTypes.Num());
 		float tempdmg = EquippedAmmo.AmmoType->DamageValue;
-		UE_LOG(LogTemp, Warning, TEXT("Damage?: %f"), tempdmg);
-		/*UE_LOG(LogTemp, Warning, TEXT("Looking for ammo"));
-		for (FLinetraceAmmoStruct Type : AmmoTypes) {
-			UE_LOG(LogTemp, Warning, TEXT("Ammo iteration"));
-			if (Type.CurrentAmmo > 0) {
-				EquippedAmmo = Type;
-				UE_LOG(LogTemp, Warning, TEXT("Found ammo"));
-				break;
-			}
-		}
-		UE_LOG(LogTemp, Warning, TEXT("Done looking for ammo"));*/
 		UE_LOG(LogTemp, Warning, TEXT("No Ammo Equipped, Play Empty Clip Sound?"));
 		return nullptr;
 	}
@@ -110,12 +93,7 @@ UBarrel* ULinetraceBarrel::Fire(UPARAM(ref) AController* controller)
 		GetWorld()->LineTraceSingleByChannel(Hit, SourcePoint, TargetPoint, ECC_Visibility, CollisionParams);
 		if (Hit.GetActor() && Hit.GetActor()->FindComponentByClass<UDamageComponent>()) {
 			UE_LOG(LogTemp, Warning, TEXT("hit: %s"), *Hit.GetActor()->GetFName().ToString());
-			UE_LOG(LogTemp, Warning, TEXT("ACTOR? MONKAS"));
 			if (Cast<ULinetraceAmmo>(EquippedAmmo.AmmoType)) {
-				UE_LOG(LogTemp, Warning, TEXT("TOOK DAMAGE KEKW"));
-				//ULineTraceAmmo* TempAmmo = Cast<ULineTraceAmmo>(EquippedAmmo.AmmoType);
-				//Cast<UDamageComponent>(Hit.GetActor())->TakeDamage(Cast<ULineTraceAmmo>(EquippedAmmo.AmmoType)->DamageValue);
-				//Hit.GetActor()->FindComponentByClass<UDamageComponent>()->TakeDamage(Hit.GetActor(), 5.0f, nullptr, GetController(), this);
 				Hit.GetActor()->FindComponentByClass<UDamageComponent>()->TakeDamage(Cast<ULinetraceAmmo>(EquippedAmmo.AmmoType)->DamageValue);
 			}		
 		}
