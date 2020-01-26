@@ -17,12 +17,14 @@ class UE4CCP_ASSIGNMENT1_API UUInventoryComponent : public UActorComponent
 	GENERATED_BODY()
 
 private:
-	UPROPERTY(VisibleAnywhere, Category = "Inventory")
-		TArray<class AActor*> Inventory; /** The array of inventory slots used to store object references */
+	
 
 public:	
 	// Sets default values for this component's properties
 	UUInventoryComponent();
+
+	UPROPERTY(VisibleAnywhere, Category = "Inventory")
+		TArray<class AActor*> Inventory; /** The array of inventory slots used to store object references */
 
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;

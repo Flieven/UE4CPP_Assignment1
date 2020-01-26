@@ -131,8 +131,7 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AUE4CCP_Assignment1Character); \
 
 #define UE4CCP_Assignment1_Source_UE4CCP_Assignment1_UE4CCP_Assignment1Character_h_15_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__FirstPersonCameraComponent() { return STRUCT_OFFSET(AUE4CCP_Assignment1Character, FirstPersonCameraComponent); } \
-	FORCEINLINE static uint32 __PPO__CurrentInventorySlot() { return STRUCT_OFFSET(AUE4CCP_Assignment1Character, CurrentInventorySlot); } \
-	FORCEINLINE static uint32 __PPO__Inventory() { return STRUCT_OFFSET(AUE4CCP_Assignment1Character, Inventory); }
+	FORCEINLINE static uint32 __PPO__CurrentInventorySlot() { return STRUCT_OFFSET(AUE4CCP_Assignment1Character, CurrentInventorySlot); }
 
 
 #define UE4CCP_Assignment1_Source_UE4CCP_Assignment1_UE4CCP_Assignment1Character_h_12_PROLOG

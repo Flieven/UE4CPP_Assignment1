@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\UE4CCP_Assignment1.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{F5FEA505-7D61-4D06-BE46-71BF616E9C00}</UniqueIdentifier>
+      <UniqueIdentifier>{2FD0DA1C-16F7-4CD0-9556-B27DDE178178}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\UE4CCP_Assignment1.Target.cs">
       <Filter>Source</Filter>
@@ -13,7 +13,7 @@
     </None>
     <None Include="..\..\.gitignore" />
     <Filter Include="Config">
-      <UniqueIdentifier>{DB707E1A-5685-4F6C-B604-CC7B7959A0B7}</UniqueIdentifier>
+      <UniqueIdentifier>{28C9B32D-1C0F-410F-A0BC-AB11E173BAD0}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -31,7 +31,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\UE4CCP_Assignment1">
-      <UniqueIdentifier>{DBDE9C3B-EFFA-483E-89E1-FF4D0532F737}</UniqueIdentifier>
+      <UniqueIdentifier>{1A7D906C-C914-4174-A85B-C5D7BCAC5CA2}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\UE4CCP_Assignment1\AmmoBase.cpp">
       <Filter>Source\UE4CCP_Assignment1</Filter>
@@ -157,7 +157,7 @@
       <Filter>Source\UE4CCP_Assignment1</Filter>
     </ClInclude>
     <Filter Include="Source\UE4CCP_Assignment1\Actors">
-      <UniqueIdentifier>{8856F5A4-8644-4AAC-A1AF-746602D266EF}</UniqueIdentifier>
+      <UniqueIdentifier>{ABAA695A-FB98-4AE3-A529-C6B71C1A9CA2}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\UE4CCP_Assignment1\Actors\TargetDummy.cpp">
       <Filter>Source\UE4CCP_Assignment1\Actors</Filter>
@@ -165,5 +165,15 @@
     <ClInclude Include="..\..\Source\UE4CCP_Assignment1\Actors\TargetDummy.h">
       <Filter>Source\UE4CCP_Assignment1\Actors</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Source\UE4CCP_Assignment1\AmmoInterface.h">
+      <Filter>Source\UE4CCP_Assignment1</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Source\UE4CCP_Assignment1\AmmoInterface.cpp">
+      <Filter>Source\UE4CCP_Assignment1</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -23,8 +23,6 @@ private:
 	UPROPERTY()
 		int CurrentInventorySlot = 0;
 
-	UPROPERTY()
-		class UUInventoryComponent* Inventory;
 
 	void YeetEquippedWeapon();
 
@@ -67,6 +65,10 @@ public:
 	FORCEINLINE class USkeletalMeshComponent* GetMesh1P() const { return Mesh1P; }
 	/** Returns FirstPersonCameraComponent subobject **/
 	FORCEINLINE class UCameraComponent* GetFirstPersonCameraComponent() const { return FirstPersonCameraComponent; }
+
+
+	UPROPERTY()
+		class UUInventoryComponent* Inventory;
 
 protected:
 	virtual void BeginPlay();

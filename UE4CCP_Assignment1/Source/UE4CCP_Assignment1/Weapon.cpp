@@ -6,6 +6,9 @@
 #include "Camera/CameraComponent.h"
 #include <string>
 #include "Containers/Array.h"
+#include "LinetraceBarrel.h"
+#include "AmmoInterface.h"
+#include "UInventoryComponent.h"
 #include "UE4CCP_Assignment1Character.h"
 
 // Sets default values for this component's properties
@@ -55,23 +58,56 @@ TArray<FRotator> AWeapon::Fire_Implementation(UPARAM(ref) TArray<UBarrel*>& Barr
 }
 
 
-void AWeapon::Reload_Implementation(UBarrel* Barrel)
+void AWeapon::Reload_Implementation(AActor* Caller, UBarrel* Barrel)
 {
-	//Check inventory for usable ammunition
+	if (Cast<AUE4CCP_Assignment1Character>(Caller)) {
+		AUE4CCP_Assignment1Character* owner = Cast<AUE4CCP_Assignment1Character>(Caller);
+
+		if (Cast<ULinetraceBarrel>(Barrel)) {
+			for (AActor* a : owner->Inventory->Inventory) {
+				if (a) {
+					if (a->GetClass()->ImplementsInterface(UAmmoInterface::StaticClass())) {
+						UE_LOG(LogTemp, Warning, TEXT("1"));
+						UAmmoBase* AmmoType = IAmmoInterface::Execute_GetAmmoType(a);
+						if (Cast<ULinetraceAmmo>(AmmoType)) {
+							UE_LOG(LogTemp, Warning, TEXT("2"));
+							FLinetraceAmmoStruct* LTAS = &Cast<ULinetraceBarrel>(Barrel)->EquippedAmmo;
+
+							if ((LTAS->AmmoCapacity - LTAS->CurrentAmmo) <= IAmmoInterface::Execute_GetCurrentAmmo(a)) {
+								LTAS->CurrentAmmo += IAmmoInterface::Execute_GetCurrentAmmo(a);
+							}
+							else {
+								IAmmoInterface::Execute_SetCurrentAmmo(a, IAmmoInterface::Execute_GetCurrentAmmo(a) - LTAS->AmmoCapacity - LTAS->CurrentAmmo);
+								LTAS->CurrentAmmo = LTAS->AmmoCapacity;
+							}
+							UE_LOG(LogTemp, Warning, TEXT("RELOADED"));
+							break;
+							//LTAS = (LTAS->AmmoCapacity - LTAS->CurrentAmmo) <= IAmmoInterface::Execute_GetCurrentAmmo(a) ? LTAS->CurrentAmmo + IAmmoInterface::Execute_GetCurrentAmmo(a)
+						}
+					}
+				}
+				else {
+					UE_LOG(LogTemp, Warning, TEXT("NULLPTR"));
+				}
+			}
+		}
+	}
 }
 
 void AWeapon::OnInteract_Implementation(AActor* Caller)
 {
-	AUE4CCP_Assignment1Character* owner = Cast<AUE4CCP_Assignment1Character>(Caller);
+	if (Cast<AUE4CCP_Assignment1Character>(Caller)) {
+		AUE4CCP_Assignment1Character* owner = Cast<AUE4CCP_Assignment1Character>(Caller);
 
-	WeaponMesh->SetAllBodiesSimulatePhysics(false);
-	AttachToComponent(owner->Mesh1P, FAttachmentTransformRules::SnapToTargetIncludingScale, "GripPoint");
-	SetActorLocation(owner->Mesh1P->GetSocketLocation("GripPoint"), false, 0, ETeleportType::TeleportPhysics);
+		WeaponMesh->SetAllBodiesSimulatePhysics(false);
+		AttachToComponent(owner->Mesh1P, FAttachmentTransformRules::SnapToTargetIncludingScale, "GripPoint");
+		SetActorLocation(owner->Mesh1P->GetSocketLocation("GripPoint"), false, 0, ETeleportType::TeleportPhysics);
 
-	SetActorHiddenInGame(true);
-	SetActorTickEnabled(false);
+		SetActorHiddenInGame(true);
+		SetActorTickEnabled(false);
 
-	if (owner->EquippedObject == nullptr) { owner->UpdateEquippedWeapon(this); }
+		if (owner->EquippedObject == nullptr) { owner->UpdateEquippedWeapon(this); }
+	}
 }
 
 
