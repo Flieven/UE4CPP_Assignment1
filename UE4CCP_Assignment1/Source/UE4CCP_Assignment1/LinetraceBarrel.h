@@ -37,7 +37,6 @@ class UE4CCP_ASSIGNMENT1_API ULinetraceBarrel : public UBarrel
 public:
 
 	ULinetraceBarrel();
-	~ULinetraceBarrel();
 
 	void BeginPlay() override;
 

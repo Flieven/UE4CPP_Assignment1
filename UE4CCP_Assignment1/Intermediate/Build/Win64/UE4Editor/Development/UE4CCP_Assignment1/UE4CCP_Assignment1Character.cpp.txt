@@ -54,6 +54,8 @@ C:\Program Files\Epic Games\UE_4.24\Engine\Source\Runtime\Engine\Classes\Particl
 C:\Program Files\Epic Games\UE_4.24\Engine\Source\Runtime\Engine\Classes\Particles/Emitter.h
 C:\Program Files\Epic Games\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\Emitter.generated.h
 C:\Program Files\Epic Games\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\ParticleSystemComponent.generated.h
+C:\Program Files\Epic Games\UE_4.24\Engine\Source\Runtime\Engine\Classes\Components/AudioComponent.h
+C:\Program Files\Epic Games\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\AudioComponent.generated.h
 C:\Users\Leon.Andersson\Documents\UE4CPP_Assignment1\UE4CCP_Assignment1\Intermediate\Build\Win64\UE4Editor\Inc\UE4CCP_Assignment1\Barrel.generated.h
 C:\Users\Leon.Andersson\Documents\UE4CPP_Assignment1\UE4CCP_Assignment1\Intermediate\Build\Win64\UE4Editor\Inc\UE4CCP_Assignment1\Weapon.generated.h
 C:\Program Files\Epic Games\UE_4.24\Engine\Source\Runtime\Engine\Public\DrawDebugHelpers.h

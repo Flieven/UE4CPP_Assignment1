@@ -35,12 +35,6 @@ public:
 	UPROPERTY(VisibleDefaultsOnly, Category = "Weapon Assets")
 	class USkeletalMeshComponent* WeaponMesh; /** Mesh of the weapon */
 
-	UPROPERTY(VisibleAnywhere, Category = "Audio Emitter")
-		class UAudioComponent* WeaponAudioEmitter;
-		
-	UPROPERTY(EditInstanceOnly, Category = "Weapon Assets")
-	class USoundBase* FiringAudio; /** audio cue when weapon is fired */
-
 	UPROPERTY(EditInstanceOnly, Category = "Weapon Assets")
 	class USoundCue* ReloadAudio; /** [UNUSED] audio cue when weapon is reloaded */
 

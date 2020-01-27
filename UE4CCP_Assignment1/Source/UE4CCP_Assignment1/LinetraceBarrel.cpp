@@ -24,13 +24,10 @@ ULinetraceBarrel::ULinetraceBarrel()
 	
 }
 
-ULinetraceBarrel::~ULinetraceBarrel()
-{
-}
-
 void ULinetraceBarrel::BeginPlay()
 {
 	Super::BeginPlay();
+	BarrelAudioEmitter->SetSound(FiringAudio);
 }
 
 FVector ULinetraceBarrel::GetEndPoint(AController* controller, float travelDist)
@@ -96,6 +93,7 @@ UBarrel* ULinetraceBarrel::Fire(UPARAM(ref) AController* controller)
 			}
 		}
 		BarrelEmitter->Activate(true);
+		BarrelAudioEmitter->Play();
 	}
 	return this;
 }

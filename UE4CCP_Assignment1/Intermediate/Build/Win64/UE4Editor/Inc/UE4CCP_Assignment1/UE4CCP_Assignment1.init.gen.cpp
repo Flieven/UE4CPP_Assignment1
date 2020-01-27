@@ -21,7 +21,7 @@ void EmptyLinkFunctionForGeneratedCodeUE4CCP_Assignment1_init() {}
 				nullptr,
 				0,
 				PKG_CompiledIn | 0x00000000,
-				0x9CF62855,
+				0x14B37548,
 				0x9CEC5E10,
 				METADATA_PARAMS(nullptr, 0)
 			};

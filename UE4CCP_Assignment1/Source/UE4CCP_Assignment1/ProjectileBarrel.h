@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "Barrel.h"
 #include "ProjectileAmmo.h"
+#include "UE4CCP_Assignment1GameMode.h"
 #include "ProjectileBarrel.generated.h"
 
 /**
@@ -27,17 +28,22 @@ public:
 /**
  * Derived class of UBarrel
  */
-UCLASS(Blueprintable, BlueprintType)
+UCLASS(ClassGroup = (Custom), Blueprintable, BlueprintType, meta = (BlueprintSpawnableComponent))
 class UE4CCP_ASSIGNMENT1_API UProjectileBarrel : public UBarrel
 {
 	GENERATED_BODY()
-	
+
 public:
+
+	UProjectileBarrel();
+
+	void BeginPlay() override;
+
 	/**
 	 * Overrides Fire function in base barrel class
 	 * Passing a controller to it does nothing as the controller is mostly used in the linetrace barrel anyway
 	 */
-	UBarrel* Fire(UPARAM(ref) AController* Controller) override; 
+	UBarrel* Fire(UPARAM(ref) AController* Controller) override;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo Data")
 		TArray<FProjectileAmmoStruct> AmmoTypes; /** An array of all ammo types usable by this weapon */
@@ -47,5 +53,5 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo Data")
 		FProjectileAmmoStruct EquippedAmmo; /** The ammo currently "equipped" on this barrel */
-
+	
 };

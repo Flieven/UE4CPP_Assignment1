@@ -51,7 +51,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{1F75A041-929C-4F06-9556-697ABF2660AD}</ProjectGuid>
+    <ProjectGuid>{04C41EF9-9A0E-4460-9FD5-1745D47E689D}</ProjectGuid>
     <Keyword>MakeFileProj</Keyword>
     <RootNamespace>UE4CCP_Assignment1</RootNamespace>
     <PlatformToolset>v142</PlatformToolset>

@@ -3,7 +3,6 @@
 #include "Barrel.h"
 
 
-
 // Sets default values for this component's properties
 UBarrel::UBarrel()
 {
@@ -15,6 +14,10 @@ UBarrel::UBarrel()
 	BarrelEmitter->bAutoActivate = false;
 	BarrelEmitter->bAllowRecycling = true;
 	BarrelEmitter->SetRelativeLocation(FVector(0.0f, 0.0f, 0.0f)); 
+
+	BarrelAudioEmitter = CreateDefaultSubobject<UAudioComponent>(TEXT("AudioEmitter"));
+	BarrelAudioEmitter->bAutoActivate = false;
+	BarrelAudioEmitter->SetRelativeLocation(FVector(0.0f, 0.0f, 0.0f));
 	// ...
 }
 

@@ -9,7 +9,6 @@
 #include "LinetraceBarrel.h"
 #include "AmmoInterface.h"
 #include "UInventoryComponent.h"
-#include "Components/AudioComponent.h"
 #include "UE4CCP_Assignment1Character.h"
 
 // Sets default values for this component's properties
@@ -25,10 +24,6 @@ AWeapon::AWeapon()
 	WeaponMesh->CastShadow = false;
 	WeaponMesh->SetRelativeRotation(FRotator(0.0f, 0.0f, 0.0f));
 	WeaponMesh->SetRelativeLocation(FVector(0.0f, 0.0f, 0.0f));
-
-	WeaponAudioEmitter = CreateDefaultSubobject<UAudioComponent>(TEXT("AudioEmitter"));
-	WeaponAudioEmitter->bAutoActivate = false;
-	WeaponAudioEmitter->SetRelativeLocation(FVector(0.0f, 0.0f, 0.0f));
 
 }
 
@@ -49,7 +44,6 @@ void AWeapon::Tick(float DeltaTime)
 TArray<FRotator> AWeapon::Fire_Implementation(UPARAM(ref) TArray<UBarrel*>& Barrels, AController* controller)
 {
 	RecoilArray.Empty();
-	WeaponAudioEmitter->SetSound(FiringAudio);
 
 	for (UBarrel* Barrel : Barrels)
 	{
@@ -57,7 +51,6 @@ TArray<FRotator> AWeapon::Fire_Implementation(UPARAM(ref) TArray<UBarrel*>& Barr
 		if (CurrentBarrel)
 		{
 			RecoilArray.Add(CurrentBarrel->BarrelRecoil);
-			WeaponAudioEmitter->Play();
 		}
 	}
 

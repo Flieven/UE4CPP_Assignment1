@@ -7,6 +7,7 @@
 #include "ParticleHelper.h"
 #include "Particles/ParticleSystem.h"
 #include "Particles/ParticleSystemComponent.h"
+#include "Components/AudioComponent.h"
 #include "Barrel.generated.h"
 
 /**
@@ -36,6 +37,12 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Emitter")
 	UParticleSystemComponent* BarrelEmitter; /** Particle system used for firing effects */
+
+	UPROPERTY()
+	UAudioComponent* BarrelAudioEmitter;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Audio Emitter")
+	USoundBase* FiringAudio; /** audio cue when weapon is fired */
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Barrel Data")
 		int BulletsPerShot = 1; /** Number of bullets per fired "round", think shotguns */

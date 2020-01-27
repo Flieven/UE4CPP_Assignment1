@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\UE4CCP_Assignment1.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{AC8D867E-64C6-4918-95C9-0B486CFB6309}</UniqueIdentifier>
+      <UniqueIdentifier>{2E2E0407-3951-489D-9E2C-A1D1A2A4654D}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\UE4CCP_Assignment1.Target.cs">
       <Filter>Source</Filter>
@@ -13,7 +13,7 @@
     </None>
     <None Include="..\..\.gitignore" />
     <Filter Include="Config">
-      <UniqueIdentifier>{E5E02C2B-2984-4C8F-9409-72DB55FB8158}</UniqueIdentifier>
+      <UniqueIdentifier>{7333D4AE-68DA-4D8E-B1E4-11230E8D9045}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -31,7 +31,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\UE4CCP_Assignment1">
-      <UniqueIdentifier>{8A15F2D0-D5E8-4967-9B37-6CCB824406DC}</UniqueIdentifier>
+      <UniqueIdentifier>{91C01E1E-EFFC-4839-9107-FF944E7F2771}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\UE4CCP_Assignment1\AmmoBase.cpp">
       <Filter>Source\UE4CCP_Assignment1</Filter>
@@ -163,7 +163,7 @@
       <Filter>Source\UE4CCP_Assignment1</Filter>
     </ClInclude>
     <Filter Include="Source\UE4CCP_Assignment1\Actors">
-      <UniqueIdentifier>{85FC9012-DB0D-4C27-8B0F-8DF6BC158430}</UniqueIdentifier>
+      <UniqueIdentifier>{7630EA6B-B32C-4693-8F6F-F1179F6F4415}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\UE4CCP_Assignment1\Actors\TargetDummy.cpp">
       <Filter>Source\UE4CCP_Assignment1\Actors</Filter>
