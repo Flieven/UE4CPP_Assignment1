@@ -15,7 +15,6 @@
 
 #include "UE4CCP_Assignment1GameMode.h"
 
-
 #include "Camera/CameraComponent.h"
 
 #include "UE4CCP_Assignment1Character.h"
@@ -31,7 +30,6 @@ ULinetraceBarrel::~ULinetraceBarrel()
 
 void ULinetraceBarrel::BeginPlay()
 {
-	
 	Super::BeginPlay();
 }
 
@@ -87,7 +85,7 @@ UBarrel* ULinetraceBarrel::Fire(UPARAM(ref) AController* controller)
 		FVector SourcePoint = GetComponentTransform().GetLocation();
 
 		FVector TargetPoint = GetEndPoint(controller, EquippedAmmo.AmmoType->LineDistance);
-	
+
 		DrawDebugLine(GetWorld(), SourcePoint, TargetPoint, FColor::Green, true);
 		FHitResult Hit;
 		GetWorld()->LineTraceSingleByChannel(Hit, SourcePoint, TargetPoint, ECC_Visibility, CollisionParams);
@@ -95,9 +93,9 @@ UBarrel* ULinetraceBarrel::Fire(UPARAM(ref) AController* controller)
 			UE_LOG(LogTemp, Warning, TEXT("hit: %s"), *Hit.GetActor()->GetFName().ToString());
 			if (Cast<ULinetraceAmmo>(EquippedAmmo.AmmoType)) {
 				Hit.GetActor()->FindComponentByClass<UDamageComponent>()->TakeDamage(Cast<ULinetraceAmmo>(EquippedAmmo.AmmoType)->DamageValue);
-			}		
+			}
 		}
+		BarrelEmitter->Activate(true);
 	}
-			
 	return this;
 }

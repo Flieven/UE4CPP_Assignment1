@@ -12,17 +12,6 @@
 #include "Weapon.generated.h"
 
 /**
- * [UNUSED] Enums setup to do different firing modes
- */
-UENUM(BlueprintType)
-enum class EFiringModes : uint8
-{
-	FM_Burst	UMETA(DisplayName = "Burst"),
-	FM_Auto		UMETA(DisplayName = "Auto"),
-	FM_Semi		UMETA(DisplayName = "Semi")
-};
-
-/**
  * Base weapon class
  * Derived from actor and interaction interface
  */
@@ -45,18 +34,15 @@ public:
 
 	UPROPERTY(VisibleDefaultsOnly, Category = "Weapon Assets")
 	class USkeletalMeshComponent* WeaponMesh; /** Mesh of the weapon */
-	
-	UPROPERTY(EditInstanceOnly, Category = "Weapon Assets")
-	class UParticleSystem* FiringParticles; /** [UNUSED] particles triggered when firing weapon */
+
+	UPROPERTY(VisibleAnywhere, Category = "Audio Emitter")
+		class UAudioComponent* WeaponAudioEmitter;
 		
 	UPROPERTY(EditInstanceOnly, Category = "Weapon Assets")
-	class USoundCue* FiringAudio; /** [UNUSED] audio cue when weapon is fired */
+	class USoundBase* FiringAudio; /** audio cue when weapon is fired */
 
 	UPROPERTY(EditInstanceOnly, Category = "Weapon Assets")
 	class USoundCue* ReloadAudio; /** [UNUSED] audio cue when weapon is reloaded */
-
-	UPROPERTY(EditInstanceOnly, Category = "Weapon Data")
-	EFiringModes CurrentFiringMode; /** [UNUSED] firing mode we're currently on  */
 
 	UPROPERTY(EditInstanceOnly, Category = "Weapon Data")
 	int MaximumAmmo; /** [UNUSED] Maximum amount of ammo that can be stored in the weapon */

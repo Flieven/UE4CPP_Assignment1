@@ -4,6 +4,9 @@
 
 #include "CoreMinimal.h"
 #include "Components/SceneComponent.h"
+#include "ParticleHelper.h"
+#include "Particles/ParticleSystem.h"
+#include "Particles/ParticleSystemComponent.h"
 #include "Barrel.generated.h"
 
 /**
@@ -30,6 +33,9 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Barrel Data")
 		FVector Spread = FVector::ZeroVector; /** Used to give random spread of bullets when fired */
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Emitter")
+	UParticleSystemComponent* BarrelEmitter; /** Particle system used for firing effects */
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Barrel Data")
 		int BulletsPerShot = 1; /** Number of bullets per fired "round", think shotguns */

@@ -19,6 +19,7 @@ UBarrel* UProjectileBarrel::Fire(AController* Controller)
 			{
 				GetWorld()->SpawnActor<AUE4CCP_Assignment1Projectile>(Cast<UProjectileAmmo>(AmmoTypes[i].AmmoType)->ProjectileObject, GetComponentTransform().GetLocation(), GetComponentRotation());
 			}
+			BarrelEmitter->Activate(true);
 			return this;
 		}
 	}
