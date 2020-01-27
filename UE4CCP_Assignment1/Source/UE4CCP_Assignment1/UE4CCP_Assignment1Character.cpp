@@ -74,7 +74,7 @@ void AUE4CCP_Assignment1Character::BeginPlay()
 /* If overlapping actor contains the "PickUp" actor tag, pick it up */
 void AUE4CCP_Assignment1Character::BeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
-	if (OtherActor->Tags.Contains("PickUp")) {
+	if (OtherActor->Tags.Contains("OverlapPickUp")) {
 		if (Inventory && Inventory->bHasEmptySlot())
 		{
 			Inventory->Add(OtherActor);
@@ -125,8 +125,6 @@ void AUE4CCP_Assignment1Character::Interact()
 			{
 				UE_LOG(LogTemp, Display, TEXT("Hit detected!"));
 				AddToInventory(hit.GetActor());
-
-				Cast<IInterinterface>(hit.GetActor())->OnInteract_Implementation(this);
 			}
 			else if (hit.GetActor()->FindComponentByClass<UDamageComponent>()) 
 			{ 
@@ -184,6 +182,7 @@ void AUE4CCP_Assignment1Character::AddToInventory(AActor* Object)
 		Inventory->Add(Object);
 
 		Inventory->DebugInventory();
+		Cast<IInterinterface>(Object)->OnInteract_Implementation(this);
 	}
 	else { UE_LOG(LogTemp, Display, TEXT("ERROR 404: Inventory Not Found")); }
 }

@@ -41,15 +41,15 @@ FVector ULinetraceBarrel::GetEndPoint(AController* controller, float travelDist)
 			FVector Start;
 			FVector End;
 			FRotator Rot;
-			FVector BulletSpread;
 
 			PlayerController->GetPlayerViewPoint(Start, Rot);
 
-			BulletSpread.X = FMath::RandRange(FMath::Abs(Spread.X) * -1, Spread.X);
-			BulletSpread.Y = FMath::RandRange(FMath::Abs(Spread.Y) * -1, Spread.Y);
-			BulletSpread.Z = FMath::RandRange(FMath::Abs(Spread.Z) * -1, Spread.Z);
+			float angle = FMath::RandRange(0.f, 1.f) * 2 * PI;
+			float scalar = FMath::Sqrt(FMath::RandRange(0.f, 1.f));
+			float xPos = scalar * Spread.X * cos(angle); 
+			float yPos = scalar * Spread.Y * sin(angle);
 
-			End = (Start + BulletSpread) + (Rot.Vector() * travelDist);
+			End = (Start + FVector(0, yPos, xPos)) + (Rot.Vector() * travelDist);
 			return End;
 		}
 	}

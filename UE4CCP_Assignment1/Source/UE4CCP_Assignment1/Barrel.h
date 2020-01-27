@@ -33,7 +33,7 @@ public:
 		FRotator BarrelRecoil = FRotator::ZeroRotator; /** Recoil to use for recoil calculations inside of recoil component */
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Barrel Data")
-		FVector Spread = FVector::ZeroVector; /** Used to give random spread of bullets when fired */
+		FVector2D Spread = FVector2D::ZeroVector; /** Used to give random spread of bullets when fired */
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Emitter")
 	UParticleSystemComponent* BarrelEmitter; /** Particle system used for firing effects */
