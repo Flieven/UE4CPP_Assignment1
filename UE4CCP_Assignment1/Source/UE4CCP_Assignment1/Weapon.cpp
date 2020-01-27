@@ -73,7 +73,7 @@ void AWeapon::Reload_Implementation(AActor* Caller, UBarrel* Barrel)
 							UE_LOG(LogTemp, Warning, TEXT("2"));
 							FLinetraceAmmoStruct* LTAS = &Cast<ULinetraceBarrel>(Barrel)->EquippedAmmo;
 
-							if ((LTAS->AmmoCapacity - LTAS->CurrentAmmo) <= IAmmoInterface::Execute_GetCurrentAmmo(a)) {
+							if (IAmmoInterface::Execute_GetCurrentAmmo(a) <= (LTAS->AmmoCapacity - LTAS->CurrentAmmo)) {
 								LTAS->CurrentAmmo += IAmmoInterface::Execute_GetCurrentAmmo(a);
 								IAmmoInterface::Execute_SetCurrentAmmo(a, 0);
 								UE_LOG(LogTemp, Display, TEXT("1"));
