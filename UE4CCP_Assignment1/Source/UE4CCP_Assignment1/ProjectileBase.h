@@ -6,6 +6,9 @@
 #include "GameFramework/Actor.h"
 #include "ProjectileBase.generated.h"
 
+/**
+ * A unused projectile base class
+ */
 UCLASS()
 class UE4CCP_ASSIGNMENT1_API AProjectileBase : public AActor
 {

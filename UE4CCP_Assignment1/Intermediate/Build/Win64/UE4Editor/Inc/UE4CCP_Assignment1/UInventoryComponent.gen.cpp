@@ -49,8 +49,10 @@ void EmptyLinkFunctionForGeneratedCodeUInventoryComponent() {}
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UUInventoryComponent_Statics::Class_MetaDataParams[] = {
 		{ "BlueprintSpawnableComponent", "" },
 		{ "ClassGroupNames", "Custom" },
+		{ "Comment", "/**\n * Inventory component\n * Allows the attached actor to save a number of objects when interacting with them\n * Currently only used by the player character\n */" },
 		{ "IncludePath", "UInventoryComponent.h" },
 		{ "ModuleRelativePath", "UInventoryComponent.h" },
+		{ "ToolTip", "Inventory component\nAllows the attached actor to save a number of objects when interacting with them\nCurrently only used by the player character" },
 	};
 #endif
 #if WITH_METADATA
@@ -59,7 +61,7 @@ void EmptyLinkFunctionForGeneratedCodeUInventoryComponent() {}
 		{ "ModuleRelativePath", "UInventoryComponent.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UClass_UUInventoryComponent_Statics::NewProp_Inventory = { "Inventory", nullptr, (EPropertyFlags)0x0040000000020001, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UUInventoryComponent, Inventory), METADATA_PARAMS(Z_Construct_UClass_UUInventoryComponent_Statics::NewProp_Inventory_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UUInventoryComponent_Statics::NewProp_Inventory_MetaData)) };
+	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UClass_UUInventoryComponent_Statics::NewProp_Inventory = { "Inventory", nullptr, (EPropertyFlags)0x0010000000020001, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UUInventoryComponent, Inventory), METADATA_PARAMS(Z_Construct_UClass_UUInventoryComponent_Statics::NewProp_Inventory_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UUInventoryComponent_Statics::NewProp_Inventory_MetaData)) };
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UUInventoryComponent_Statics::NewProp_Inventory_Inner = { "Inventory", nullptr, (EPropertyFlags)0x0000000000020000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UUInventoryComponent_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UUInventoryComponent_Statics::NewProp_Inventory,
@@ -92,7 +94,7 @@ void EmptyLinkFunctionForGeneratedCodeUInventoryComponent() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UUInventoryComponent, 2092768617);
+	IMPLEMENT_CLASS(UUInventoryComponent, 3716016832);
 	template<> UE4CCP_ASSIGNMENT1_API UClass* StaticClass<UUInventoryComponent>()
 	{
 		return UUInventoryComponent::StaticClass();

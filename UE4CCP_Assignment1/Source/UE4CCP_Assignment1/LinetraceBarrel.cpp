@@ -10,10 +10,10 @@
 #include "GameFramework/Controller.h"
 #include "GameFramework/PlayerController.h"
 #include "AmmoBase.h"
+#include "LinetraceAmmo.h"
 #include "DamageComponent.h"
 
 #include "UE4CCP_Assignment1GameMode.h"
-
 
 #include "Camera/CameraComponent.h"
 
@@ -21,21 +21,13 @@
 
 ULinetraceBarrel::ULinetraceBarrel()
 {
-	//Cast<ULineTraceAmmo>(EquippedAmmo.AmmoType).
-		//Cast<ULineTraceAmmo>(EquippedAmmo.AmmoType);
-	//EquippedAmmo.AmmoType = Cast< GetWorld()->GetAuthGameMode()
-	//EquippedAmmo.AmmoType = Cast<ULineTraceAmmo>(Cast<AUE4CCP_Assignment1GameMode>(GetWorld()->GetAuthGameMode())->LinetraceAmmoType);
-}
-
-ULinetraceBarrel::~ULinetraceBarrel()
-{
+	
 }
 
 void ULinetraceBarrel::BeginPlay()
 {
-	//EquippedAmmo.AmmoType = Cast<ULineTraceAmmo>(Cast<AUE4CCP_Assignment1GameMode>(GetWorld()->GetAuthGameMode())->LinetraceAmmoType);
-
 	Super::BeginPlay();
+	BarrelAudioEmitter->SetSound(FiringAudio);
 }
 
 FVector ULinetraceBarrel::GetEndPoint(AController* controller, float travelDist)
@@ -52,7 +44,12 @@ FVector ULinetraceBarrel::GetEndPoint(AController* controller, float travelDist)
 
 			PlayerController->GetPlayerViewPoint(Start, Rot);
 
-			End = Start + (Rot.Vector() * travelDist);
+			float angle = FMath::RandRange(0.f, 1.f) * 2 * PI;
+			float scalar = FMath::Sqrt(FMath::RandRange(0.f, 1.f));
+			float xPos = scalar * Spread.X * cos(angle); 
+			float yPos = scalar * Spread.Y * sin(angle);
+
+			End = (Start + FVector(0, yPos, xPos)) + (Rot.Vector() * travelDist);
 			return End;
 		}
 	}
@@ -61,58 +58,43 @@ FVector ULinetraceBarrel::GetEndPoint(AController* controller, float travelDist)
 	return FVector::ZeroVector;
 }
 
-void ULinetraceBarrel::Fire(UPARAM(ref) AController* controller, TArray<UBarrel*>& SuccesfulBarrels)
+UBarrel* ULinetraceBarrel::Fire(UPARAM(ref) AController* controller)
 {
-	//if (!EquippedAmmo.AmmoType) {
-	//	UE_LOG(LogTemp, Warning, TEXT("Pointer: %d"), EquippedAmmo.AmmoType);
-	//	UE_LOG(LogTemp, Warning, TEXT("Arraylength: %d"), AmmoTypes.Num());
-	//	float tempdmg = EquippedAmmo.AmmoType->DamageValue;
-	//	UE_LOG(LogTemp, Warning, TEXT("Damage?: %f"), tempdmg);
-	//	/*UE_LOG(LogTemp, Warning, TEXT("Looking for ammo"));
-	//	for (FLinetraceAmmoStruct Type : AmmoTypes) {
-	//		UE_LOG(LogTemp, Warning, TEXT("Ammo iteration"));
-	//		if (Type.CurrentAmmo > 0) {
-	//			EquippedAmmo = Type;
-	//			UE_LOG(LogTemp, Warning, TEXT("Found ammo"));
-	//			break;
-	//		}
-	//	}
-	//	UE_LOG(LogTemp, Warning, TEXT("Done looking for ammo"));*/
-	//	UE_LOG(LogTemp, Warning, TEXT("No Ammo Equipped, Play Empty Clip Sound?"));
-	//	return;
-	//}
+	if (!EquippedAmmo.AmmoType) {
+		float tempdmg = EquippedAmmo.AmmoType->DamageValue;
+		UE_LOG(LogTemp, Warning, TEXT("No Ammo Equipped, Play Empty Clip Sound?"));
+		return nullptr;
+	}
 
-	//if (EquippedAmmo.CurrentAmmo <= 0) {
-	//	UE_LOG(LogTemp, Warning, TEXT("Empty Mag, Play Empty Clip Sound?"));
-	//	return;
-	//}
+	if (EquippedAmmo.CurrentAmmo <= 0) {
+		UE_LOG(LogTemp, Warning, TEXT("Empty Mag, Play Empty Clip Sound?"));
+		return nullptr;
+	}
 
-	//SuccesfulBarrels.Add(this);
-	//EquippedAmmo.CurrentAmmo--;
+	EquippedAmmo.CurrentAmmo--;
 
-	////float Distance = Cast<ULineTraceAmmo>(EquippedAmmo.AmmoType)->LineDistance;
+	//float Distance = Cast<ULineTraceAmmo>(EquippedAmmo.AmmoType)->LineDistance;
 
-	//FCollisionQueryParams CollisionParams;
+	for (int i = 0; i < BulletsPerShot; i++)
+	{
+		FCollisionQueryParams CollisionParams;
+		CollisionParams.AddIgnoredActor(GetAttachmentRootActor());
 
-	//FVector SourcePoint = GetComponentTransform().GetLocation();
+		FVector SourcePoint = GetComponentTransform().GetLocation();
 
-	//FVector TargetPoint = GetEndPoint(controller, 500.f);
+		FVector TargetPoint = GetEndPoint(controller, EquippedAmmo.AmmoType->LineDistance);
 
-	//DrawDebugLine(GetWorld(), SourcePoint, TargetPoint, FColor::Green, true);
-	//FHitResult Hit;
-	//UE_LOG(LogTemp, Warning, TEXT("HELLO"));
-	//if (GetWorld()->LineTraceSingleByChannel(Hit, SourcePoint, TargetPoint, ECC_Visibility, CollisionParams)) {
-	//	UE_LOG(LogTemp, Warning, TEXT("WHAT ABOUT HERE"));
-	//	UE_LOG(LogTemp, Warning, TEXT("hit: %s"), *Hit.GetActor()->GetFName().ToString());
-	//	if (Hit.GetActor() && Hit.GetActor()->FindComponentByClass<UDamageComponent>()) {
-	//		UE_LOG(LogTemp, Warning, TEXT("ACTOR? MONKAS"));
-	//		if (Cast<ULineTraceAmmo>(EquippedAmmo.AmmoType)) {
-	//			UE_LOG(LogTemp, Warning, TEXT("TOOK DAMAGE KEKW"));
-	//			//ULineTraceAmmo* TempAmmo = Cast<ULineTraceAmmo>(EquippedAmmo.AmmoType);
-	//			//Cast<UDamageComponent>(Hit.GetActor())->TakeDamage(Cast<ULineTraceAmmo>(EquippedAmmo.AmmoType)->DamageValue);
-	//			//Hit.GetActor()->FindComponentByClass<UDamageComponent>()->TakeDamage(Hit.GetActor(), 5.0f, nullptr, GetController(), this);
-	//			Hit.GetActor()->FindComponentByClass<UDamageComponent>()->TakeDamage(Cast<ULineTraceAmmo>(EquippedAmmo.AmmoType)->DamageValue);
-	//		}
-	//	}
-	//}
+		DrawDebugLine(GetWorld(), SourcePoint, TargetPoint, FColor::Green, true);
+		FHitResult Hit;
+		GetWorld()->LineTraceSingleByChannel(Hit, SourcePoint, TargetPoint, ECC_Visibility, CollisionParams);
+		if (Hit.GetActor() && Hit.GetActor()->FindComponentByClass<UDamageComponent>()) {
+			UE_LOG(LogTemp, Warning, TEXT("hit: %s"), *Hit.GetActor()->GetFName().ToString());
+			if (Cast<ULinetraceAmmo>(EquippedAmmo.AmmoType)) {
+				Hit.GetActor()->FindComponentByClass<UDamageComponent>()->TakeDamage(Cast<ULinetraceAmmo>(EquippedAmmo.AmmoType)->DamageValue);
+			}
+		}
+		BarrelEmitter->Activate(true);
+		BarrelAudioEmitter->Play();
+	}
+	return this;
 }

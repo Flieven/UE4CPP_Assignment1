@@ -36,7 +36,7 @@ void UUInventoryComponent::TickComponent(float DeltaTime, ELevelTick TickType, F
 
 bool UUInventoryComponent::bHasEmptySlot()
 {
-	for (int i = 0; i < Inventory.Max()-1; i++)
+	for (int i = 0; i < Inventory.Num()-1; i++)
 	{
 		if (Inventory[i] == nullptr)
 		{
@@ -50,7 +50,7 @@ void UUInventoryComponent::Add(AActor* obj)
 {
 	bool added = false;
 
-	for (int i = 0; i < Inventory.Max()-1; i++)
+	for (int i = 0; i < Inventory.Num()-1; i++)
 	{
 		if (Inventory[i] == nullptr && !added)
 		{
@@ -72,7 +72,7 @@ AActor* UUInventoryComponent::GetFromSlot(int slot)
 
 int UUInventoryComponent::Size()
 {
-	return Inventory.Max()-1;
+	return Inventory.Num()-1;
 }
 
 int UUInventoryComponent::Find(AActor* obj)

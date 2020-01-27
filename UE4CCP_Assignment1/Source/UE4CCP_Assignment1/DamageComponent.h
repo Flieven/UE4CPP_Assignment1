@@ -6,7 +6,9 @@
 #include <Components/ActorComponent.h>
 #include "DamageComponent.generated.h"
 
-
+/**
+ * Damaging component
+ */
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class UE4CCP_ASSIGNMENT1_API UDamageComponent : public UActorComponent
 {
@@ -16,7 +18,13 @@ public:
 	// Sets default values for this component's properties
 	UDamageComponent();
 
+	/**
+	 * Complex damaging function
+	 */
 		void TakeDamage(AActor* DamagedActor, float Damage, const class UDamageType* DamageType, class AController* InstigatedBy, AActor* DamageCauser);
+	/**
+	 * Simple damaging function
+	 */
 	UFUNCTION()
 		void TakeDamage(float Damage);
 
@@ -25,10 +33,10 @@ protected:
 	virtual void BeginPlay() override;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Health")
-		float DefaultHealth;
+		float DefaultHealth; /** Default health value of object */
 
 	UPROPERTY(BlueprintReadWrite)
-		float Health;
+		float Health; /** Current health value of object */
 
 	
 };

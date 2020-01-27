@@ -28,9 +28,9 @@ void URecoilComponent::DoRecoil(AController* controller, TArray<FRotator> Barrel
 
 	for (int i = 0; i < BarrelRecoils.Num(); i++)
 	{
-		TotalRecoil.Roll += FMath::FRandRange(0.0f, BarrelRecoils[i].Roll); 
-		TotalRecoil.Pitch += FMath::FRandRange(0.0f, BarrelRecoils[i].Pitch);
-		TotalRecoil.Yaw += FMath::FRandRange(0.0f, BarrelRecoils[i].Yaw);
+		TotalRecoil.Roll += FMath::FRandRange((FMath::Abs(BarrelRecoils[i].Roll) * -1), BarrelRecoils[i].Roll);
+		TotalRecoil.Pitch += FMath::FRandRange((FMath::Abs(BarrelRecoils[i].Pitch) * -1), BarrelRecoils[i].Pitch);
+		TotalRecoil.Yaw += FMath::FRandRange((FMath::Abs(BarrelRecoils[i].Yaw) * -1), BarrelRecoils[i].Yaw);
 	}
 		//UE_LOG(LogTemp, Warning, TEXT("Random Rot: %f"), RandRot.Roll);
 
