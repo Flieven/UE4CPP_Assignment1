@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+
 #include "UE4CCP_Assignment1Character.generated.h"
 
 class UInputComponent;
@@ -62,6 +63,7 @@ public:
 
 	UFUNCTION()
 		void UpdateEquippedWeapon(AActor* obj);
+
 
 	/** Returns Mesh1P subobject **/
 	FORCEINLINE class USkeletalMeshComponent* GetMesh1P() const { return Mesh1P; }

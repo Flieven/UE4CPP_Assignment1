@@ -1,4 +1,4 @@
-#include "UE4CCP_Assignment1Character.h"
+
 // Copyright 1998-2019 Epic Games, Inc. All Rights Reserved.
 
 #include "UE4CCP_Assignment1Character.h"
@@ -16,11 +16,10 @@
 #include "Kismet/GameplayStatics.h"
 
 #include "HeadMountedDisplayFunctionLibrary.h"
-
+#include "Weapon.h"
 #include "UInventoryComponent.h"
 #include "DamageComponent.h"
 #include "ATEST_OBJ.h"
-#include "Weapon.h"
 #include "Interinterface.h"
 
 #include "DrawDebugHelpers.h"
@@ -171,7 +170,7 @@ void AUE4CCP_Assignment1Character::SetupPlayerInputComponent(class UInputCompone
 	PlayerInputComponent->BindAction("PickUp", IE_Pressed, this, &AUE4CCP_Assignment1Character::Interact);
 
 	PlayerInputComponent->BindAction("Drop", IE_Pressed, this, &AUE4CCP_Assignment1Character::DropItem);
-
+	
 	PlayerInputComponent->BindAxis("MouseWheel", this, &AUE4CCP_Assignment1Character::UpdateSlotNumber);
 	
 	// Bind movement events
@@ -236,6 +235,7 @@ void AUE4CCP_Assignment1Character::UpdateSlotNumber(float value)
 	CurrentInventorySlot += value;
 	UpdateCurrentSlot();
 }
+
 #pragma endregion
 
 
