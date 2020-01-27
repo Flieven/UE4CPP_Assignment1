@@ -14,6 +14,7 @@
 #include "GameFramework/InputSettings.h"
 
 #include "Kismet/GameplayStatics.h"
+#include "Kismet/KismetSystemLibrary.h"
 
 #include "HeadMountedDisplayFunctionLibrary.h"
 #include "Weapon.h"
@@ -54,6 +55,8 @@ AUE4CCP_Assignment1Character::AUE4CCP_Assignment1Character()
 	Mesh1P->SetRelativeLocation(FVector(-0.5f, -4.4f, -155.7f));
 
 	Inventory = CreateDefaultSubobject<UUInventoryComponent>(TEXT("CharacterInventory"));
+
+	
 }
 
 void AUE4CCP_Assignment1Character::BeginPlay()
@@ -61,8 +64,29 @@ void AUE4CCP_Assignment1Character::BeginPlay()
 	// Call the base class  
 	Super::BeginPlay();
 
+	GetCapsuleComponent()->OnComponentBeginOverlap.AddDynamic(this, &AUE4CCP_Assignment1Character::BeginOverlap);
+	//GetCapsuleComponent()->
 	// Show or hide the two versions of the gun based on whether or not we're using motion controllers.
 	Mesh1P->SetHiddenInGame(false, true);
+}
+
+/* If overlapping actor contains the "PickUp" actor tag, pick it up */
+void AUE4CCP_Assignment1Character::BeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+	if (OtherActor->Tags.Contains("OverlapPickUp")) {
+		if (Inventory && Inventory->bHasEmptySlot())
+		{
+			Inventory->Add(OtherActor);
+
+			Inventory->DebugInventory();
+
+			if (OtherActor->GetClass()->ImplementsInterface(UInterinterface::StaticClass()))
+				IInterinterface::Execute_OnOverlap(OtherActor, this);
+			else
+				UE_LOG(LogTemp, Display, TEXT("Couldn't cast"));
+		}
+		else { UE_LOG(LogTemp, Display, TEXT("ERROR 404: Inventory Not Found")); }
+	}
 }
 
 #pragma region Interactions
@@ -99,15 +123,7 @@ void AUE4CCP_Assignment1Character::Interact()
 			if (hit.GetActor()->Tags.Contains("PickUp") && Cast<IInterinterface>(hit.Actor))
 			{
 				UE_LOG(LogTemp, Display, TEXT("Hit detected!"));
-				if (Inventory && Inventory->bHasEmptySlot())
-				{
-					Inventory->Add(hit.GetActor());
-
-					Inventory->DebugInventory();
-
-					Cast<IInterinterface>(hit.GetActor())->OnInteract_Implementation(this);
-				}
-				else { UE_LOG(LogTemp, Display, TEXT("ERROR 404: Inventory Not Found")); }
+				AddToInventory(hit.GetActor());
 			}
 			else if (hit.GetActor()->FindComponentByClass<UDamageComponent>()) 
 			{ 
@@ -157,6 +173,18 @@ void AUE4CCP_Assignment1Character::YeetEquippedWeapon()
 }
 
 #pragma endregion
+
+void AUE4CCP_Assignment1Character::AddToInventory(AActor* Object)
+{
+	if (Inventory && Inventory->bHasEmptySlot())
+	{
+		Inventory->Add(Object);
+
+		Inventory->DebugInventory();
+		Cast<IInterinterface>(Object)->OnInteract_Implementation(this);
+	}
+	else { UE_LOG(LogTemp, Display, TEXT("ERROR 404: Inventory Not Found")); }
+}
 
 void AUE4CCP_Assignment1Character::SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent)
 {

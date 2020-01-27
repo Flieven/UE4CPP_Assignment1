@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\UE4CCP_Assignment1.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{5DDD00A5-20E1-420A-8727-403534D28162}</UniqueIdentifier>
+      <UniqueIdentifier>{2E2E0407-3951-489D-9E2C-A1D1A2A4654D}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\UE4CCP_Assignment1.Target.cs">
       <Filter>Source</Filter>
@@ -13,7 +13,7 @@
     </None>
     <None Include="..\..\.gitignore" />
     <Filter Include="Config">
-      <UniqueIdentifier>{62005889-67D9-4119-9152-D72672C550AD}</UniqueIdentifier>
+      <UniqueIdentifier>{7333D4AE-68DA-4D8E-B1E4-11230E8D9045}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -31,12 +31,18 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\UE4CCP_Assignment1">
-      <UniqueIdentifier>{A1F280CC-42ED-43A9-B629-308B0575DD42}</UniqueIdentifier>
+      <UniqueIdentifier>{91C01E1E-EFFC-4839-9107-FF944E7F2771}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\UE4CCP_Assignment1\AmmoBase.cpp">
       <Filter>Source\UE4CCP_Assignment1</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\UE4CCP_Assignment1\AmmoBase.h">
+      <Filter>Source\UE4CCP_Assignment1</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UE4CCP_Assignment1\AmmoInterface.cpp">
+      <Filter>Source\UE4CCP_Assignment1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UE4CCP_Assignment1\AmmoInterface.h">
       <Filter>Source\UE4CCP_Assignment1</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\UE4CCP_Assignment1\ATEST_OBJ.cpp">
@@ -79,6 +85,12 @@
       <Filter>Source\UE4CCP_Assignment1</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\UE4CCP_Assignment1\LinetraceBarrel.h">
+      <Filter>Source\UE4CCP_Assignment1</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UE4CCP_Assignment1\ProjectileAmmo.cpp">
+      <Filter>Source\UE4CCP_Assignment1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UE4CCP_Assignment1\ProjectileAmmo.h">
       <Filter>Source\UE4CCP_Assignment1</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\UE4CCP_Assignment1\ProjectileBarrel.cpp">
@@ -151,7 +163,7 @@
       <Filter>Source\UE4CCP_Assignment1</Filter>
     </ClInclude>
     <Filter Include="Source\UE4CCP_Assignment1\Actors">
-      <UniqueIdentifier>{96DE9A23-9FC4-492F-AB7E-3CBD14F29D99}</UniqueIdentifier>
+      <UniqueIdentifier>{7630EA6B-B32C-4693-8F6F-F1179F6F4415}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\UE4CCP_Assignment1\Actors\TargetDummy.cpp">
       <Filter>Source\UE4CCP_Assignment1\Actors</Filter>
@@ -159,15 +171,5 @@
     <ClInclude Include="..\..\Source\UE4CCP_Assignment1\Actors\TargetDummy.h">
       <Filter>Source\UE4CCP_Assignment1\Actors</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\Source\UE4CCP_Assignment1\ZoomInComponent.h">
-      <Filter>Source\UE4CCP_Assignment1</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\Source\UE4CCP_Assignment1\ZoomInComponent.cpp">
-      <Filter>Source\UE4CCP_Assignment1</Filter>
-    </ClCompile>
   </ItemGroup>
 </Project>

@@ -24,8 +24,6 @@ private:
 	UPROPERTY()
 		int CurrentInventorySlot = 0;
 
-	UPROPERTY()
-		class UUInventoryComponent* Inventory;
 
 	void YeetEquippedWeapon();
 
@@ -33,7 +31,7 @@ public:
 	AUE4CCP_Assignment1Character();
 
 	/** Pawn mesh: 1st person view (arms; seen only by self) */
-	UPROPERTY(VisibleDefaultsOnly, Category = Mesh)
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Mesh)
 		class USkeletalMeshComponent* Mesh1P;
 
 	/** Base turn rate, in deg/sec. Other scaling may affect final turn rate. */
@@ -70,16 +68,25 @@ public:
 	/** Returns FirstPersonCameraComponent subobject **/
 	FORCEINLINE class UCameraComponent* GetFirstPersonCameraComponent() const { return FirstPersonCameraComponent; }
 
+
+	UPROPERTY()
+		class UUInventoryComponent* Inventory;
+
 protected:
 	virtual void BeginPlay();
-	
-	/** Fires a projectile. */
-	void OnFire();
+
+	UFUNCTION()
+	void BeginOverlap(UPrimitiveComponent* OverlappedComponent,
+		AActor* OtherActor,
+		UPrimitiveComponent* OtherComp,
+		int32 OtherBodyIndex,
+		bool bFromSweep,
+		const FHitResult& SweepResult);
 
 	/** Handles moving forward/backward */
 	void MoveForward(float Val);
 
-	/** Handles stafing movement, left and right */
+	/** Handles strafing movement, left and right */
 	void MoveRight(float Val);
 
 	/**
@@ -94,13 +101,32 @@ protected:
 	 */
 	void LookUpAtRate(float Rate);
 
+	/**
+	 * Update the equipped object reference to current slot
+	 */
 	void UpdateCurrentSlot();
+	/**
+	 * Update to next slot number for inventory
+	 */
 	void UpdateSlotNumber(float value);
 
+	/**
+	 * Drop the currently equipped object
+	 */
 	void DropItem();
 
+	/**
+	 * Line trace from character forward and activate if hitting something
+	 * Current hit ables: anything with an interaction interface that is tagged "PickUp"
+	 */
 	void Interact();
 	
+	/**
+	 * Attempts to update and add given object to the inventory
+	 */
+	UFUNCTION(BlueprintCallable, Category = "Inventory Management")
+	void AddToInventory(AActor* Object);
+
 	// APawn interface
 	virtual void SetupPlayerInputComponent(UInputComponent* InputComponent) override;
 	// End of APawn interface
