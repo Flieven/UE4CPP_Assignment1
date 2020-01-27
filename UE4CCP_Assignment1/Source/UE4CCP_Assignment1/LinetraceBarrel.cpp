@@ -78,6 +78,7 @@ UBarrel* ULinetraceBarrel::Fire(UPARAM(ref) AController* controller)
 	for (int i = 0; i < BulletsPerShot; i++)
 	{
 		FCollisionQueryParams CollisionParams;
+		CollisionParams.AddIgnoredActor(GetAttachmentRootActor());
 
 		FVector SourcePoint = GetComponentTransform().GetLocation();
 
