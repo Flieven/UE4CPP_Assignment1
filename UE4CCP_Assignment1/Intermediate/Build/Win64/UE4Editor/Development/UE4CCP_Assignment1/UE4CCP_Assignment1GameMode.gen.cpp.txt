@@ -1,13 +1,13 @@
-C:\Users\Leon.Andersson\Documents\UE4CPP_Assignment1\UE4CCP_Assignment1\Intermediate\Build\Win64\UE4Editor\Development\UE4CCP_Assignment1\Definitions.UE4CCP_Assignment1.h
+C:\Users\Uhuru.Mccray\source\repos\UE4CPP_Assignment1\UE4CCP_Assignment1\UE4CCP_Assignment1\Intermediate\Build\Win64\UE4Editor\Development\UE4CCP_Assignment1\Definitions.UE4CCP_Assignment1.h
 C:\Program Files\Epic Games\UE_4.24\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
 C:\Program Files\Epic Games\UE_4.24\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
-C:\Users\Leon.Andersson\Documents\UE4CPP_Assignment1\UE4CCP_Assignment1\Source\UE4CCP_Assignment1/UE4CCP_Assignment1GameMode.h
+C:\Users\Uhuru.Mccray\source\repos\UE4CPP_Assignment1\UE4CCP_Assignment1\UE4CCP_Assignment1\Source\UE4CCP_Assignment1/UE4CCP_Assignment1GameMode.h
 C:\Program Files\Epic Games\UE_4.24\Engine\Source\Runtime\Engine\Classes\GameFramework/GameModeBase.h
 C:\Program Files\Epic Games\UE_4.24\Engine\Source\Runtime\Engine\Classes\Engine/ServerStatReplicator.h
 C:\Program Files\Epic Games\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\ServerStatReplicator.generated.h
 C:\Program Files\Epic Games\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\GameModeBase.generated.h
-C:\Users\Leon.Andersson\Documents\UE4CPP_Assignment1\UE4CCP_Assignment1\Source\UE4CCP_Assignment1\AmmoBase.h
-C:\Users\Leon.Andersson\Documents\UE4CPP_Assignment1\UE4CCP_Assignment1\Source\UE4CCP_Assignment1\UE4CCP_Assignment1Projectile.h
-C:\Users\Leon.Andersson\Documents\UE4CPP_Assignment1\UE4CCP_Assignment1\Intermediate\Build\Win64\UE4Editor\Inc\UE4CCP_Assignment1\UE4CCP_Assignment1Projectile.generated.h
-C:\Users\Leon.Andersson\Documents\UE4CPP_Assignment1\UE4CCP_Assignment1\Intermediate\Build\Win64\UE4Editor\Inc\UE4CCP_Assignment1\AmmoBase.generated.h
-C:\Users\Leon.Andersson\Documents\UE4CPP_Assignment1\UE4CCP_Assignment1\Intermediate\Build\Win64\UE4Editor\Inc\UE4CCP_Assignment1\UE4CCP_Assignment1GameMode.generated.h
+C:\Users\Uhuru.Mccray\source\repos\UE4CPP_Assignment1\UE4CCP_Assignment1\UE4CCP_Assignment1\Source\UE4CCP_Assignment1\AmmoBase.h
+C:\Users\Uhuru.Mccray\source\repos\UE4CPP_Assignment1\UE4CCP_Assignment1\UE4CCP_Assignment1\Source\UE4CCP_Assignment1\UE4CCP_Assignment1Projectile.h
+C:\Users\Uhuru.Mccray\source\repos\UE4CPP_Assignment1\UE4CCP_Assignment1\UE4CCP_Assignment1\Intermediate\Build\Win64\UE4Editor\Inc\UE4CCP_Assignment1\UE4CCP_Assignment1Projectile.generated.h
+C:\Users\Uhuru.Mccray\source\repos\UE4CPP_Assignment1\UE4CCP_Assignment1\UE4CCP_Assignment1\Intermediate\Build\Win64\UE4Editor\Inc\UE4CCP_Assignment1\AmmoBase.generated.h
+C:\Users\Uhuru.Mccray\source\repos\UE4CPP_Assignment1\UE4CCP_Assignment1\UE4CCP_Assignment1\Intermediate\Build\Win64\UE4Editor\Inc\UE4CCP_Assignment1\UE4CCP_Assignment1GameMode.generated.h
